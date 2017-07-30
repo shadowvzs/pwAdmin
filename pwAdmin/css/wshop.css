@@ -1,0 +1,145 @@
+a{
+text-decoration:none;
+}
+a:hover{
+   co1lor: #000033;
+}
+#PreviewDiv{
+	position:fixed;
+	top: 120px;
+	right: 20px;
+	bottom: 20px;
+	width: 400px;
+	background-color:#333;
+	border-left: 2px solid #777;
+	opacity: 0.9;
+}
+
+#BodyCont{
+	position: absolute;
+	top: 50px;
+	bottom: 1px;
+	left:1px;
+	right:1px;
+}
+
+.iconList{
+	-webkit-user-select: none;  /* Chrome all / Safari all */
+    -moz-user-select: none;     /* Firefox all */
+    -ms-user-select: none;      /* IE 10+ */
+    user-select: none;          /* Likely future */  
+	float: left;
+	border: 0;
+	margin:1px;
+	height:32px;
+	width:32px;
+	overflow:hidden;
+}
+.iconList a{
+	text-decoration:none;
+	border: 0;
+}
+.iconList img{
+	transition-property: all;
+	transition-property: transform;
+	transition: all .2s;
+}
+.iconList:hover{
+    -ms-transform: scale(2, 3); /* IE 9 */
+    -webkit-transform: scale(2, 3); /* Safari */
+    transform: scale(1.2, 1.2);	
+}
+#iconHolder{
+	position: absolute;
+	top: 80px;
+	left: 20px;
+	right: 422px;
+}
+
+#BuyWindow input{
+	color: #fff;
+	background-color: #444;
+	text-align: center;
+	font-style: italic;
+}
+#BuyWindow input:focus{
+	color: #ff0;
+	background-color: #222;
+	font-style: normal;
+}
+#BuyWindow{
+    -webkit-user-select: none;  /* Chrome all / Safari all */
+    -moz-user-select: none;     /* Firefox all */
+    -ms-user-select: none;      /* IE 10+ */
+    user-select: none;          /* Likely future */  
+	text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+	font-size: 16px;
+	position: fixed; 
+	right:50px;
+	bottom:50px;
+	border: 1px solid #000;
+	-moz-box-shadow: 10px 10px 14px -7px #000;
+	-webkit-box-shadow: 10px 10px 14px -7px #000;
+	box-shadow: 10px 10px 14px -7px #000;
+	padding: 10px;
+	width: 300px;
+	height: 150px;
+	z-index: 2;
+	opacity: 1;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+	background: linear-gradient(top, #333 0%, #ccc 100%);  
+	background: -moz-linear-gradient(top, #333 0%, #ccc 100%); 
+	background: -webkit-linear-gradient(top, #333 0%,#ccc 100%); 
+	background:-o-linear-gradient(top, #333 0%,#ccc 100%);
+	background:-ms-linear-gradient(top, #333 0%,#ccc 100%);
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#333', endColorstr='#ccc',GradientType=0);
+	opacity: 0.9;
+}
+
+#Bckgrnd{
+	position: fixed;
+	top:50px;
+	left:0px;
+	right:0px;
+	bottom:0px;
+	z-index:-1;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+	overflow-y: scroll;
+	background: linear-gradient(top, #111 0%, #e2e2e2 100%);  
+	background: -moz-linear-gradient(top, #111 0%, #e2e2e2 100%); 
+	background: -webkit-linear-gradient(top, #111 0%,#e2e2e2 100%); 
+	background:-o-linear-gradient(top, #111 0%,#e2e2e2 100%);
+	background:-ms-linear-gradient(top, #111 0%,#e2e2e2 100%);
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#111', endColorstr='#e2e2e2',GradientType=0);
+}
+
+.bubble{
+    -webkit-user-select: none;  /* Chrome all / Safari all */
+    -moz-user-select: none;     /* Firefox all */
+    -ms-user-select: none;      /* IE 10+ */
+    user-select: none;          /* Likely future */  	
+	position: relative;
+	top:20px;
+	font-family: 'arial';
+	font-size: 14px;
+	color: #eee;
+	text-decoration: none;
+	border-radius: 5px;
+	min-width: 150px;
+	min-height: 100px;
+	display:inline-block;
+	opacity: 0.6;
+	background-color: #000;
+	padding: 5px 15px;
+	border: 2px solid #bbb;
+	float:left;
+	vertical-align:top;
+	left: 50%;
+	transform: translateX(-50%);
+}
+
+.bubble:hover{
+	opacity: 1;
+}

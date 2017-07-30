@@ -1,0 +1,154 @@
+button{
+    padding: 0;
+}
+body, html{
+	text-shadow: 1px 1px 2px #aaa;
+}
+
+#BckgrndImg{
+	position: fixed;
+	top: 50px;
+	bottom: 0px;
+	left: 0px;
+	bottom: 0px;
+	width: 100%;
+	height: 100%;
+	z-index:-1;
+	background-size: 100% 100%;
+    background-repeat: no-repeat;
+	background-image: url("../images/background1.jpg");
+}
+#BodyCont{
+	position: absolute;
+	top: 50px;
+	bottom: 1px;
+	width: 100%;
+	height: 100%;
+	z-index:3;
+}
+#ptemplateDiv{
+	position: absolute; 
+	left:10px;
+	top:10px;
+	border: 1px solid #000;
+	-moz-box-shadow: 10px 10px 14px -7px #777;
+	-webkit-box-shadow: 10px 10px 14px -7px #777;
+	box-shadow: 10px 10px 14px -7px #777;
+	padding: 10px;
+	width: 200px;
+	opacity: 0.8;
+	background-color: #fff;
+	font-family:arial;
+	font-size:12px;
+}
+#ptemplateDiv:hover{
+	opacity:1;
+}
+#ChatDiv{
+	position: absolute; 
+	left:250px;
+	top:10px;
+	border: 1px solid #000;
+	-moz-box-shadow: 10px 10px 14px -7px #777;
+	-webkit-box-shadow: 10px 10px 14px -7px #777;
+	box-shadow: 10px 10px 14px -7px #777;
+	padding: 10px;
+	width: 410px;
+	opacity: 0.8;
+	background-color: #fff;
+}
+#ChatDiv:hover{
+	opacity:1;
+}
+
+#ServerStatus{
+	position: absolute; 
+	left:700px;
+	top:10px;
+	border: 1px solid #000;
+	-moz-box-shadow: 10px 10px 14px -7px #777;
+	-webkit-box-shadow: 10px 10px 14px -7px #777;
+	box-shadow: 10px 10px 14px -7px #777;
+	padding: 10px;
+	width: 200px;
+	background-color: #fff;
+	opacity: 0.8;
+}
+#ServerStatus:hover{
+	opacity:1;
+}
+#ServerMapStatus{
+	position: absolute; 
+	left:700px;
+	top:300px;
+	border: 1px solid #000;
+	-moz-box-shadow: 10px 10px 14px -7px #777;
+	-webkit-box-shadow: 10px 10px 14px -7px #777;
+	box-shadow: 10px 10px 14px -7px #777;
+	padding: 10px;
+	width: 200px;
+	opacity: 0.8;
+	background-color: #fff;
+}
+#ServerMapStatus:hover{
+	opacity:1;
+}
+
+#LogDiv{
+	position: absolute;
+	background-color: #eee;
+	border: 1px inset #333;
+	-moz-box-shadow: 10px 10px 14px -7px #777;
+	-webkit-box-shadow: 10px 10px 14px -7px #777;
+	box-shadow: 10px 10px 14px -7px #777;
+	transition: 0.4s;
+	transition-timing-function: ease-in;
+	right: 10px;
+	height: 200px;
+	width: 285px;
+	font-family:Arial;
+	font-size:12px;
+	opacity: 0.95;
+}
+
+#LogHeaderDiv{
+	position: absolute;
+	left: 1px;
+	right: 1px;
+	top: 1px;
+	height: 20px;
+	border: 1px solid #000;
+	line-height:20px;
+	font-size:16px;
+	text-shadow: 1px 1px 2px #000, 0px 0px 1px #000; 
+	color:#fff;
+	background-color: #fff;
+	background: -webkit-linear-gradient(-90deg, #88d, #337);
+	background: -o-linear-gradient(-90deg, #88d, #337);
+	background: -moz-linear-gradient(-90deg, #88d, #337);
+	background: linear-gradient(-90deg, #88d, #337);
+}
+
+#LogContDiv{
+	position: absolute;
+	border: 1px solid #777;
+	left: 1px;
+	right: 1px;
+	top: 22px;
+	bottom:1px;
+	padding: 10px 20px;
+	background-color: #fff;
+	background: -webkit-linear-gradient(-90deg, #eef, #ddf);
+	background: -o-linear-gradient(-90deg, #eef, #ddf);
+	background: -moz-linear-gradient(-90deg, #eef, #ddf);
+	background: linear-gradient(-90deg, #eef, #ddf);
+}
+#LogMsg{
+	position: absolute;
+	left: 10px;
+	right: 10px;
+	top: 1px;
+	bottom:25px;
+	overflow: auto;
+	
+}
