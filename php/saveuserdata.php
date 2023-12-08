@@ -130,10 +130,9 @@ if (($data)&&(isset($_SESSION['un']))) {
 															}
 														}else if($PassType==3){	
 															$LPw = addslashes($LPw);
-															$rs=mysqli_query($link,"SELECT fn_varbintohexsubstring (1,'$LPw',1,0) AS result");
-															$GetResult = mysqli_fetch_array($rs, MYSQLI_BOTH);
-															$LDPw = $GetResult['result'];
-															if ($LDPw==$Salt1){
+															$rs=mysqli_query($link,"SELECT ID FROM users WHERE ID=? AND passwd=CONVERT($Salt2 USING latin1)");
+															$count = mysqli_num_rows($rs);
+															if ($count > 0){
 																$verifiedPw=true;
 															}else{
 																$header_arr["error"]="Wrong username and password combination, don't cheat!";

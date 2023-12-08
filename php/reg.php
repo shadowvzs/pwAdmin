@@ -1,5 +1,8 @@
 <?php 
 session_start();
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
 include "../config.php";
 include "../basefunc.php";
 $resp="Unkown Error";
@@ -7,6 +10,7 @@ $resp="Unkown Error";
 SessionVerification();
 //obj = {"name":dArr[0], "password1":dArr[1], "password2":dArr[2], "email":dArr[3], "answer1":dArr[4], "answer2":dArr[5], "term":dArr[6]};		
 $data = json_decode(file_get_contents('php://input'), true);
+$IPL = $_SERVER['REMOTE_ADDR'];
 if ( $data ) {
 	$u=StrToLower(Trim(stripslashes($data['name'])));
 	$p1=stripslashes($data['password1']);
@@ -19,7 +23,6 @@ if ( $data ) {
 	$UserNmC=CountMysqlRows($link, 3, $u);
 	$UserEmC=CountMysqlRows($link, 2, $m);
 	$UserIPC=CountMysqlRows($link, 5, $IPL);
-	$IPL = $_SERVER['REMOTE_ADDR'];
 	if (substr($IPL, 0, 3)=="192"){
 		$IPL = trim(shell_exec("dig +short myip.opendns.com @resolver1.opendns.com"));
 	}
@@ -57,13 +60,14 @@ if ( $data ) {
 	}else{
 		if ($PassType==1){
 			$Salt = "0x".md5($u.$p1);
-			$rs=mysqli_query($link, "call adduser('$u', '$Salt', '0', '0', '', '$IPL', '$m', '0', '0', '0', '0', '0', '0', '0', '', '', '$Salt')");
+			$q = "call adduser('$u', '$Salt', '0', '0', '', '$IPL', '$m', '0', '0', '0', '0', '0', '0', '0', '1970-01-01 08:00:00', '', '$Salt')";
+			$rs=mysqli_query($link, $q);
 		}else if ($PassType==2){ 
 			$Salt = base64_encode(hash('md5',strtolower($u).$p1, true));
-			$rs=mysqli_query($link, "call adduser('$u', '$Salt', '0', '0', '', '$IPL', '$m', '0', '0', '0', '0', '0', '0', '0', '', '', '$Salt')");
+			$rs=mysqli_query($link, "call adduser('$u', '$Salt', '0', '0', '', '$IPL', '$m', '0', '0', '0', '0', '0', '0', '0', '1970-01-01 08:00:00', '', '$Salt')");
 		}else if ($PassType==3){ 
 			$Salt = "0x".md5($u.$p1);
-			$rs=mysqli_query($link, "call adduser('$u', $Salt, '0', '0', '', '$IPL', '$m', '0', '0', '0', '0', '0', '0', '0', '', '', $Salt)");
+			$rs=mysqli_query($link, "call adduser('$u', $Salt, '0', '0', '', '$IPL', '$m', '0', '0', '0', '0', '0', '0', '0', '1970-01-01 08:00:00', '', $Salt)");
 		}		
 		$UserNmC=CountMysqlRows($link, 3, $u);
 		if ($UserNmC>0){
@@ -81,13 +85,19 @@ if ( $data ) {
 					$nr0 = 0;
 					$nr1 = 1;
 					$stmt = $link->prepare("INSERT INTO usecashnow (userid, zoneid, sn, aid, point, cash, status, creatime) VALUES (?, ?, ?, ?, ?, ?, ?, ?)");
+					if (!$stmt) {
+						printf("Error message: %s\n", $link->error);
+					}
 					$stmt->bind_param("iiiiiiis", $ID, $nr1, $nr0, $nr1, $nr0, $StartGold, $nr1, $TIME);
 					$stmt->execute(); 
 					$stmt->close();
 				}
 				
 				if ($StartPoint > 0){
-					$stmt = $link->prepare("UPDATE users SET VotePoint = ? WHERE ID=?");
+					$stmt = $link->prepare("UPDATE users SET VotePoint=? WHERE ID=?");
+					if (!$stmt) {
+						printf("Error message: %s\n", $link->error);
+					}
 					$stmt->bind_param('ii', $StartPoint, $ID);
 					$stmt->execute(); 
 					$stmt->close();

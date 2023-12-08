@@ -11,7 +11,7 @@ if ( $data ) {
 	$username=$data['name'];
 	$password=$data['password'];
 	if (($username)&&($password)){
-		$u=StrToLower(Trim(stripslashes($username)));
+		$u=Trim(stripslashes($username));
 		$p=stripslashes($password);
 		if (!(((strlen($u)<5)||(strlen($u)>20)||(strlen($p)<5))||(strlen($p)>20))&&((ctype_alnum($u))&&(ctype_alnum($p)))){
 			$link = new mysqli($DB_Host, $DB_User, $DB_Password, $DB_Name);

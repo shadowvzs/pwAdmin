@@ -1,15 +1,15 @@
 <?php 
-$DB_Host="localhost";
-$DB_User="root";
-$DB_Password="root";
-$DB_Name="pw";
+$DB_Host="DATABASE_HOST_NAME";
+$DB_User="DATABASE_USERNAME";
+$DB_Password="DATABASE_PASSWORD";
+$DB_Name="DATABASE_NAME";
 $SSH_User="";
 $SSH_Password="";
 $PassType=3;
 $ServerIP="shadowvzs.ddns.net";
 $LanIP="192.168.0.2";
 $ServerPort=29000;
-$WebDir="/var/www/html/pwAdmin";
+$WebDir="WEB_SITE_PATH";
 $IPRegLimit=2;
 $SRegLimit=3;
 
@@ -68,8 +68,8 @@ $StartGold=1000;
 $StartPoint=10000;
 $RegisEnabled=true;
 $LoginEnabled=true;
-$AdminId=32;
-$AdminPw="7b510da8049f81db86ba8874c0d83c1f";
+$AdminId="PW_ADMIN_ID";
+$AdminPw="PW_ADMIN_HASH";
 $MaxWebPoint=2000000000;
 
 $months[1]="January";

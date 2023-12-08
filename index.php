@@ -1,6 +1,9 @@
 <?php
 // Start the session
 session_start();
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -29,7 +32,7 @@ if (!(file_exists($cfgFile))) {
 ?>
 <title>Perfect World RetroMS Server</title>
 <link rel="stylesheet" type="text/css" href="./css/index.css">
-<script src="./js/index.js?s=<?php echo uniqid; ?>"></script>
+<script src="./js/index.js?s=<?php echo uniqid(); ?>"></script>
 </head>
 <body>
 <center>
@@ -76,9 +79,18 @@ if ($RegisEnabled!==false){
 	<div id="lHeaderDiv"> &nbsp; &nbsp; <b>Login Panel</b></div>
 	<div id="lContDiv">
 		<table border="0">
-		<tr><td style="font-size:14px;text-shadow: 2px 2px 5px #000, 0px 0px 1px #000; color:#fff;"> <b>Username:&nbsp;&nbsp;</b></td><td>    <input type="text" name="login" id='luname' maxlength="20" onkeydown = "if (event.keyCode == 13){SendLoginData();};"></td></tr>
-		<tr><td style="font-size:14px;text-shadow: 2px 2px 5px #000, 0px 0px 1px #000; color:#fff;"> <b>Password:</b></td><td>   <input type="password" name="passwd" id='lupass' maxlength=" 20"onkeydown = "if (event.keyCode == 13){SendLoginData();};"><br></td></tr>
-		</table><br>
+		<tr>
+			<td style="font-size:14px;text-shadow: 2px 2px 5px #000, 0px 0px 1px #000; color:#fff;">
+				<b>Username:&nbsp;&nbsp;</b>
+			</td>
+			<td><input type="text" name="login" id='luname' maxlength="20" onkeydown="if (event.keyCode == 13){SendLoginData();};"></td>
+		</tr>
+		<tr>
+			<td style="font-size:14px;text-shadow: 2px 2px 5px #000, 0px 0px 1px #000; color:#fff;"> <b>Password:</b></td>
+			<td><input type="password" name="passwd" id='lupass' maxlength=" 20" onkeydown="if (event.keyCode == 13){SendLoginData();};"></td>
+		</tr>
+		</table>
+		<br>
 		<center> <a href="javascript:void(0);" class="myButton" onClick="SendLoginData();" id="LoginButton1">Login</a>&nbsp;&nbsp;<a href="javascript:void(0);" class="myButton" onClick="document.getElementById('loginDiv').style.left='-1000px';">Cancel</a></center>
 	</div>
 </div>

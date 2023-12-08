@@ -30,23 +30,15 @@ function VerifyPassword ($link, $name, $password){
 		$statement->close();
 	}else if ($PassType == 3){	
         $Salt = "0x".md5($name.$password);
-		$statement = $link->prepare("SELECT passwd FROM users WHERE name=?");
+		$statement = $link->prepare("SELECT passwd FROM users WHERE name=? AND passwd=CONVERT($Salt USING latin1)");
 		$statement->bind_param('s', $name);
 		$statement->execute();
 		$statement->bind_result($p2);
 		$statement->store_result();
 		$count = $statement->num_rows;
 		if($count==1){
-			while($statement->fetch()) {
-				$p2=addslashes($p2);
-				$rs=mysqli_query($link,"SELECT fn_varbintohexsubstring (1,'$p2',1,0) AS result");
-				$GetResult=mysqli_fetch_array($rs, MYSQLI_BOTH);
-				$CheckPassword = $GetResult['result'];
-				if ($CheckPassword==$Salt){
-					return true;
-					exit;
-				}
-			}
+			return true;
+			exit;
 		}	
 		$statement->close();	
 	}
@@ -59,8 +51,13 @@ function VerifyAdmin($con, $username, $password, $userid, $email){
 	global $AdminId;
 	global $AdminPw;
 
-	if (!($con->connect_errno)) {	
-		$query = "SELECT ID, name, email, passwd FROM users WHERE ID=?";
+	if (!($con->connect_errno)) {
+		if ($PassType == 3) {
+			$binSalt = "0x".md5($username.$password);
+			$query = "SELECT ID, name, email, passwd FROM users WHERE ID=? AND passwd=CONVERT($binSalt USING latin1)";
+		} else {
+			$query = "SELECT ID, name, email, passwd FROM users WHERE ID=?";
+		}
 		$statement = $con->prepare($query);
 		$statement->bind_param('i', $userid);
 		$statement->execute();
@@ -87,12 +84,7 @@ function VerifyAdmin($con, $username, $password, $userid, $email){
 						$Salt1 = "0x".md5($username.$password);
 						$Salt2 = "0x".$AdminPw;						
 						if ($Salt1==$Salt2) {
-							$rs=mysqli_query($con,"SELECT fn_varbintohexsubstring (1,'$LPASSWD',1,0) AS result");
-							$GetResult=mysqli_fetch_array($rs, MYSQLI_BOTH);
-							$Salt3 = $GetResult['result'];
-							if ($Salt3==$Salt2){
-								$rValue=true;
-							}
+							$rValue=true;
 						}					
 					}					
 				}

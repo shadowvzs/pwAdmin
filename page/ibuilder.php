@@ -3,16 +3,11 @@ session_start();
 ?>
 <!DOCTYPE html>
 <html lang="en">
-<head>
-<meta charset="utf-8">
-<link rel="stylesheet" type="text/css" href="../css/ibuild.css">
-<link rel="stylesheet" type="text/css" href="../css/windowstyle.css">
-<script src="../js/conv.js"></script>
-<script src="../js/refined.js"></script>
-<script src="../js/baseitemdata.js"></script>
-<script src="../js/cards.js"></script>
-<script src="../js/ibuild.js"></script>
-</head>
+	<head>
+		<meta charset="utf-8">
+		<link rel="stylesheet" type="text/css" href="../css/ibuild.css">
+		<link rel="stylesheet" type="text/css" href="../css/windowstyle.css">
+	</head>
 <body>
 <?php
 include "../config.php";
@@ -41,7 +36,7 @@ if ((isset($_SESSION['un']))&&(isset($_SESSION['pw']))&&(isset($_SESSION['id']))
 	echo "<script>parent.window.location.href = '../index.php';</script>";
 }
 SessionVerification();
-if ($AllowN !== true){die;}
+//if ($AllowN !== true){die;}
 
 $allClass = 219;
 $maxClass = 6;
@@ -1664,5 +1659,12 @@ function ClassMask2String ($ClassMask){
 	return $res;
 }
 ?>
+
+<script src="../js/conv.js"></script>
+<script src="../js/refined.js"></script>
+<script src="../js/baseitemdata.js"></script>
+<script src="../js/cards.js"></script>
+<script src="../js/ibuild.js"></script>
+
 </body>
 </html>

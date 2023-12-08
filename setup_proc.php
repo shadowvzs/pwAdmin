@@ -567,6 +567,12 @@ if (isset($_GET['do'])){
 						if ($link->connect_errno) {
 							$msg="Cannot connect to MySQL";
 						}else{
+							if ($_SESSION['pt']==3) {
+								$binSalt = "0x".md5($user.$passwd);
+								$query="SELECT ID, passwd FROM users WHERE name=? AND passwd=CONVERT($binSalt USING latin1)";
+							} else {
+								$query="SELECT ID, passwd FROM users WHERE name=?";
+							}
 							$query="SELECT ID, passwd FROM users WHERE name=?";
 							$statement=$link->prepare($query);
 							$statement->bind_param('s', $selusr);
@@ -596,14 +602,9 @@ if (isset($_GET['do'])){
 									$work=true;
 								}elseif ($_SESSION['pt']==3){
 									while($statement->fetch()) {
-										$dpasswd=addslashes($Upass);
-										$selId=$ID;
+										$pwAdminId=$ID;
+										$pwAdminPw=md5($user.$passwd);
 									}	
-									$rs=mysqli_query($link,"SELECT fn_varbintohexsubstring (1,'$dpasswd',1,0) AS result");
-									$GetResult=mysqli_fetch_array($rs, MYSQLI_BOTH);
-									$enc_passwd=substr($GetResult['result'],2);
-									$pwAdminId=$selId;
-									$pwAdminPw=$enc_passwd;
 									$msg="<font color=#0000aa>".$selusr."[".$selId."] became the pwAdmin!";
 									$work=true;									
 								}
@@ -639,12 +640,12 @@ if (isset($_GET['do'])){
 												if ($_SESSION['pt']==1){
 													$Salt1="0x".md5($Salt1);
 													$Salt=$Salt1;
-													$query="call adduser('$admnam', '$Salt', '0', '0', '', '$IPL', '$admema', '0', '0', '0', '0', '0', '0', '0', '', '', '$Salt')";
+													$query="call adduser('$admnam', '$Salt', '0', '0', '', '$IPL', '$admema', '0', '0', '0', '0', '0', '0', '0', '1970-01-01 08:00:00', '', '$Salt')";
 													$rs=mysqli_query($link, $query);
 												}elseif ($_SESSION['pt']==2){
 													$Salt1=base64_encode(hash('md5',strtolower($admnam).$admpas, true));
 													$Salt=$Salt1;
-													$query="call adduser('$admnam', '$Salt', '0', '0', '', '$IPL', '$admema', '0', '0', '0', '0', '0', '0', '0', '', '', '$Salt')";
+													$query="call adduser('$admnam', '$Salt', '0', '0', '', '$IPL', '$admema', '0', '0', '0', '0', '0', '0', '0', '1970-01-01 08:00:00', '', '$Salt')";
 													$rs=mysqli_query($link, $query);
 												}elseif ($_SESSION['pt']==3){
 													$Salt1=md5($Salt1);

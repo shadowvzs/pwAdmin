@@ -1,53 +1,9 @@
+CREATE DATABASE pw CHARACTER SET latin1 COLLATE latin1_swedish_ci;
+
+use pw;
+
 SET FOREIGN_KEY_CHECKS=0;
 
--- ----------------------------
--- Table structure for webshop
--- ----------------------------
-
-DROP TABLE IF EXISTS `webshop`;
-CREATE TABLE `webshop` (
-	`id` INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
-	`pcst` INT SIGNED NOT NULL,
-	`gcst` INT SIGNED NOT NULL,
-	`itit` VARCHAR(64) NOT NULL,
-	`idsc` VARCHAR(255) NOT NULL,
-	`cats` VARCHAR(5) NOT NULL,
-	`iname` VARCHAR(64) NOT NULL,
-	`idate` DATETIME NOT NULL,
-	`itmid` INT NOT NULL,
-	`imask` INT SIGNED NOT NULL,
-	`iproc` INT UNSIGNED NOT NULL,
-	`iqty` INT UNSIGNED NOT NULL,
-	`imax` INT UNSIGNED NOT NULL,
-	`guid1` INT UNSIGNED NOT NULL,
-	`guid2` INT UNSIGNED NOT NULL,
-	`expir` INT UNSIGNED NOT NULL,
-	`octet` VARCHAR(8095) NOT NULL,
-	`wscat` VARCHAR(10) NOT NULL,
-	`icol` TINYINT NOT NULL,
-	`igrd` INT NOT NULL,
-	`stim` VARCHAR(64) NOT NULL) 
-	ENGINE=MyISAM DEFAULT CHARSET=utf8;
-
-	-- ----------------------------
--- Table structure for wshoplog
--- ----------------------------
-
-DROP TABLE IF EXISTS `wshoplog`;
-CREATE TABLE `wshoplog` (
-	`id` INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
-	`user` INT UNSIGNED NOT NULL,
-	`uname` VARCHAR(50) NOT NULL,
-	`role` INT UNSIGNED NOT NULL,
-	`rname` VARCHAR(50) NOT NULL,
-	`buydate` DATETIME NOT NULL,
-	`currency` TINYINT NOT NULL,
-	`price` INT SIGNED NOT NULL,
-	`idata` VARCHAR(8500) NOT NULL,
-	`shopid` INT UNSIGNED NOT NULL) 
-	ENGINE=MyISAM DEFAULT CHARSET=utf8;
-
-	
 -- ----------------------------
 -- Table structure for auth
 -- ----------------------------
@@ -192,8 +148,8 @@ CREATE TABLE `users` (
   `creatime` datetime NOT NULL,
   `qq` varchar(32) DEFAULT '',
   `passwd2` varchar(64) DEFAULT NULL,
-  `mudev` varchar(32) NOT NULL DEFAULT '',
-  `mmotop` varchar(32) NOT NULL DEFAULT '',
+  `mudev` varchar(32) NOT NULL,
+  `mmotop` varchar(32) NOT NULL,
   `avatar` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`ID`),
   UNIQUE KEY `IX_users_name` (`name`) USING BTREE,
@@ -213,45 +169,6 @@ CREATE TABLE IF NOT EXISTS `files` (
 	`file` varchar(512) NOT NULL,
 	`file_base64` varchar(512) NOT NULL,
 	PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
-
--- ----------------------------
--- Table structure for characters
--- ----------------------------
-
-DROP TABLE IF EXISTS `roles`;
-CREATE TABLE IF NOT EXISTS `roles` (
-  `account_id` int(11) NOT NULL,
-  `role_id` int(11) NOT NULL,
-  `role_name` varchar(64) NOT NULL,
-  `role_level` smallint(6) NOT NULL,
-  `role_race` tinyint(4) NOT NULL,
-  `role_occupation` tinyint(4) NOT NULL,
-  `role_gender` tinyint(4) NOT NULL,
-  `role_spouse` int(11) NOT NULL,
-  `faction_id` int(11) NOT NULL,
-  `faction_name` varchar(64) NOT NULL,
-  `faction_level` int(11) NOT NULL,
-  `faction_domains` varchar(132) NOT NULL,
-  `role_faction_rank` int(11) NOT NULL,
-  `pvp_time` int(11) NOT NULL,
-  `pvp_kills` int(11) NOT NULL,
-  `pvp_deads` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8; 
-
-DROP TABLE IF EXISTS `uwebplayers`;
-CREATE TABLE IF NOT EXISTS `uwebplayers` (
-  `roleid` int(11) NOT NULL,
-  `rolename` varchar(50) DEFAULT NULL,
-  `rolelevel` int(11) DEFAULT NULL,
-  `rolestatus` int(11) DEFAULT NULL,
-  `rolegender` int(11) DEFAULT NULL,
-  `roleprof` bigint(20) DEFAULT NULL,
-  `rolerep` bigint(20) DEFAULT NULL,
-  `redname` bigint(20) DEFAULT NULL,
-  `rednametime` bigint(20) DEFAULT NULL,
-  `pinknametime` bigint(20) DEFAULT NULL,
-  PRIMARY KEY (`roleid`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- ----------------------------

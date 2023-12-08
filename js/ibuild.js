@@ -1530,6 +1530,7 @@ function ChangeElfPointTalent(){
 }
 
 var intervalID = setInterval(function(){
+	if (document.readyState !== 'complete') { return; }
 	if (CIType == "W"){
 		var fix = parseInt(document.getElementById('Inp_W_CurDur').value);
 		var e;
