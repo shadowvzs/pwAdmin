@@ -33,6 +33,6 @@ mariadb -u"$dbUser" -p"$dbPassword" pw <<eof
     ALTER TABLE users ADD VoteDates varchar(255) NOT NULL DEFAULT "1970-01-01 01:00:00";
 eof
 
-sed -r -e "s|DATABASE_HOST_NAME|$dbHost|" -e "s|DATABASE_USERNAME|$dbUser|" -e "s|DATABASE_PASSWORD|$dbPassword|" -e "s|DATABASE_PASSWORD|$dbName|" -e "s|WEB_SITE_PATH|$websitePath|" -e "s|PW_ADMIN_ID|$pwAdminId|" -e "s|PW_ADMIN_HASH|$pwAdminSalt|" $websitePath/pwAdmin/config.php>$websitePath/pwAdmin/config.php.new
+sed -r -e "s|DATABASE_HOST_NAME|$dbHost|" -e "s|DATABASE_USERNAME|$dbUser|" -e "s|DATABASE_PASSWORD|$dbPassword|" -e "s|DATABASE_NAME|$dbName|" -e "s|WEB_SITE_PATH|$websitePath|" -e "s|PW_ADMIN_ID|$pwAdminId|" -e "s|PW_ADMIN_HASH|$pwAdminSalt|" $websitePath/pwAdmin/config.php>$websitePath/pwAdmin/config.php.new
 mv "$websitePath/pwAdmin/config.php" "$websitePath/pwAdmin/config.php.old"
 mv "$websitePath/pwAdmin/config.php.new" "$websitePath/pwAdmin/config.php"
