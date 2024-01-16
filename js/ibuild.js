@@ -5866,6 +5866,7 @@ function OctSelectedItem(id, listType){
 			if (listType == 2){
 				myArr[5] = myArr[2];
 			}			
+			console.log(itmCol[iCol], iCol,myArr[5] );
 			cINM="<font color='"+itmCol[iCol]+"'>"+myArr[5]+"</font>";
 			itmName.innerHTML = cINM;
 			if (myArr[10] == 1){

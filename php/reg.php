@@ -74,8 +74,8 @@ if ( $data ) {
 			$statement = $link->prepare("SELECT name, ID, creatime FROM users WHERE name=?");
 			$statement->bind_param('s', $u);
 			$statement->execute();
-			$statement->bind_result($uname, $ID, $TIME);
 			$statement->store_result();
+			$statement->bind_result($uname, $ID, $TIME);
 			$result = $statement->num_rows;
 			if (!$result) {
 				$resp="Query failed to execute!";
@@ -84,13 +84,15 @@ if ( $data ) {
 				if ($StartGold > 0){
 					$nr0 = 0;
 					$nr1 = 1;
-					$stmt = $link->prepare("INSERT INTO usecashnow (userid, zoneid, sn, aid, point, cash, status, creatime) VALUES (?, ?, ?, ?, ?, ?, ?, ?)");
-					if (!$stmt) {
-						printf("Error message: %s\n", $link->error);
+					while ($statement->fetch()) {
+						$stmt = $link->prepare("INSERT INTO usecashnow (userid, zoneid, sn, aid, point, cash, status, creatime) VALUES (?, ?, ?, ?, ?, ?, ?, ?)");
+						if (!$stmt) {
+							printf("Error message: %s\n", $link->error);
+						}
+						$stmt->bind_param("iiiiiiis", $ID, $nr1, $nr0, $nr1, $nr0, $StartGold, $nr1, $TIME);
+						$stmt->execute(); 
+						$stmt->close();
 					}
-					$stmt->bind_param("iiiiiiis", $ID, $nr1, $nr0, $nr1, $nr0, $StartGold, $nr1, $TIME);
-					$stmt->execute(); 
-					$stmt->close();
 				}
 				
 				if ($StartPoint > 0){

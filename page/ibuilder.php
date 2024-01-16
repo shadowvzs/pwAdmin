@@ -9,6 +9,11 @@ session_start();
 		<link rel="stylesheet" type="text/css" href="../css/windowstyle.css">
 	</head>
 <body>
+<script src="../js/conv.js"></script>
+<script src="../js/refined.js"></script>
+<script src="../js/baseitemdata.js"></script>
+<script src="../js/cards.js"></script>
+<script src="../js/ibuild.js"></script>
 <?php
 include "../config.php";
 include "../basefunc.php";
@@ -887,10 +892,10 @@ for ($i = 1; $i <= count($SoulStone[3]); $i++) {
 		<option value="c7a24c4f"> Tradeable </option>
 	</select></td></tr>
 	<tr><td>Gears:</td><td colspan="3" style='text-align:center;'>
-	<a href="javascript:void(0);" title="Change Gear 1" onclick="ChangeElfGearIcon(1);"><img src="../images/icons/slot.gif" id="EGearImg1" width="32" height="32"></a>
-	<a href="javascript:void(0);" title="Change Gear 2" onclick="ChangeElfGearIcon(2);"><img src="../images/icons/slot.gif" id="EGearImg2" width="32" height="32"></a>
-	<a href="javascript:void(0);" title="Change Gear 3" onclick="ChangeElfGearIcon(3);"><img src="../images/icons/slot.gif" id="EGearImg3" width="32" height="32"></a> 
-	<a href="javascript:void(0);" title="Change Gear 4" onclick="ChangeElfGearIcon(4);"><img src="../images/icons/slot.gif" id="EGearImg4" width="32" height="32"></a>
+	<a href="javascript:void(0);" title="Change Gear 1" onclick="ChangeElfGearIcon(1);"><img src="../images/icons/slot.png" id="EGearImg1" width="32" height="32"></a>
+	<a href="javascript:void(0);" title="Change Gear 2" onclick="ChangeElfGearIcon(2);"><img src="../images/icons/slot.png" id="EGearImg2" width="32" height="32"></a>
+	<a href="javascript:void(0);" title="Change Gear 3" onclick="ChangeElfGearIcon(3);"><img src="../images/icons/slot.png" id="EGearImg3" width="32" height="32"></a> 
+	<a href="javascript:void(0);" title="Change Gear 4" onclick="ChangeElfGearIcon(4);"><img src="../images/icons/slot.png" id="EGearImg4" width="32" height="32"></a>
 	</td></tr>
 	<tr><td>Gear <span id='elfGearId'>1</span>: </td><td colspan='3'>
 <?php
@@ -1659,12 +1664,5 @@ function ClassMask2String ($ClassMask){
 	return $res;
 }
 ?>
-
-<script src="../js/conv.js"></script>
-<script src="../js/refined.js"></script>
-<script src="../js/baseitemdata.js"></script>
-<script src="../js/cards.js"></script>
-<script src="../js/ibuild.js"></script>
-
 </body>
 </html>
