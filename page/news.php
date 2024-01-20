@@ -28,18 +28,27 @@
 
 <br>
 
+<section style="padding: 8px 32px 32px 32px; border-radius: 16px; background: rgba(255,255,0, 0.2);box-shadow: 0 0 25px 25px rgba(255,255,0, 0.4) inset; border: 1px solid #eee;display:inline-block;margin: auto;">
+<h3>Discord</h3>
+Please join into our discord server: <a href="https://discord.gg/AFr3AwRD" target="_blank" rel="noopener noreferrer"><strong>https://discord.gg/AFr3AwRD</strong></a>
+</section>
+<br><br><br>
+
+
 <br>
 <div id="newsDiv"><div id="nHeaderDiv"> Last News </div>
 <div id="nContDiv">
 
+<table border='0'><tr><td><b>2024.01.15: </b></td></tr>
+<tr><td> - Server started - 1.4.1 Age of the Elemental Elfs</td></tr>
+<tr><td> - Exp, Sp, Gold drop: 1x</td></tr>
+<tr><td> - Regular items in the item mall [O]</td></tr>
+<tr><td> - Race: 3 - Beastking, Winged Elves, Human</td></tr>
+<tr><td> - You can request help on discord</td></tr>
+</table>
+<br><br>
 
-<table border='0'><tr><td><b>This patch changes (v2 - 2016.10.30): </b></td></tr>
-<tr><td> - item mall prices changed, added +10 Con stone (crit & channeling), HH99 mats, set etc, removed Wall of Fame</td></tr>
-<tr><td> - changed start gear (full HH90+12 with 4 socket with Lv7 HP stones, weapon +9)</td></tr>
-<tr><td> - dual fairy pill bug fixed and reseted the skills</td></tr>
-<tr><td> - now start directly with level 79 culti and you can take lv89 quest from npc where you start</td></tr>
-<tr><td> - Gold selling/buying disabled at Auction Hall for avoid the cheating with starter gold</td></tr>
-<tr><td> - For Chrono World don't need anymore the chrono culti quest chain.</td></tr></table><br>
+
 <font size='5'> Please check the <a href="javascript:void(0);" onClick="ClrWin();ShowPage('./page/downloads.php');"> download section </a> for manual patch and replace these files in client </font>
 </div></div>
 </center>
