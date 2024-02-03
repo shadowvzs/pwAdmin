@@ -496,9 +496,6 @@ function VoteHandler(userData){
 	if (userD[0]["error"]!=""){
 		alert(userD[0]["error"]);
 	}else{
-		if (userD[0]["success"]!=""){
-			alert(userD[0]["success"]);
-		}
 		NewVoteTimer (["votesecleft"], userD[0]["voteid"]);
 		window.parent.location = userD[0]["voteurl"];
 	}	

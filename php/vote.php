@@ -1,4 +1,5 @@
 <?php 
+ini_set('display_errors', 1);
 session_start();
 include "../config.php";
 include "../basefunc.php";
@@ -11,6 +12,17 @@ if (($data)&&(isset($_SESSION['un']))) {
 		$vId = intval($data['voteid']);
 		if (($vId <= count($VoteUrl))&&($vId > 0)){
 			$VoteLink = $VoteUrl[$vId];
+			if ((isset($VoteOut[$vId])) && $VoteOut[$vId] == true) {
+				$header_arr["voteid"]=$vId;	
+				$header_arr["votesecleft"]=60*60*$VoteInterval;
+				$header_arr["success"]="Thank you for voteing";
+				$header_arr["voteurl"]=$VoteLink;
+				$header_arr["error"]="";
+				$return_arr = array();
+				$return_arr[0]=$header_arr;
+				echo json_encode($return_arr);
+				die();
+			}
 			if (!isset($VoteLink)){$VoteLink="";}
 			if (strlen($VoteLink) > 3){
 				$un=$_SESSION['un'];
@@ -61,9 +73,12 @@ if (($data)&&(isset($_SESSION['un']))) {
 										$nr0 = 0;
 										$nr1 = 1;
 										$stmt = $link->prepare("INSERT INTO usecashnow (userid, zoneid, sn, aid, point, cash, status, creatime) VALUES (?, ?, ?, ?, ?, ?, ?, ?)");
+										if (!$stmt) {
+											printf("Error message: %s\n", $link->error);
+										}
 										$stmt->bind_param("iiiiiiis", $uid, $nr1, $nr0, $nr1, $nr0, $VoteReward, $nr1, $TIME);
 										$stmt->execute(); 
-										$stmt->close();											
+										$stmt->close();
 									}
 									if (($VoteFor == 1) or ($VoteFor == 2)){
 										$header_arr["voteurl"]=$VoteUrl[$vId];
@@ -71,6 +86,9 @@ if (($data)&&(isset($_SESSION['un']))) {
 										$VDates=implode(",",$expArr);
 										$query = "UPDATE users SET VoteDates=? WHERE ID=?";
 										$stmt = $link->prepare($query);
+										if (!$stmt) {
+											printf("Error message: %s\n", $link->error);
+										}
 										$stmt->bind_param('si', $VDates, $uid);
 										$stmt->execute(); 
 										$stmt->close();	
@@ -148,7 +166,7 @@ function validDateStack($DateStack, &$VoteUrl){
 					$newStack = $newStack.$sepChar.$expDate;
 				}
 			}		
-		}else{
+		} else {
 			if (validateDate($DateStack)){
 				if ($max==1){
 					return $DateStack;

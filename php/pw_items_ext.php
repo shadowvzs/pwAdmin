@@ -516,8 +516,8 @@ $FashCol[] = "1f63#Smokey";
 //item builder sub menus
 $IBMenuSC[1][1]="Polehammer#0";
 $IBMenuSC[1][2]="Poleaxe#0";
-$IBMenuSC[1][3]="Dual Hammer#0";
-$IBMenuSC[1][4]="Dual Axe#0";
+$IBMenuSC[1][3]="Dual Axe#0";
+$IBMenuSC[1][4]="Dual Hammer#0";
 $IBMenuSC[1][5]="Spear#0";
 $IBMenuSC[1][6]="Polearm#0";
 $IBMenuSC[1][7]="Staff#0";

@@ -2718,7 +2718,7 @@ function ChangeElfGear(id){
 	var reqLv = parseInt(myArr[1], 10);
 	if (elfLevel < reqLv){
 		e.selectedIndex = 0;
-		document.getElementById("EGearImg"+id).src="../images/icons/slot.gif";
+		document.getElementById("EGearImg"+id).src="../images/icons/slot.png";
 		document.getElementById("Inp_E_GearId"+id).value = 0;
 		document.getElementById('Inp_E_GearName'+id).value = "";
 		alert("This item need level "+reqLv+", but your genie is level "+elfLevel+"!");
@@ -2730,7 +2730,7 @@ function ChangeElfGear(id){
 		}else{
 			document.getElementById("Inp_E_GearId"+id).value = 0;
 			document.getElementById("Inp_E_GearName"+id).value = "";
-			document.getElementById("EGearImg"+id).src="../images/icons/slot.gif";
+			document.getElementById("EGearImg"+id).src="../images/icons/slot.png";
 		}
 	}
 }

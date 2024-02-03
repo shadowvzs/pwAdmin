@@ -20,8 +20,18 @@ body{
 </head>
 <body>
 <center><br><br>
+Since server is not free for me, any donation is welcome, for donation you can contact me on the <a href="https://discord.gg/aapqeqP4">discord server</a>.<br /><br />
+As thanks from my side for your donation, I give away in game gold (PW GOLD) to each donator.<br />
+For each donated EURO, you will get 100 PW GOLD and a bonus based on donation amount.<br /><br />
+
+<h3>Example<h3>
+
 <table>
-<tr><td style="font-weight:bold;">Since server is costly, every donation is welcome, even 4 dollar or 3 euro could be 1 month on cheapest server host!</td></tr>
+	<tr><td style="font-weight:bold;">- 10 euro = 1100 PW GOLD</td></tr>
+	<tr><td style="font-weight:bold;">- 20 euro = 2250 PW GOLD</td></tr>
+	<tr><td style="font-weight:bold;">- 50 euro = 6500 PW GOLD</td></tr>
+	<tr><td style="font-weight:bold;">- 100 euro = 15000 PW GOLD</td></tr>
+	<tr><td style="font-weight:bold;">- 200 euro = 35000 PW GOLD</td></tr>
 </table>
 <br><br>
 </center>

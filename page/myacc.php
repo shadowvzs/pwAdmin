@@ -53,8 +53,8 @@ if (isset($_SESSION['un'])){
 				<div class='WindowHead_Light2'>Admin Tools</div>
 				<table width='230' style='position:relative;top:35px;'>";
 				echo"<tr><td><b>User:</b></td><td> <input type='text' id='LoadUserId'     maxlength='5' value='".$uid."' style='width:50px;text-align:center;'></td><td><a href='javascript:void(0);' onClick='RequestUserData(1);' title='You can load a account data if you type the account id'><button>Load</button></a></td></tr>";
-				echo"<tr><td><b>Gold:</b></td><td> <input type='text' id='AddGoldAmount'  maxlength='5' value='0' style='width:50px;text-align:center;'>       </td><td><a href='javascript:void(0);' onClick='RequestUserData(2);' title='You can add item mall gold to account id'><button>Add gold</button></a></td></tr>";
-				echo"<tr><td><b>Point:</b></td><td> <input type='text' id='AddPointAmount' maxlength='5' value='0' style='width:50px;text-align:center;'>       </td><td><a href='javascript:void(0);' onClick='RequestUserData(3);' title='You can add web point to account id'><button>Add point</button></a></td></tr>";
+				echo"<tr><td><b>Gold:</b></td><td> <input type='text' id='AddGoldAmount'  maxlength='7' value='0' style='width:50px;text-align:center;'>       </td><td><a href='javascript:void(0);' onClick='RequestUserData(2);' title='You can add item mall gold to account id'><button>Add gold</button></a></td></tr>";
+				echo"<tr><td><b>Point:</b></td><td> <input type='text' id='AddPointAmount' maxlength='7' value='0' style='width:50px;text-align:center;'>       </td><td><a href='javascript:void(0);' onClick='RequestUserData(3);' title='You can add web point to account id'><button>Add point</button></a></td></tr>";
 				echo"<tr><td colspan='3' align='center'><a href='javascript:void(0);' onClick='RequestUserData(4);' title='Make GM from the account'><button>Add GM</button></a> <a href='javascript:void(0);' onClick='RequestUserData(5);' title='Remove GM rank from account'><button>Remove GM</button></a></td></tr>";
 				echo"<tr><td colspan='3' align='center'><a href='javascript:void(0);' onClick='RequestUserData(8);' title='Delete the account, but not the roles data!'><button>Delete</button></a></td></tr>";
 				echo "</table><br><br><br>";
@@ -84,7 +84,7 @@ if (isset($_SESSION['un'])){
 
 				echo "<div id='UsersDiv'>
 				<div class='WindowHead_Light2'>User List</div>
-				<div style='position: relative; top: 30px;'>
+				<div style='position: relative; top: 30px; height: 100%;'>
 				<input type='text' id='SearchUser' maxlength='32' value='' style='width:100px;text-align:center;'> <a href='javascript:void(0);' onClick='UserSearch();' title='You can search after: \n- username or real name (type name, example: shadow)\n- email adress (example: your@mail.com)\n- ip address (example: 79.84.75.89)\n- account id (type number)\n- who is online (type: *)\n- show Game Masters (type: @)\n- who was online in last x day (type negative number, example: -3)'><button>Search</button></a>
 				<div id='UserDivCont'><table width='100%' id='UserTable'>";
 				$query = "SELECT ID, name, truename, email FROM users";
@@ -121,7 +121,7 @@ if (isset($_SESSION['un'])){
 			<tr><td><b>Email address:</b></td><td><span id='AccInfoEm'> </span></td></tr>
 			<tr><td><b>Gender:</b></td><td><span id='AccInfoGe'> </span></td></tr>
 			<tr><td><b>Birthday:</b></td><td><span id='AccInfobd'> </span></td></tr>
-			<tr><td><b>Web Point:</b></td><td><span id='AccInfoWP'> </span> <a href='javascript:void(0);' onClick=document.getElementById('ExchangeDiv').style.display='block'; style='float:right;' id='PExchLink'><button>Exchange</button></a></td></tr>
+			<tr style='display:none'><td><b>Web Point:</b></td><td><span id='AccInfoWP'> </span> <a href='javascript:void(0);' onClick=document.getElementById('ExchangeDiv').style.display='block'; style='float:right;' id='PExchLink'><button>Exchange</button></a></td></tr>
 			<tr><td><b>Status:</b></td><td><span id='AccInfoRa'> </span></td></tr>
 			<tr><td><b>Reg. date:</b></td><td><span id='AccInfoRD'>".$_SESSION['t']."</span></td></tr>
 			<tr><td><b>Last login:</b></td><td><span id='AccInfoLL'> </span></td></tr>

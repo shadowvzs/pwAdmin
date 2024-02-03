@@ -22,7 +22,9 @@ body{
 <center>
 <br><br>
 <table>
-<tr><td style="font-weight:bold;"><a href="https://drive.google.com/file/d/1iLd6cBgMwdGtyQvUf3n-AMHM4dLWt__s/view?usp=sharing"><img src="./images/download.png" alt="Download" valign="middle" style="vertical-align:middle;"></a> Download v2 Full Client from Google Drive (3.5gb) </td></tr>
+<tr><td style="font-weight:bold;"><a href="https://www.mediafire.com/file/0zohwfchy577s1w/PWClient-RetroMs.7z/file"><img src="./images/download.png" alt="Download" valign="middle" style="vertical-align:middle;"></a> Download the Game Client from MediaFire (3.3gb) </td></tr>
+<tr><td style="font-weight:bold;"><a href="https://drive.google.com/file/d/1q1LlOoKpClQzMVps3GDAgvLtMaRAMGq0/view?usp=drive_link"><img src="./images/download.png" alt="Download" valign="middle" style="vertical-align:middle;"></a> Download the Game Client from Google Drive (3.3gb) </td></tr>
+<tr><td style="font-weight:bold;"><a href="https://drive.usercontent.google.com/download?id=1q1LlOoKpClQzMVps3GDAgvLtMaRAMGq0&export=download&authuser=2&confirm=t&uuid=e61c8933-4d41-447e-87d8-992260d35cc2&at=APZUnTUge6UltrP-qpKFSc2SQgRk:1705785949247"><img src="./images/download.png" alt="Download" valign="middle" style="vertical-align:middle;"></a> Download the Game Client - direct link (3.3gb) </td></tr>
 <!-- <tr><td style="font-weight:bold;"><a href="https://drive.google.com/open?id=0BzQbqnVz5iizQm1MZjdhc2dwLWc"><img src="./images/download.png" alt="Download" valign="middle" style="vertical-align:middle;"></a> Download v1-2 manual patch (few mb)</td></tr>-->
 </table>
 <br><br>
