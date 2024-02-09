@@ -82,7 +82,7 @@ function VerifyAdmin($con, $username, $password, $userid, $email){
 						}		
 					}else if ($PassType == 3){	
 						$Salt1 = "0x".md5($username.$password);
-						$Salt2 = "0x".$AdminPw;						
+						$Salt2 = $AdminPw;						
 						if ($Salt1==$Salt2) {
 							$rValue=true;
 						}					
