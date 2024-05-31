@@ -1,0 +1,26 @@
+{
+    "userId": 5776,
+    "userName": "kwikee2",
+    "REMOTE_ADDR": "196.61.106.91",
+    "HTTP_X_FORWARDED_FOR": false,
+    "date": "2024-04-15 20:05:51",
+    "voteid": 1,
+    "VDates": [
+        "2024-04-11 21:51:44",
+        "2024-04-11 21:52:17",
+        "2024-04-11 21:53:49",
+        "2024-04-11 21:55:25",
+        "2024-04-10 12:58:48",
+        "2024-04-10 13:02:50",
+        "2016-12-01 01:00:00",
+        "2016-12-01 01:00:00"
+    ],
+    "HTTP_CLIENT_IP": "-",
+    "HTTP_USER_AGENT": "Mozilla\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\/537.36 (KHTML, like Gecko) Chrome\/123.0.0.0 Safari\/537.36",
+    "HTTP_REFERER": "http:\/\/retroms.ddns.net\/pwAdmin\/page\/myacc.php",
+    "GEOIP_COUNTRY_CODE": "-",
+    "cheater": false,
+    "secDiff": -296047,
+    "VoteIntSec": 43200,
+    "sId": 126404059
+}

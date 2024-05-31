@@ -1,0 +1,26 @@
+{
+    "userId": 7136,
+    "userName": "xblizzard",
+    "REMOTE_ADDR": "92.40.214.239",
+    "HTTP_X_FORWARDED_FOR": false,
+    "date": "2024-03-24 13:35:02",
+    "voteid": 1,
+    "VDates": [
+        "1970-01-01 01:00:00",
+        "2016-12-01 01:00:00",
+        "2016-12-01 01:00:00",
+        "2016-12-01 01:00:00",
+        "2016-12-01 01:00:00",
+        "2016-12-01 01:00:00",
+        "2016-12-01 01:00:00",
+        "2016-12-01 01:00:00"
+    ],
+    "HTTP_CLIENT_IP": "-",
+    "HTTP_USER_AGENT": "Mozilla\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\/537.36 (KHTML, like Gecko) Chrome\/123.0.0.0 Safari\/537.36",
+    "HTTP_REFERER": "http:\/\/retroms.ddns.net\/pwAdmin\/page\/myacc.php",
+    "GEOIP_COUNTRY_CODE": "-",
+    "cheater": false,
+    "secDiff": -1711240502,
+    "VoteIntSec": 43200,
+    "sId": 102409644
+}

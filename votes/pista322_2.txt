@@ -1,0 +1,26 @@
+{
+    "userId": 3392,
+    "userName": "pista322",
+    "REMOTE_ADDR": "188.24.15.250",
+    "HTTP_X_FORWARDED_FOR": false,
+    "date": "2024-03-11 00:41:02",
+    "voteid": 2,
+    "VDates": [
+        "2024-03-11 00:40:32",
+        "2024-03-10 09:05:25",
+        "2024-03-10 09:10:23",
+        "2024-03-10 17:13:36",
+        "2024-03-10 17:47:14",
+        "2024-03-10 17:52:44",
+        "2016-12-01 01:00:00",
+        "2016-12-01 01:00:00"
+    ],
+    "HTTP_CLIENT_IP": "-",
+    "HTTP_USER_AGENT": "Mozilla\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\/537.36 (KHTML, like Gecko) Chrome\/121.0.0.0 Safari\/537.36 OPR\/107.0.0.0",
+    "HTTP_REFERER": "http:\/\/retroms.ddns.net\/pwAdmin\/page\/myacc.php",
+    "GEOIP_COUNTRY_CODE": "-",
+    "cheater": false,
+    "secDiff": -12937,
+    "VoteIntSec": 43200,
+    "sId": 1021455665
+}

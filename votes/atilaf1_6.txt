@@ -1,0 +1,26 @@
+{
+    "userId": 2352,
+    "userName": "atilaf1",
+    "REMOTE_ADDR": "177.36.213.21",
+    "HTTP_X_FORWARDED_FOR": false,
+    "date": "2024-04-10 11:35:26",
+    "voteid": 6,
+    "VDates": [
+        "2024-04-10 11:24:57",
+        "2024-04-10 11:25:58",
+        "2024-04-10 11:32:29",
+        "2024-04-10 11:33:57",
+        "2024-04-10 11:34:44",
+        "2024-04-06 20:57:28",
+        "2016-12-01 01:00:00",
+        "2016-12-01 01:00:00"
+    ],
+    "HTTP_CLIENT_IP": "-",
+    "HTTP_USER_AGENT": "Mozilla\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\/537.36 (KHTML, like Gecko) Chrome\/123.0.0.0 Safari\/537.36",
+    "HTTP_REFERER": "http:\/\/retroms.ddns.net\/pwAdmin\/page\/myacc.php",
+    "GEOIP_COUNTRY_CODE": "-",
+    "cheater": false,
+    "secDiff": -268678,
+    "VoteIntSec": 43200,
+    "sId": 1036392267
+}

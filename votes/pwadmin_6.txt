@@ -1,0 +1,26 @@
+{
+    "userId": 32,
+    "userName": "pwadmin",
+    "REMOTE_ADDR": "79.115.134.134",
+    "HTTP_X_FORWARDED_FOR": false,
+    "date": "2024-03-06 22:02:02",
+    "voteid": 6,
+    "VDates": [
+        "2024-03-06 19:29:30",
+        "2024-03-05 06:30:53",
+        "2024-03-05 06:34:05",
+        "2024-03-06 19:35:54",
+        "2024-03-06 19:39:01",
+        "2024-03-06 20:13:22",
+        "2016-12-01 01:00:00",
+        "2016-12-01 01:00:00"
+    ],
+    "HTTP_CLIENT_IP": "-",
+    "HTTP_USER_AGENT": "Mozilla\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\/537.36 (KHTML, like Gecko) Chrome\/122.0.0.0 Safari\/537.36",
+    "HTTP_REFERER": "http:\/\/retroms.ddns.net\/pwAdmin\/page\/myacc.php",
+    "GEOIP_COUNTRY_CODE": "-",
+    "cheater": false,
+    "secDiff": 36680,
+    "VoteIntSec": 43200,
+    "sId": 1982986953
+}

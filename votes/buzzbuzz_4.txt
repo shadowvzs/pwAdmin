@@ -1,0 +1,26 @@
+{
+    "userId": 5808,
+    "userName": "buzzbuzz",
+    "REMOTE_ADDR": "97.89.102.101",
+    "HTTP_X_FORWARDED_FOR": false,
+    "date": "2024-03-11 03:58:23",
+    "voteid": 4,
+    "VDates": [
+        "2024-03-11 03:56:52",
+        "2024-03-11 03:57:22",
+        "2024-03-11 03:57:52",
+        "2024-03-04 05:03:19",
+        "2024-03-04 05:03:51",
+        "2024-03-04 05:04:23",
+        "2016-12-01 01:00:00",
+        "2016-12-01 01:00:00"
+    ],
+    "HTTP_CLIENT_IP": "-",
+    "HTTP_USER_AGENT": "Mozilla\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\/537.36 (KHTML, like Gecko) Chrome\/122.0.0.0 Safari\/537.36",
+    "HTTP_REFERER": "http:\/\/retroms.ddns.net\/pwAdmin\/page\/myacc.php",
+    "GEOIP_COUNTRY_CODE": "-",
+    "cheater": false,
+    "secDiff": -557704,
+    "VoteIntSec": 43200,
+    "sId": 1538812773
+}

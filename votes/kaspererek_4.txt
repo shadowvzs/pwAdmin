@@ -1,0 +1,26 @@
+{
+    "userId": 7760,
+    "userName": "kaspererek",
+    "REMOTE_ADDR": "92.40.187.140",
+    "HTTP_X_FORWARDED_FOR": false,
+    "date": "2024-05-10 21:16:07",
+    "voteid": 4,
+    "VDates": [
+        "2024-05-10 21:14:19",
+        "2024-05-10 21:14:59",
+        "2024-05-10 21:15:37",
+        "2024-05-03 19:12:06",
+        "2024-05-03 19:12:42",
+        "2024-05-03 19:13:17",
+        "2016-12-01 01:00:00",
+        "2016-12-01 01:00:00"
+    ],
+    "HTTP_CLIENT_IP": "-",
+    "HTTP_USER_AGENT": "Mozilla\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\/537.36 (KHTML, like Gecko) Chrome\/123.0.0.0 Safari\/537.36 OPR\/109.0.0.0",
+    "HTTP_REFERER": "http:\/\/retroms.ddns.net\/pwAdmin\/page\/myacc.php",
+    "GEOIP_COUNTRY_CODE": "-",
+    "cheater": false,
+    "secDiff": -569041,
+    "VoteIntSec": 43200,
+    "sId": 1344719879
+}

@@ -1,0 +1,26 @@
+{
+    "userId": 7072,
+    "userName": "demoneater21",
+    "REMOTE_ADDR": "57.129.24.32",
+    "HTTP_X_FORWARDED_FOR": false,
+    "date": "2024-03-24 21:32:49",
+    "voteid": 6,
+    "VDates": [
+        "2024-03-24 21:27:22",
+        "2024-03-24 21:28:32",
+        "2024-03-24 21:29:05",
+        "2024-03-24 21:30:33",
+        "2024-03-24 21:31:14",
+        "2024-03-24 03:12:09",
+        "2016-12-01 01:00:00",
+        "2016-12-01 01:00:00"
+    ],
+    "HTTP_CLIENT_IP": "-",
+    "HTTP_USER_AGENT": "Mozilla\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\/537.36 (KHTML, like Gecko) Chrome\/121.0.0.0 Safari\/537.36 OPR\/107.0.0.0",
+    "HTTP_REFERER": "http:\/\/retroms.ddns.net\/pwAdmin\/page\/myacc.php",
+    "GEOIP_COUNTRY_CODE": "-",
+    "cheater": false,
+    "secDiff": -22840,
+    "VoteIntSec": 43200,
+    "sId": 1704479333
+}

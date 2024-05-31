@@ -6,17 +6,27 @@ error_reporting(E_ALL);
 include "../config.php";
 include "../basefunc.php";
 $resp="Unkown Error";
-
 SessionVerification();
 //obj = {"name":dArr[0], "password1":dArr[1], "password2":dArr[2], "email":dArr[3], "answer1":dArr[4], "answer2":dArr[5], "term":dArr[6]};		
 $data = json_decode(file_get_contents('php://input'), true);
 $IPL = $_SERVER['REMOTE_ADDR'];
+
 if ( $data ) {
+	if (
+		!ctype_alnum($data['name']) ||
+		!preg_match('/[0-9a-zA-Z]/', $data['password1']) || 
+		!preg_match('/[0-9a-zA-Z]/', $data['password2']) || 
+		!preg_match('/[0-9a-zA-Z@\.]/', $data['email'])
+	) {
+		echo "Do no cheat, do not use invalid characters!";
+		die(); 
+	}
+	
 	$u=StrToLower(Trim(stripslashes($data['name'])));
 	$p1=stripslashes($data['password1']);
 	$p2=stripslashes($data['password2']);
 	$m=StrToLower(Trim(stripslashes($data['email'])));
-	$a1=intval(StrToLower(Trim(stripslashes($data['answer1']))));
+	$a1=intval($data['answer1']);
 	$a2=intval(StrToLower(Trim(stripslashes($data['answer2']))));
 	$term=intval(StrToLower(Trim(stripslashes($data['term']))));
 	$link = new mysqli($DB_Host, $DB_User, $DB_Password, $DB_Name);
@@ -33,7 +43,7 @@ if ( $data ) {
 		if (isset($_COOKIE['regC'])){
 			$sregc=intval($_COOKIE['regC']);
 		}
-	}	
+	}
 	
 	if ($RegisEnabled !== true){
 		$resp = "Registration disabled!";
@@ -50,7 +60,7 @@ if ( $data ) {
 	}else if ($UserIPC>=$IPRegLimit){
 		$resp = "Cannot register more account from your PC!";
 	}else if ($sregc>=$SRegLimit){
-		$resp = "Cannot register more account from your PC!";;
+		$resp = "Cannot register more account from your PC!";
 	}else if ($UserNmC>0){
 		$resp = "Username already exist!";
 	}else if ($UserEmC>0){

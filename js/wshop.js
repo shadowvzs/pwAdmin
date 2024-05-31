@@ -455,7 +455,7 @@ function CreateBubble(id){
 								STxt = STxt + "Magic Attack: "+(MDmg1 - bmDmg1)+"-"+(MDmg2 - bmDmg2)+"<br>";
 							}
 						}else{
-							if ((RefLv > 0)&&((RefId>1711)&&(RefId<1752))){
+							if ((RefLv > 0)&&((RefId>=1700)&&(RefId<1752))){
 								STxt = STxt + "Physical Attack: <font color='#7777ff'>"+(PDmg1 - bpDmg1 + RefVal)+"-"+(PDmg2 - bpDmg2 + RefVal)+"</font><br>";
 							}else{
 								STxt = STxt + "Physical Attack: "+(PDmg1 - bpDmg1)+"-"+(PDmg2 - bpDmg2)+"<br>";
@@ -531,8 +531,8 @@ function CreateBubble(id){
 					}
 					var Pdef = HextoDec(Octet.substr(n, 8), 8, 0, true);
 					var Dodge = HextoDec(Octet.substr(n+8, 8), 8, 0, true);
-					var HitPoint = HextoDec(Octet.substr(n+16, 8), 8, 0, true);
-					var Mana = HextoDec(Octet.substr(n+24, 8), 8, 0, true);
+					var Mana = HextoDec(Octet.substr(n+16, 8), 8, 0, true);
+					var HitPoint = HextoDec(Octet.substr(n+24, 8), 8, 0, true);
 					var Metal = HextoDec(Octet.substr(n+32, 8), 8, 0, true);
 					var Wood = HextoDec(Octet.substr(n+40, 8), 8, 0, true);
 					var Water = HextoDec(Octet.substr(n+48, 8), 8, 0, true);
@@ -583,6 +583,7 @@ function CreateBubble(id){
 										RefId = HextoDec(Octet.substr(n+88+x*16+shift, 8), 8, 4, true);
 										RefLv = HextoDec(Octet.substr(n+88+x*16+shift+16, 8), 8, 0, true);
 										RefVal = HextoDec(Octet.substr(n+88+x*16+shift+8, 8), 8, 0, true);
+										
 									}else{
 										//special weapon addons
 										tAddon = tAddon + "&nbsp;&nbsp;" + SearchAddonNameValue(HextoDec(AHex, 8, aType, false), HextoDec(Octet.substr(n+88+x*16+shift+8, 8), 8, 0, true) +" "+ HextoDec(Octet.substr(n+88+x*16+shift+16, 8), 8, 0, true))+"<br>";
@@ -927,7 +928,7 @@ function CreateBubble(id){
 					}				
 				}
 			}else if ((MIType == "O")&&(SIType!=3)){
-				STxt = "<font color='#aaaaff'>"+GearType[4][SIType]+"</font><br>";
+				STxt = STxt + "<font color='#aaaaff'>"+GearType[4][SIType]+"</font><br>";
 				
 				if (SIType == 1){
 					var Fuel1 = HextoDec(Octet.substr(0, 8), 8, 0, true);
@@ -1136,8 +1137,6 @@ function CreateBubble(id){
 								for (var a=0; a<GearStat.length; a++){
 									if (GearStat[a] > 0){
 										STxt=STxt.replace("[ElfStat"+a+"]", " <font color='#99f'>+"+GearStat[a]+"</font>");
-									}else{
-										STxt=STxt.replace("[ElfStat"+a+"]", ""); 
 									}
 								}
 								
@@ -1145,14 +1144,10 @@ function CreateBubble(id){
 							SRes = parseInt(ElfCon, 10)+parseInt(bElfCon, 10)+parseInt(GearStat[3], 10)+100;
 							if (SRes > 100){
 								STxt=STxt.replace("[BaseEnergy]", "<font color='#ffff77'>"+SRes+"</font>");
-							}else{
-								STxt=STxt.replace("[BaseEnergy]", "100"); 		
 							}
 							SRes = ((parseInt(ElfInt, 10)+parseInt(bElfInt, 10)+parseInt(GearStat[2], 10))*2/100+1).toFixed(2);
 							if (SRes > 1){
 								STxt=STxt.replace("[EnergyRegen]", "<font color='#ffff77'>"+SRes+"</font>"); 
-							}else{
-								STxt=STxt.replace("[EnergyRegen]", "1.00"); 
 							}
 						
 							STxt = STxt + eGTxt;
@@ -1163,9 +1158,14 @@ function CreateBubble(id){
 							for (var x=1; x<=ElfSki; x++){
 								STxt = STxt + "&nbsp;&nbsp;<font color='#7777ff'>" + SearchElfSkillData(HextoDec(Octet.substr(84+ElfGea*8+x*8, 4), 4, 0, true), HextoDec(Octet.substr(84+ElfGea*8+x*8+4, 4), 4, 0, true))+"</font><br>";
 							}	
-						}	
-						
-					}	
+						}
+					}
+					
+					STxt=STxt.replace("[EnergyRegen]", "1.00");
+					STxt=STxt.replace("[BaseEnergy]", "100"); 
+					for (var a=0; a<4; a++){
+						STxt=STxt.replace("[ElfStat"+a+"]", ""); 
+					}
 				}else if (SIType == 5){			
 					if (Octet.length == 32){
 						var DType = HextoDec(Octet.substr(0, 8), 8, 0, true);
@@ -1213,6 +1213,7 @@ function CreateBubble(id){
 					}
 				}else if (SIType == 6){
 						if (Octet.length > 103){
+							var amount = myArr[10];
 							var LvReq = HextoDec(Octet.substr(0, 4), 4, 0, true);
 							var ReqCls = HextoDec(Octet.substr(4, 4), 4, 0, true);
 							var StrReq = HextoDec(Octet.substr(8, 4), 4, 0, true);
@@ -1282,7 +1283,7 @@ function CreateBubble(id){
 								}	
 								STxt = STxt + "<font color='#7777ff'>"+tAddon+"</font>";
 							}
-						}				
+						}
 				}else if (SIType == 7){
 					var LvReq = HextoDec(Octet.substr(0, 8), 8, 0, true);
 					STxt = STxt + "This potion need <font color='#aaaaff'>"+LvReq+"</font> level<br> to able to use<br>";

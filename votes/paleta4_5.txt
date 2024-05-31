@@ -1,0 +1,26 @@
+{
+    "userId": 9648,
+    "userName": "paleta4",
+    "REMOTE_ADDR": "137.26.244.90",
+    "HTTP_X_FORWARDED_FOR": false,
+    "date": "2024-05-12 01:07:50",
+    "voteid": 5,
+    "VDates": [
+        "2024-05-12 01:05:13",
+        "2024-05-12 01:05:46",
+        "2024-05-12 01:06:31",
+        "2024-05-12 01:07:03",
+        "2024-05-11 03:04:36",
+        "2024-05-11 03:05:15",
+        "2016-12-01 01:00:00",
+        "2016-12-01 01:00:00"
+    ],
+    "HTTP_CLIENT_IP": "-",
+    "HTTP_USER_AGENT": "Mozilla\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\/537.36 (KHTML, like Gecko) Chrome\/124.0.0.0 Safari\/537.36",
+    "HTTP_REFERER": "http:\/\/retroms.ddns.net\/pwAdmin\/page\/myacc.php",
+    "GEOIP_COUNTRY_CODE": "-",
+    "cheater": false,
+    "secDiff": -36194,
+    "VoteIntSec": 43200,
+    "sId": 803661461
+}

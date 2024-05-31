@@ -1,0 +1,26 @@
+{
+    "userId": 2960,
+    "userName": "jump08",
+    "REMOTE_ADDR": "177.36.213.21",
+    "HTTP_X_FORWARDED_FOR": false,
+    "date": "2024-04-10 11:54:39",
+    "voteid": 5,
+    "VDates": [
+        "2024-04-10 11:49:44",
+        "2024-04-10 11:50:56",
+        "2024-04-10 11:52:03",
+        "2024-04-10 11:53:51",
+        "2024-04-06 21:06:37",
+        "2024-04-06 21:07:14",
+        "2016-12-01 01:00:00",
+        "2016-12-01 01:00:00"
+    ],
+    "HTTP_CLIENT_IP": "-",
+    "HTTP_USER_AGENT": "Mozilla\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\/537.36 (KHTML, like Gecko) Chrome\/123.0.0.0 Safari\/537.36",
+    "HTTP_REFERER": "http:\/\/retroms.ddns.net\/pwAdmin\/page\/myacc.php",
+    "GEOIP_COUNTRY_CODE": "-",
+    "cheater": false,
+    "secDiff": -269282,
+    "VoteIntSec": 43200,
+    "sId": 1036392267
+}

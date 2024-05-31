@@ -1,0 +1,26 @@
+{
+    "userId": 2736,
+    "userName": "racksonracks",
+    "REMOTE_ADDR": "196.61.106.91",
+    "HTTP_X_FORWARDED_FOR": false,
+    "date": "2024-03-25 08:31:46",
+    "voteid": 4,
+    "VDates": [
+        "2024-03-24 21:14:12",
+        "2024-03-24 21:14:49",
+        "2024-03-25 08:30:25",
+        "2024-03-24 08:54:20",
+        "2024-03-24 08:55:07",
+        "2024-03-24 08:55:43",
+        "2016-12-01 01:00:00",
+        "2016-12-01 01:00:00"
+    ],
+    "HTTP_CLIENT_IP": "-",
+    "HTTP_USER_AGENT": "Mozilla\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\/537.36 (KHTML, like Gecko) Chrome\/123.0.0.0 Safari\/537.36",
+    "HTTP_REFERER": "http:\/\/retroms.ddns.net\/pwAdmin\/page\/myacc.php",
+    "GEOIP_COUNTRY_CODE": "-",
+    "cheater": false,
+    "secDiff": -41846,
+    "VoteIntSec": 43200,
+    "sId": 1932061087
+}

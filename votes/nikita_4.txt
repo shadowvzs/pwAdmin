@@ -1,0 +1,26 @@
+{
+    "userId": 9808,
+    "userName": "nikita",
+    "REMOTE_ADDR": "176.3.22.97",
+    "HTTP_X_FORWARDED_FOR": false,
+    "date": "2024-05-27 14:25:58",
+    "voteid": 4,
+    "VDates": [
+        "2024-05-27 14:24:20",
+        "2024-05-27 14:24:50",
+        "2024-05-27 14:25:24",
+        "2024-05-13 09:31:30",
+        "2024-05-13 09:32:09",
+        "2024-05-13 09:32:39",
+        "2016-12-01 01:00:00",
+        "2016-12-01 01:00:00"
+    ],
+    "HTTP_CLIENT_IP": "-",
+    "HTTP_USER_AGENT": "Mozilla\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\/537.36 (KHTML, like Gecko) Chrome\/109.0.0.0 Safari\/537.36",
+    "HTTP_REFERER": "http:\/\/retroms.ddns.net\/pwAdmin\/page\/myacc.php",
+    "GEOIP_COUNTRY_CODE": "-",
+    "cheater": false,
+    "secDiff": -1184068,
+    "VoteIntSec": 43200,
+    "sId": 1407631594
+}

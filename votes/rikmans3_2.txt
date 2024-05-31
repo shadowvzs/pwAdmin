@@ -1,0 +1,26 @@
+{
+    "userId": 6304,
+    "userName": "rikmans3",
+    "REMOTE_ADDR": "109.37.152.103",
+    "HTTP_X_FORWARDED_FOR": false,
+    "date": "2024-04-09 08:48:03",
+    "voteid": 2,
+    "VDates": [
+        "2024-04-09 08:47:28",
+        "2024-04-08 15:52:06",
+        "2024-04-08 16:18:38",
+        "2024-04-08 16:21:46",
+        "2024-04-08 16:22:31",
+        "2024-04-07 13:00:12",
+        "2016-12-01 01:00:00",
+        "2016-12-01 01:00:00"
+    ],
+    "HTTP_CLIENT_IP": "-",
+    "HTTP_USER_AGENT": "Mozilla\/5.0 (Linux; Android 10; K) AppleWebKit\/537.36 (KHTML, like Gecko) Chrome\/119.0.0.0 Mobile Safari\/537.36",
+    "HTTP_REFERER": "http:\/\/retroms.ddns.net\/pwAdmin\/page\/myacc.php",
+    "GEOIP_COUNTRY_CODE": "-",
+    "cheater": false,
+    "secDiff": -17757,
+    "VoteIntSec": 43200,
+    "sId": 860530006
+}

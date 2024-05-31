@@ -1,0 +1,26 @@
+{
+    "userId": 8960,
+    "userName": "dragonash10",
+    "REMOTE_ADDR": "172.58.129.226",
+    "HTTP_X_FORWARDED_FOR": false,
+    "date": "2024-05-06 14:39:30",
+    "voteid": 5,
+    "VDates": [
+        "2024-05-06 14:37:20",
+        "2024-05-06 14:37:53",
+        "2024-05-06 14:38:26",
+        "2024-05-06 14:38:58",
+        "2024-05-06 01:37:59",
+        "2024-05-06 01:38:54",
+        "2016-12-01 01:00:00",
+        "2016-12-01 01:00:00"
+    ],
+    "HTTP_CLIENT_IP": "-",
+    "HTTP_USER_AGENT": "Mozilla\/5.0 (iPhone; CPU iPhone OS 17_4_1 like Mac OS X) AppleWebKit\/605.1.15 (KHTML, like Gecko) Version\/17.4.1 Mobile\/15E148 Safari\/604.1",
+    "HTTP_REFERER": "http:\/\/retroms.ddns.net\/pwAdmin\/page\/myacc.php",
+    "GEOIP_COUNTRY_CODE": "-",
+    "cheater": false,
+    "secDiff": -3691,
+    "VoteIntSec": 43200,
+    "sId": 1778509472
+}

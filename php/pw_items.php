@@ -1650,7 +1650,7 @@ $ItemMod[4][6][] = "Elite Pulse Bullet#8565#0#2#8548 2 150 50000";
 
 
 $ItemMod[4][7][1] = "Chaos Powder#11330#1#2#10 728 1 9999";
-$ItemMod[4][7][] = "Darkwine Wood#11375#1#2#10 740 1 9999";
+$ItemMod[4][7][] = "Darkwine Wood#11357#1#2#10 740 1 9999";
 $ItemMod[4][7][] = "Life Powder#11334#1#2#10 730 1 9999";
 $ItemMod[4][7][] = "Moon Chaser Powder#11294#1#2#10 713 1 9999";
 $ItemMod[4][7][] = "Phosphorus Orb#11351#1#2#10 738 1 9999";
@@ -1788,10 +1788,10 @@ $ItemMod[4][8][] = "Authentic Work III#7726#0#0#1987 30 1";
 $ItemMod[4][8][] = "Authentic Work IV#7727#0#0#1996 30 1";
 $ItemMod[4][8][] = "Authentic Work V#7728#0#0#2006 30 1";
 $ItemMod[4][8][] = "Authentic Work VI#7729#0#0#2015 30 1";
-$ItemMod[4][8][] = "Authentic Work VII#7730#0#2024 30 1";
+$ItemMod[4][8][] = "Authentic Work VII#7730#0#0#2024 30 1";
 $ItemMod[4][8][] = "Authentic Work VIII#7731#0#0#2033 30 1";
 $ItemMod[4][8][] = "Authentic Work IX#7732#0#0#2043 30 1";
-$ItemMod[4][8][] = "Authentic Work X#7733#0#2052 30 1";
+$ItemMod[4][8][] = "Authentic Work X#7733#0#0#2052 30 1";
 $ItemMod[4][8][] = "Authentic Work XI#7734#0#0#2061 30 1";
 $ItemMod[4][8][] = "Authentic Work XII#7735#0#0#2070 30 1";
 $ItemMod[4][8][] = "Authentic Work XIII#7736#0#0#2078 30 1";

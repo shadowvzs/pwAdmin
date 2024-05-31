@@ -1,0 +1,26 @@
+{
+    "userId": 7904,
+    "userName": "barb001",
+    "REMOTE_ADDR": "136.158.124.31",
+    "HTTP_X_FORWARDED_FOR": false,
+    "date": "2024-04-20 21:48:30",
+    "voteid": 1,
+    "VDates": [
+        "2024-04-19 17:17:30",
+        "2024-04-19 17:18:12",
+        "2024-04-19 17:18:54",
+        "2024-04-19 17:19:31",
+        "2024-04-19 17:20:10",
+        "2024-04-19 17:20:53",
+        "2016-12-01 01:00:00",
+        "2016-12-01 01:00:00"
+    ],
+    "HTTP_CLIENT_IP": "-",
+    "HTTP_USER_AGENT": "Mozilla\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\/537.36 (KHTML, like Gecko) Chrome\/124.0.0.0 Safari\/537.36",
+    "HTTP_REFERER": "http:\/\/retroms.ddns.net\/pwAdmin\/page\/myacc.php",
+    "GEOIP_COUNTRY_CODE": "-",
+    "cheater": false,
+    "secDiff": -59460,
+    "VoteIntSec": 43200,
+    "sId": 102137430
+}

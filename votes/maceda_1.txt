@@ -1,0 +1,26 @@
+{
+    "userId": 8288,
+    "userName": "maceda",
+    "REMOTE_ADDR": "69.221.53.84",
+    "HTTP_X_FORWARDED_FOR": false,
+    "date": "2024-05-19 13:01:46",
+    "voteid": 1,
+    "VDates": [
+        "2024-05-18 13:48:50",
+        "2024-05-18 13:49:32",
+        "2024-05-18 13:50:02",
+        "2024-05-18 13:50:33",
+        "2024-05-18 13:51:13",
+        "2024-05-18 13:52:02",
+        "2016-12-01 01:00:00",
+        "2016-12-01 01:00:00"
+    ],
+    "HTTP_CLIENT_IP": "-",
+    "HTTP_USER_AGENT": "Mozilla\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\/537.36 (KHTML, like Gecko) Chrome\/124.0.0.0 Safari\/537.36",
+    "HTTP_REFERER": "http:\/\/retroms.ddns.net\/pwAdmin\/page\/myacc.php",
+    "GEOIP_COUNTRY_CODE": "-",
+    "cheater": false,
+    "secDiff": -40376,
+    "VoteIntSec": 43200,
+    "sId": 1277845192
+}

@@ -1,5 +1,7 @@
 <?php 
+ini_set('display_errors', 1);
 session_start();
+
 include "../config.php";
 include "../basefunc.php";
 include "../php/sendgamemail.php";
@@ -60,7 +62,7 @@ if (($data)&&(isset($_SESSION['un']))) {
 						$ShopId = intval($data['shopid']);
 						$roleName = $data['rolename'];
 						if (($buyWith > 0) && ($transWith > 0) && ($Amount > 0) && ($roleId > 0) && ($iArr[11] >= $Amount)){
-							$sockres = @FSockOpen($LanIP, $ServerPort, $errno, $errstr, 10);
+							$sockres = @FSockOpen("localhost", $ServerPort, $errno, $errstr, 10);
 							if (!$sockres){
 								$header_arr["error"]="Server is offline";
 							}else{
@@ -167,8 +169,8 @@ if (($data)&&(isset($_SESSION['un']))) {
 }
 
 function ShopLog($conn, $buyWith, $price, $roleId, $roleName, $shopid, $idata, $amount){
-	global $username;
-	global $userid;
+	$username = $_SESSION['un'];
+	$userid=$_SESSION['id'];
 	global $WebShopLog;
 	global $WShopLogDel;
 	

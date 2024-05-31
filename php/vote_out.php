@@ -59,13 +59,8 @@ if (($vId > 0) &&(isset($_SESSION['un'])) && (isset($_SESSION['id']))) {
 									$stmt->close();			
 									$VoteIntHour = 3600*$VoteInterval;
 								}elseif ($VoteFor == 2){
-									$nr0 = 0;
-									$nr1 = 1;
-									$stmt = $link->prepare("INSERT INTO usecashnow (userid, zoneid, sn, aid, point, cash, status, creatime) VALUES (?, ?, ?, ?, ?, ?, ?, ?)");
-									if (!$stmt) {
-										printf("Error message: %s\n", $link->error);
-									}
-									$stmt->bind_param("iiiiiiis", $uid, $nr1, $nr0, $nr1, $nr0, $VoteReward, $nr1, $TIME);
+									$query="INSERT INTO usecashnow (userid, zoneid, sn, aid, point, cash, status, creatime) VALUES ('$uid', '1', '0', '1', '0', '$VoteReward', '1', '$TIME') ON DUPLICATE KEY UPDATE cash = cash + $VoteReward";
+									$stmt = $link->prepare($query);
 									$stmt->execute(); 
 									$stmt->close();
 								}

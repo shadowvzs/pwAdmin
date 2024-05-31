@@ -1,0 +1,26 @@
+{
+    "userId": 9424,
+    "userName": "catmoon",
+    "REMOTE_ADDR": "177.37.149.214",
+    "HTTP_X_FORWARDED_FOR": false,
+    "date": "2024-05-29 17:39:52",
+    "voteid": 2,
+    "VDates": [
+        "2024-05-29 17:12:50",
+        "2024-05-22 13:35:30",
+        "2024-05-22 13:36:21",
+        "2024-05-22 13:37:43",
+        "2024-05-22 13:38:34",
+        "2024-05-22 13:40:57",
+        "2016-12-01 01:00:00",
+        "2016-12-01 01:00:00"
+    ],
+    "HTTP_CLIENT_IP": "-",
+    "HTTP_USER_AGENT": "Mozilla\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\/537.36 (KHTML, like Gecko) Chrome\/125.0.0.0 Safari\/537.36",
+    "HTTP_REFERER": "http:\/\/retroms.ddns.net\/pwAdmin\/page\/myacc.php",
+    "GEOIP_COUNTRY_CODE": "-",
+    "cheater": false,
+    "secDiff": -576262,
+    "VoteIntSec": 43200,
+    "sId": 1818285115
+}

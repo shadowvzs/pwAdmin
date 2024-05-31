@@ -1,0 +1,26 @@
+{
+    "userId": 1696,
+    "userName": "hungnsg",
+    "REMOTE_ADDR": "115.76.118.142",
+    "HTTP_X_FORWARDED_FOR": false,
+    "date": "2024-03-26 12:43:47",
+    "voteid": 6,
+    "VDates": [
+        "2024-03-09 08:59:47",
+        "2024-03-09 09:00:41",
+        "2024-03-09 09:01:19",
+        "2024-03-09 09:05:32",
+        "2024-03-09 09:06:27",
+        "2024-03-09 09:07:20",
+        "2016-12-01 01:00:00",
+        "2016-12-01 01:00:00"
+    ],
+    "HTTP_CLIENT_IP": "-",
+    "HTTP_USER_AGENT": "Mozilla\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\/537.36 (KHTML, like Gecko) Chrome\/120.0.0.0 Safari\/537.36",
+    "HTTP_REFERER": "http:\/\/retroms.ddns.net\/pwAdmin\/page\/myacc.php",
+    "GEOIP_COUNTRY_CODE": "-",
+    "cheater": false,
+    "secDiff": -1438587,
+    "VoteIntSec": 43200,
+    "sId": 1373066810
+}

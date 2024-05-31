@@ -1,0 +1,26 @@
+{
+    "userId": 8256,
+    "userName": "mystic3",
+    "REMOTE_ADDR": "49.204.118.208",
+    "HTTP_X_FORWARDED_FOR": false,
+    "date": "2024-04-23 02:39:34",
+    "voteid": 3,
+    "VDates": [
+        "2024-04-23 02:37:18",
+        "2024-04-23 02:38:54",
+        "2016-12-01 01:00:00",
+        "2016-12-01 01:00:00",
+        "2016-12-01 01:00:00",
+        "2016-12-01 01:00:00",
+        "2016-12-01 01:00:00",
+        "2016-12-01 01:00:00"
+    ],
+    "HTTP_CLIENT_IP": "-",
+    "HTTP_USER_AGENT": "Mozilla\/5.0 (Windows NT 10.0; Win64; x64; rv:125.0) Gecko\/20100101 Firefox\/125.0",
+    "HTTP_REFERER": "http:\/\/retroms.ddns.net\/pwAdmin\/page\/myacc.php",
+    "GEOIP_COUNTRY_CODE": "-",
+    "cheater": false,
+    "secDiff": -233242774,
+    "VoteIntSec": 43200,
+    "sId": 893829146
+}

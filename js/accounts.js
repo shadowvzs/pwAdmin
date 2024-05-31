@@ -43,28 +43,34 @@ function stringToDate(s) {
   return d
 }
 
+function stringToGMTDate(s) {
+  var dateParts = s.split(' ')[0].split('-'); 
+  var timeParts = s.split(' ')[1].split(':');
+  var dateStr = `${dateParts[0]}-${("0"+dateParts[1]).substr(-2)}-${("0"+dateParts[2]).substr(-2)}T${timeParts[0]}:${timeParts[1]}:${timeParts[2]}.000Z`;
+  var d = new Date(dateStr);
+  return d;
+}
+
 function SetVotTimers(dstack){
 	var dstck=dstack.split(",");
 	var dv;
 	var maxVOpt=7;
 	var stcki=dstck.length;
 	var si=0;
-	var cDate = new Date;
+	var cDate = new Date();
 	var diff;
     var cDat = cDate.getFullYear()+'-'+("00"+(cDate.getMonth()+1)).slice(-2)+'-'+("00" + cDate.getDate()).slice(-2)+' '+("00" + cDate.getHours()).slice(-2)+':'+("00" + cDate.getMinutes()).slice(-2)+':'+("00" + cDate.getSeconds()).slice(-2);
-	VTIndex=0;
 	for(var i=1;i <= maxVOpt; i++){
 		dv=document.getElementById('VoteRow'+i);
 		if (dv != null){
-			VTIndex++;
 			if (dstck[si] != null){
 				if (dstck[si].length<10){diff=0;}else{
-					diff=(VInterval*3600) - parseInt((stringToDate(cDat)-stringToDate(dstck[si]))/1000,10);
+					diff=(VInterval*3600) - parseInt((stringToDate(cDat)-stringToGMTDate(dstck[si]))/1000,10);
 				}
 			}else{
 				diff=0;
 			}
-			NewVoteTimer(diff, VTIndex);
+			NewVoteTimer(diff, i);
 			si++;
 			if (si >= dstck.length){si=0;}
 		}
@@ -73,7 +79,11 @@ function SetVotTimers(dstack){
 
 function FinishedVoteTimer(voteid){
 	var div1 = document.getElementById(('VoteTimer'+voteid));
-	div1.innerHTML = "<a href='javascript:void(0);' onClick='SendVoteData("+voteid+");' title='Vote to site, make our server mor popular so we can get more plyer!'><button> Vote </button></a>"
+	if (div1) {
+		div1.innerHTML = "<a href='javascript:void(0);' onClick='SendVoteData("+voteid+");' title='Vote to site, make our server mor popular so we can get more plyer!'><button> Vote </button></a>"	
+	} else {
+		console.error(`Missing the VoteTimer${voteid} from the dom`);
+	}
 }
 
 function NewVoteTimer (duration, voteid){
@@ -87,14 +97,14 @@ function NewVoteTimer (duration, voteid){
 	}
 }
 
-function SwitchDisplayDataDiv(x){
-	if (x==1){
-		document.getElementById("AccInfoDiv").style.display='none';
-		document.getElementById("ChngInfoDiv").style.display='block';	
-	}else if(x==2){
-		document.getElementById("AccInfoDiv").style.display='block';
-		document.getElementById("ChngInfoDiv").style.display='none';	
-	}
+function SwitchDisplayDataDiv(index){
+	var list = ["ChngInfoDiv", "AccInfoDiv", "WebshopLogDiv"];
+	
+	list.forEach((x, idx) => {
+		console.log(index, idx);
+		document.getElementById(x).style.display=idx == index ? 'block' : 'none';
+	});
+
 }
 function SendNewData(){
 	var d1 = document.getElementById('CurUnam').value+"-"+document.getElementById('CurUId').value+"-"+document.getElementById('OldUnam').value+"-"+document.getElementById('OldUId').value;
@@ -117,14 +127,14 @@ function RequestUserData(n){
 		SendDataWithAjax(1, [uid]);
 	}else if (n==2){
 		var am = parseInt(document.getElementById('AddGoldAmount').value,10)||0;
-		if ((am > 0)&&(am < 1000000)){
+		if ((am > 0)&&(am < 10000000)){
 			dArr=[uid, am];
 		}else{
 			alert('Please type a number between 1-99999.');
 		}
 	}else if (n==3){
 		var am = parseInt(document.getElementById('AddPointAmount').value,10)||0;
-		if ((am > 0)&&(am < 1000000)){
+		if ((am > 0)&&(am < 10000000)){
 			dArr=[uid, am];
 		}else{
 			alert('Please type a number between 1-99999.');
@@ -364,7 +374,7 @@ function EditUserData(userData){
 			for (var i=0; i<clogc; i++){
 				row = table.insertRow(-1);
 				cell = row.insertCell(0);
-				cell.innerHTML='<b>'+userD[3][i]["cash"]+'</b>';
+				cell.innerHTML='<b>'+(userD[3][i]["cash"] / 100) +'</b>';
 				cell = row.insertCell(1);
 				cell.innerHTML=userD[3][i]["fintime"];
 			}
@@ -381,18 +391,35 @@ function EditUserData(userData){
 		document.getElementById('AccInfoCI').innerHTML=charc;
 		if (charc>0){
 			for (var i=0; i<charc; i++){
+				var role = userD[4][i];
+				
 				if (usrank>0){
+					role.posX = ~~role.posX;
+					role.posY = ~~role.posY;
+					role.posZ = ~~role.posZ;
+
+					if (role.map == 1) {
+						role.x = ~~(400 + role.posX / 10)
+						role.y = ~~(role.posY / 10)
+						role.z = ~~(550 + role.posZ / 10)
+					}
+					const roleData = JSON.stringify(role, null, 4);
 					row = table.insertRow(-1);
 					cell = row.insertCell(0);
-					cell.innerHTML="<a href='javascript:void(0);'><b>"+userD[4][i]["rolename"]+"</b> ["+userD[4][i]["roleid"]+"]</a>";
+					const anchor = document.createElement('a');
+					anchor.href='#';
+					anchor.innerHTML = `<b>${role["rolename"]}</b> [${role["roleid"]}]`;
+					cell.appendChild(anchor);
+					anchor.onclick = () => alert(roleData);
 					cell = row.insertCell(1);
-					cell.innerHTML=userD[4][i]["rolepath"]+userD[4][i]["roleclass"]+" ("+userD[4][i]["rolelevel"]+")";						
+					
+					cell.innerHTML=`${role["rolepath"]} ${role["roleclass"]}  (${role["rolelevel"]}) <br/> x: ${role["posX"]} y: ${role["posY"]} z: ${role["posZ"]} [${role["map"]}]`;
 				}else{
 					row = table.insertRow(-1);
 					cell = row.insertCell(0);
-					cell.innerHTML="<b>"+userD[4][i]["rolename"]+"</b>";
+					cell.innerHTML="<b>"+role["rolename"]+"</b>";
 					cell = row.insertCell(1);
-					cell.innerHTML=userD[4][i]["rolepath"]+userD[4][i]["roleclass"]+" ("+userD[4][i]["rolelevel"]+")";					
+					cell.innerHTML=role["rolepath"]+role["roleclass"]+" ("+role["rolelevel"]+")";					
 				}
 			}
 		}else{
@@ -412,7 +439,9 @@ function EditUserList(userData){
 	if (userD[0]["error"]!=""){
 		alert(userD[0]["error"]);
 	}else{
-		var uc=Object.keys(userD[1]).length;
+		var users = userD[1];
+		var ipMap = {};
+		var uc=Object.keys(users).length;
 		var table = document.getElementById('UserTable');
 		var row,cell,id,rn,un,rk,em;
 		table.innerHTML = '';	
@@ -422,16 +451,21 @@ function EditUserList(userData){
 			cell.innerHTML='<span style=\'font-size:12px;\'><i> Sorry but no result..... </i></span>';			
 		}else{
 			for (var i=0;i<uc;i++){
-				id=userD[1][i]["userid"];
-				un=userD[1][i]["username"];
-				rn=userD[1][i]["realname"];
-				rk=userD[1][i]["rank"];
-				em=userD[1][i]["email"];
+				var user = users[i];
+				if (!ipMap[user.ip]) { ipMap[user.ip] = []; }
+				ipMap[user.ip].push(user.username);
+				id=user["userid"];
+				un=user["username"];
+				rn=user["realname"];
+				rk=user["rank"];
+				em=user["email"];
 				row = table.insertRow(-1);
 				cell = row.insertCell(0);
 				cell.innerHTML="<a href='javascript:void(0);' title='Name: "+un+" and email: "+em+"' onClick='SendDataWithAjax(1, ["+id+"]);document.getElementById(\"LoadUserId\").value="+id+";'><font color=\""+rCol[rk]+"\">"+un+"</font> <i><font color='black' size='2'>["+id+"]</font></i></a>";
 			}
 		}
+		
+		console.log(ipMap);
 	}
 }
 

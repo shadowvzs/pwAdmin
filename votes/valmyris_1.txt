@@ -1,0 +1,26 @@
+{
+    "userId": 7536,
+    "userName": "valmyris",
+    "REMOTE_ADDR": "45.228.191.206",
+    "HTTP_X_FORWARDED_FOR": false,
+    "date": "2024-04-25 14:17:35",
+    "voteid": 1,
+    "VDates": [
+        "2024-04-19 15:13:55",
+        "2024-04-19 15:14:41",
+        "2024-04-19 15:15:20",
+        "2024-04-19 15:20:39",
+        "2024-04-19 15:21:18",
+        "2024-04-19 15:22:20",
+        "2016-12-01 01:00:00",
+        "2016-12-01 01:00:00"
+    ],
+    "HTTP_CLIENT_IP": "-",
+    "HTTP_USER_AGENT": "Mozilla\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\/537.36 (KHTML, like Gecko) Chrome\/124.0.0.0 Safari\/537.36",
+    "HTTP_REFERER": "http:\/\/retroms.ddns.net\/pwAdmin\/page\/myacc.php",
+    "GEOIP_COUNTRY_CODE": "-",
+    "cheater": false,
+    "secDiff": -471820,
+    "VoteIntSec": 43200,
+    "sId": 226633633
+}

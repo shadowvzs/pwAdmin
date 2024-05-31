@@ -129,9 +129,13 @@ if (isset($_SESSION['un'])){
 			<tr id='AccInfoZone' style='display:none;'><td><b>Where:</b></td><td><span id='AccInfoZId'> - </span></td></tr>
 			<tr id='AccInfoBanRow' style='display:none;'><td><b>Banned:</b></td><td><span id='AccInfoLA'> - </span></td></tr>
 			<tr><td><b>Characters: </b></td><td> <span id='AccInfoCI'>0</span></td></tr>
-			<tr><td colspan='2' align='center'><a href='javascript:void(0);' onClick='SwitchDisplayDataDiv(1);'><button>Change Account Data</button></a>";
+			<tr><td colspan='2' align='center'><a href='javascript:void(0);' onClick='SwitchDisplayDataDiv(0);'><button>Change Account Data</button></a>";
+			if ($admin) {
+				echo "&nbsp;&nbsp;&nbsp;&nbsp;<a href='javascript:void(0);' onClick='SwitchDisplayDataDiv(2);'><button>WebShop Log</button></a>";
+			}
 			if ($VoteButton!==false){
-			echo"&nbsp;&nbsp;&nbsp;&nbsp;<a href='javascript:void(0);' onClick='document.getElementById(\"VoteDiv\").style.display=\"block\";'><button>Vote to server</button></a>";
+				echo "<br><a href='https://youtu.be/5PiYd6XS5pI' rel='noopener noreferrer' target='_blank'><button>How to vote?!</button></a>";
+				echo"&nbsp;&nbsp;&nbsp;&nbsp;<a href='javascript:void(0);' onClick='document.getElementById(\"VoteDiv\").style.display=\"block\";'><button>Vote to server</button></a>";
 			}
 			echo"</td></tr>
 			</table>
@@ -168,8 +172,29 @@ if (isset($_SESSION['un'])){
 			echo"</table></div>
 			</div>";
 
-
-
+			if ($admin) {
+				echo "<div id='WebshopLogDiv' style='font-family:Arial;font-size:15px;z-index:2;display:none;'>
+					<div class='WindowHead_Light2'>Webshop Log
+						<div class='WindowClose_Light1' onclick='document.getElementById(\"WebshopLogDiv\").style.display=\"none\";'>&#10006;</div>
+					</div>
+				<br><br>
+				<table border='0' style='font-family:Arial;font-size:12px;width:100%;' id='WebShopLogList'>";
+				echo "<thead><tr>
+					<th style='text-align:center;'><i>Id</i></th>
+					<th style='text-align:center;width:50px;'><i>User</i></th>
+					<th style='text-align:center;width:50px;'><i>Name</i></th>
+					<th style='text-align:center;width:50px;'><i>Role</i></th>
+					<th style='text-align:center;width:50px;'><i>Role Name</i></th>
+					<th style='text-align:center;width:50px;'><i>Date</i></th>
+					<th style='text-align:center;width:50px;'><i>Currency</i></th>
+					<th style='text-align:center;width:50px;'><i>Price</i></th>
+					<th style='text-align:center;width:50px;'><i>Item Data</i></th>
+					<th style='text-align:center;width:50px;'><i>Shop Id</i></th>
+				</tr></thead><tbody></tbody></table>";
+	
+				echo "</div>";
+			}
+		
 			echo "<div id='ChngInfoDiv' style='border: 1px solid #000; width:320px;padding:10px;'>
 			<div class='WindowHead_Light2'>Change Account Data</div><br><br>
 			<table width='300' border='0' style='font-family:Arial;font-size:12px;border-collapse: collapse;'>
@@ -231,7 +256,7 @@ if (isset($_SESSION['un'])){
 				<option value='0'>Member</option>
 				</select></td></tr>";				
 			}
-			echo"<tr><td align='right'><a href='javascript:void(0);' onClick='SendNewData();'><button>Save</button></a></td><td align='center'><a href='javascript:void(0);' onClick='SwitchDisplayDataDiv(2);'><button>Cancel</button></a></td></tr>";
+			echo"<tr><td align='right'><a href='javascript:void(0);' onClick='SendNewData();'><button>Save</button></a></td><td align='center'><a href='javascript:void(0);' onClick='SwitchDisplayDataDiv(1);'><button>Cancel</button></a></td></tr>";
 			echo"</table><center><font color='red'><b><span id='Feedback_div' style='color:red; font-weight:900;align:center;'></span></b></font></center></div>";
 	}else{
 		echo "<script>parent.window.location.href = '../index.php';</script>";

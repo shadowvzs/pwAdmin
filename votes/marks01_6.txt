@@ -1,0 +1,26 @@
+{
+    "userId": 4000,
+    "userName": "marks01",
+    "REMOTE_ADDR": "181.51.32.186",
+    "HTTP_X_FORWARDED_FOR": false,
+    "date": "2024-03-16 23:58:41",
+    "voteid": 6,
+    "VDates": [
+        "2024-03-16 23:55:41",
+        "2024-03-16 23:56:18",
+        "2024-03-16 23:56:48",
+        "2024-03-16 23:57:20",
+        "2024-03-16 23:57:53",
+        "2024-03-15 03:13:42",
+        "2016-12-01 01:00:00",
+        "2016-12-01 01:00:00"
+    ],
+    "HTTP_CLIENT_IP": "-",
+    "HTTP_USER_AGENT": "Mozilla\/5.0 (Linux; Android 10; K) AppleWebKit\/537.36 (KHTML, like Gecko) Chrome\/122.0.0.0 Mobile Safari\/537.36",
+    "HTTP_REFERER": "http:\/\/retroms.ddns.net\/pwAdmin\/page\/myacc.php",
+    "GEOIP_COUNTRY_CODE": "-",
+    "cheater": false,
+    "secDiff": -117899,
+    "VoteIntSec": 43200,
+    "sId": 1306568726
+}

@@ -40,7 +40,8 @@ if (!(file_exists($cfgFile))) {
 <td width="99" align="center" style="text-shadow: 2px 2px 5px #000, 0px 0px 1px #000; color:white;"><b><font color="#ffff88">Perfect</font> <font color="#ffff99">World </font><font color="#ffffaa">RetroMS</font></b><br><br><b><font color="#ffffcc">Wodan</font></b><br><span id="statusID">
 <?php
 	$con = new mysqli($DB_Host, $DB_User, $DB_Password, $DB_Name);
-	if (ServerOnline($con)!==false){
+	$isOnline = ServerOnline($con);
+	if ($isOnline !== false){
 		echo "<font color=lightgreen><b>Online</b></font>";
 	}else{
 		echo "<font color=red><b>Offline</b></font>";
@@ -54,7 +55,6 @@ if (!(file_exists($cfgFile))) {
 </tr></table>
 <div style="width:100%;border:0px solid #000;"><table id="ButtonRow"><tr>
 <td><a href="javascript:void(0);" class="myButton" onClick="ClrWin();ShowPage('./page/news.php');">Home</a></td>
-<td><a href="javascript:void(0);" class="myButton" onClick="ClrWin();ShowPage('./page/info.php');">Server Info</a></td>
 <td><a href="javascript:void(0);" class="myButton" onClick="ClrWin();ShowPage('./page/story.php');">Story</a></td>
 <td><a href="javascript:void(0);" class="myButton" onClick="ClrWin();ShowPage('./page/downloads.php');">Download</a></td>
 <td><a href="javascript:void(0);" class="myButton" onClick="ClrWin();ShowPage('./page/guide.php');">Guide</a></td>

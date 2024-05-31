@@ -1,0 +1,26 @@
+{
+    "userId": 4336,
+    "userName": "truelove",
+    "REMOTE_ADDR": "95.55.44.86",
+    "HTTP_X_FORWARDED_FOR": false,
+    "date": "2024-03-27 21:18:39",
+    "voteid": 5,
+    "VDates": [
+        "2024-03-27 21:16:11",
+        "2024-03-27 21:16:44",
+        "2024-03-27 21:17:17",
+        "2024-03-27 21:17:59",
+        "2024-03-27 08:33:25",
+        "2024-03-27 08:33:58",
+        "2016-12-01 01:00:00",
+        "2016-12-01 01:00:00"
+    ],
+    "HTTP_CLIENT_IP": "-",
+    "HTTP_USER_AGENT": "Mozilla\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\/537.36 (KHTML, like Gecko) Chrome\/121.0.0.0 Safari\/537.36 OPR\/107.0.0.0 (Edition Yx GX)",
+    "HTTP_REFERER": "http:\/\/retroms.ddns.net\/pwAdmin\/page\/myacc.php",
+    "GEOIP_COUNTRY_CODE": "-",
+    "cheater": false,
+    "secDiff": -2714,
+    "VoteIntSec": 43200,
+    "sId": 1832753314
+}

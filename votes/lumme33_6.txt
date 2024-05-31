@@ -1,0 +1,26 @@
+{
+    "userId": 4224,
+    "userName": "lumme33",
+    "REMOTE_ADDR": "109.70.100.65",
+    "HTTP_X_FORWARDED_FOR": false,
+    "date": "2024-03-27 21:12:47",
+    "voteid": 6,
+    "VDates": [
+        "2024-03-27 21:07:12",
+        "2024-03-27 21:10:06",
+        "2024-03-27 21:10:54",
+        "2024-03-27 21:11:29",
+        "2024-03-27 21:12:01",
+        "2024-03-27 08:29:03",
+        "2016-12-01 01:00:00",
+        "2016-12-01 01:00:00"
+    ],
+    "HTTP_CLIENT_IP": "-",
+    "HTTP_USER_AGENT": "Mozilla\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\/537.36 (KHTML, like Gecko) Chrome\/123.0.0.0 Safari\/537.36",
+    "HTTP_REFERER": "http:\/\/retroms.ddns.net\/pwAdmin\/page\/myacc.php",
+    "GEOIP_COUNTRY_CODE": "-",
+    "cheater": false,
+    "secDiff": -2624,
+    "VoteIntSec": 43200,
+    "sId": 991206077
+}

@@ -1,0 +1,26 @@
+{
+    "userId": 10224,
+    "userName": "libation",
+    "REMOTE_ADDR": "207.81.165.171",
+    "HTTP_X_FORWARDED_FOR": false,
+    "date": "2024-05-30 03:04:38",
+    "voteid": 3,
+    "VDates": [
+        "2024-05-30 02:56:55",
+        "2024-05-30 03:02:48",
+        "2024-05-28 19:23:30",
+        "2024-05-28 19:25:11",
+        "2024-05-28 19:28:23",
+        "2024-05-28 19:30:30",
+        "2016-12-01 01:00:00",
+        "2016-12-01 01:00:00"
+    ],
+    "HTTP_CLIENT_IP": "-",
+    "HTTP_USER_AGENT": "Mozilla\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\/537.36 (KHTML, like Gecko) Chrome\/124.0.0.0 Safari\/537.36",
+    "HTTP_REFERER": "http:\/\/retroms.ddns.net\/pwAdmin\/page\/myacc.php",
+    "GEOIP_COUNTRY_CODE": "-",
+    "cheater": false,
+    "secDiff": -70868,
+    "VoteIntSec": 43200,
+    "sId": 1863265659
+}

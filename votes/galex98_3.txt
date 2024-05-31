@@ -1,0 +1,26 @@
+{
+    "userId": 7312,
+    "userName": "galex98",
+    "REMOTE_ADDR": "88.97.212.142",
+    "HTTP_X_FORWARDED_FOR": false,
+    "date": "2024-05-09 16:06:16",
+    "voteid": 3,
+    "VDates": [
+        "2024-05-09 15:52:36",
+        "2024-05-09 15:53:37",
+        "2024-05-08 18:20:10",
+        "2024-05-08 18:21:09",
+        "2024-05-08 18:28:42",
+        "2024-05-08 18:30:40",
+        "2016-12-01 01:00:00",
+        "2016-12-01 01:00:00"
+    ],
+    "HTTP_CLIENT_IP": "-",
+    "HTTP_USER_AGENT": "Mozilla\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\/537.36 (KHTML, like Gecko) Chrome\/124.0.0.0 Safari\/537.36 Edg\/124.0.0.0",
+    "HTTP_REFERER": "http:\/\/retroms.ddns.net\/pwAdmin\/page\/myacc.php",
+    "GEOIP_COUNTRY_CODE": "-",
+    "cheater": false,
+    "secDiff": -35166,
+    "VoteIntSec": 43200,
+    "sId": 1568917972
+}

@@ -203,10 +203,10 @@ function CountMysqlRows ($con, $type, $value){
 function ServerOnline($link){
 	global $LanIP;
 	global $ServerPort;
-	$result = mysqli_query($link,"SELECT zoneid FROM point WHERE zoneid IS NOT NULL");
+	$result = mysqli_query($link,"SELECT zoneid FROM point WHERE zoneid IS NOT NULL GROUP BY uid");
 	$count = @mysqli_num_rows($result);
 	if ($count > 0) {
-		return true;
+		return $count;
 	}
     $sockres = @FSockOpen("localhost", $ServerPort, $errno, $errstr, 1);
     if (!$sockres){
@@ -257,4 +257,110 @@ function ConvDecToRevHex($Dec){
 	return $RevHex;
 }
 
+function loadUserRoles($id) {
+	global $PWclsPath;
+	global $PWclass;
+	
+	$role_arr = array();
+	$CharCount=0;
+	$GetUserRolesArg = new WritePacket();
+	$GetUserRolesArg -> WriteUInt32(-1); // always
+	$GetUserRolesArg -> WriteUInt32($id); // userid
+	$GetUserRolesArg -> Pack(0xD49);//0xD49
+	if ($GetUserRolesArg -> Send("localhost", 29400)){ // send to gamedbd
+		$GetUserRolesRes = new ReadPacket($GetUserRolesArg); // reading packet from stream
+		$GetUserRolesRes -> ReadPacketInfo(); // read opcode and length
+		$GetUserRolesRes -> ReadUInt32(); // always
+		$GetUserRolesRes -> ReadUInt32(); // retcode
+		$CharCount = $GetUserRolesRes -> ReadCUInt32();
+	
+		for ($i = 0; $i < $CharCount; $i++){
+			$roleid = $GetUserRolesRes -> ReadUInt32();
+			$rolename = $GetUserRolesRes -> ReadUString();
+
+			$GetRoleBase = new WritePacket();
+			$GetRoleBase -> WriteUInt32(-1); // always
+			$GetRoleBase -> WriteUInt32($roleid); // userid
+			$GetRoleBase -> Pack(0x1F43); // opcode  
+
+			// send to gamedbd
+			if (!$GetRoleBase -> Send("localhost", 29400)) { return; }
+
+			$GetRoleBase_Re = new ReadPacket($GetRoleBase); // reading packet from stream
+			$packetinfo = $GetRoleBase_Re -> ReadPacketInfo(); // read opcode and length
+			$GetRoleBase_Re -> ReadUInt32(); // always
+			$GetRoleBase_Re -> ReadUInt32(); // retcode
+			$GetRoleBase_Re -> ReadUByte();
+			$GetRoleBase_Re -> ReadUInt32();
+			$GetRoleBase_Re -> ReadUString();
+			$GetRoleBase_Re -> ReadUInt32();
+			$roleCls = cls2class($GetRoleBase_Re -> ReadUInt32());
+			$GetRoleBase_Re -> ReadUByte();
+			$GetRoleBase_Re -> ReadOctets();
+			$GetRoleBase_Re -> ReadOctets();
+			$GetRoleBase_Re -> ReadUInt32();
+			$GetRoleBase_Re -> ReadUByte();
+			$roleDelTime = $GetRoleBase_Re -> ReadUInt32();
+			$GetRoleBase_Re -> ReadUInt32();
+			$roleLastLogin = $GetRoleBase_Re -> ReadUInt32();
+			$forbidcount = $GetRoleBase_Re -> ReadCUInt32();
+			for ($x = 0; $x < $forbidcount; $x++){
+				$GetRoleBase_Re -> ReadUByte();
+				$GetRoleBase_Re -> ReadUInt32();
+				$GetRoleBase_Re -> ReadUInt32();
+				$GetRoleBase_Re -> ReadUString();
+			}
+			$GetRoleBase_Re -> ReadOctets();
+			$GetRoleBase_Re -> ReadUInt32();
+			$GetRoleBase_Re -> ReadUInt32();
+			$GetRoleBase_Re -> ReadOctets();
+			$GetRoleBase_Re -> ReadUByte();
+			$GetRoleBase_Re -> ReadUByte();
+			$GetRoleBase_Re -> ReadUByte();
+			$GetRoleBase_Re -> ReadUByte();
+			$roleLevel = $GetRoleBase_Re -> ReadUInt32();
+			$roleCulti = $GetRoleBase_Re -> ReadUInt32();
+			$exp = $GetRoleBase_Re -> ReadUInt32();
+			$sp = $GetRoleBase_Re -> ReadUInt32();
+			$pp = $GetRoleBase_Re -> ReadUInt32();
+			$hp = $GetRoleBase_Re -> ReadUInt32();
+			$mp = $GetRoleBase_Re -> ReadUInt32();
+			$posX = $GetRoleBase_Re -> ReadFloat();
+			$posY = $GetRoleBase_Re -> ReadFloat();
+			$posZ = $GetRoleBase_Re -> ReadFloat();
+			$worldTag = $GetRoleBase_Re -> ReadUInt32();
+			$roleClass = $PWclass[$roleCls];
+
+			$rolePath = "";
+			if (($roleCulti > 19) && ($roleCulti<23)){
+				$rolePath = $PWclsPath[1]." ";
+			}elseif(($roleCulti>29)&&($roleCulti<33)){
+				$rolePath = $PWclsPath[2]." ";
+			}
+			if (isset($PWclass[$roleCls])){
+				$role_arr[$i]=array(
+					"roleid" => $roleid,
+					"rolename" => $rolename,
+					"roleclass" => $roleClass,
+					"rolelevel" => $roleLevel,
+					"rolepath" => $rolePath,
+					"roledel" => $roleDelTime,
+					"roleban" => $forbidcount,
+					"roleculti" => $roleCulti,
+					"exp" => $exp,
+					"sp" => $sp,
+					"pp" => $pp,
+					"hp" => $hp,
+					"mp" => $mp,
+					"posX" => $posX,
+					"posY" => $posY,
+					"posZ" => $posZ,
+					"map" => $worldTag
+				);
+			}
+		}
+	}
+	
+	return $role_arr;
+}
 ?>

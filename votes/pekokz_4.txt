@@ -1,0 +1,26 @@
+{
+    "userId": 9856,
+    "userName": "pekokz",
+    "REMOTE_ADDR": "136.158.119.15",
+    "HTTP_X_FORWARDED_FOR": false,
+    "date": "2024-05-12 04:44:34",
+    "voteid": 4,
+    "VDates": [
+        "2024-05-12 04:43:14",
+        "2024-05-12 04:44:01",
+        "2016-12-01 01:00:00",
+        "2016-12-01 01:00:00",
+        "2016-12-01 01:00:00",
+        "2016-12-01 01:00:00",
+        "2016-12-01 01:00:00",
+        "2016-12-01 01:00:00"
+    ],
+    "HTTP_CLIENT_IP": "-",
+    "HTTP_USER_AGENT": "Mozilla\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\/537.36 (KHTML, like Gecko) Chrome\/124.0.0.0 Safari\/537.36 Edg\/124.0.0.0",
+    "HTTP_REFERER": "http:\/\/retroms.ddns.net\/pwAdmin\/page\/myacc.php",
+    "GEOIP_COUNTRY_CODE": "-",
+    "cheater": false,
+    "secDiff": -234891874,
+    "VoteIntSec": 43200,
+    "sId": 179542783
+}

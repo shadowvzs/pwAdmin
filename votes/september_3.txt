@@ -1,0 +1,26 @@
+{
+    "userId": 6592,
+    "userName": "september",
+    "REMOTE_ADDR": "92.60.40.202",
+    "HTTP_X_FORWARDED_FOR": false,
+    "date": "2024-03-15 06:30:43",
+    "voteid": 3,
+    "VDates": [
+        "2024-03-15 06:30:01",
+        "2016-12-01 01:00:00",
+        "2016-12-01 01:00:00",
+        "2016-12-01 01:00:00",
+        "2016-12-01 01:00:00",
+        "2016-12-01 01:00:00",
+        "2016-12-01 01:00:00",
+        "2016-12-01 01:00:00"
+    ],
+    "HTTP_CLIENT_IP": "-",
+    "HTTP_USER_AGENT": "Mozilla\/5.0 (Linux; Android 10; K) AppleWebKit\/537.36 (KHTML, like Gecko) Chrome\/119.0.0.0 Mobile Safari\/537.36",
+    "HTTP_REFERER": "http:\/\/retroms.ddns.net\/pwAdmin\/page\/myacc.php",
+    "GEOIP_COUNTRY_CODE": "-",
+    "cheater": false,
+    "secDiff": -229887043,
+    "VoteIntSec": 43200,
+    "sId": 1588358235
+}

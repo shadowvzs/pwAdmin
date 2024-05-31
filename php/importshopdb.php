@@ -19,7 +19,7 @@ if ( $data ) {
 		$header_arr["error"]="Sorry, this website is experiencing problems (failed to make a MySQL connection)!";
 	}else{
 		if ((VerifyAdmin($link, $un, $pw, $id, $ma)!==false)&&(isset($data["importdb"]))){
-			$query = "SELECT * FROM webshop";
+			$query = "SELECT * FROM webshop ORDER BY id";
 			$result=$link->query($query);
 			$count=$result->num_rows;
 			$c=0;

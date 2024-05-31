@@ -1,0 +1,26 @@
+{
+    "userId": 7200,
+    "userName": "inarus",
+    "REMOTE_ADDR": "109.51.163.177",
+    "HTTP_X_FORWARDED_FOR": false,
+    "date": "2024-03-30 15:05:01",
+    "voteid": 5,
+    "VDates": [
+        "2024-03-30 15:02:25",
+        "2024-03-30 15:03:07",
+        "2024-03-30 15:03:37",
+        "2024-03-30 15:04:19",
+        "2024-03-29 19:45:34",
+        "2024-03-29 19:46:14",
+        "2016-12-01 01:00:00",
+        "2016-12-01 01:00:00"
+    ],
+    "HTTP_CLIENT_IP": "-",
+    "HTTP_USER_AGENT": "Mozilla\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\/537.36 (KHTML, like Gecko) Chrome\/123.0.0.0 Safari\/537.36",
+    "HTTP_REFERER": "http:\/\/retroms.ddns.net\/pwAdmin\/page\/myacc.php",
+    "GEOIP_COUNTRY_CODE": "-",
+    "cheater": false,
+    "secDiff": -26367,
+    "VoteIntSec": 43200,
+    "sId": 400427670
+}

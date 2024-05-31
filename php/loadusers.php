@@ -21,33 +21,33 @@ if (($data)&&(isset($_SESSION['un']))) {
 		$Admin=VerifyAdmin($link, $un, $pw, $uid, $ma);
 		if ($Admin!==false){
 			if ($stype==1){
-				$statement = $link->prepare("SELECT ID, name, truename, email FROM users");
+				$statement = $link->prepare("SELECT ID, name, truename, email, idnumber FROM users ORDER BY ID");
 			}elseif ($stype==2){
-				$statement = $link->prepare("SELECT ID, name, truename, email FROM users WHERE idnumber=?");
+				$statement = $link->prepare("SELECT ID, name, truename, email, idnumber FROM users WHERE idnumber=?");
 				$statement->bind_param('s', $sname);
 			}elseif ($stype==3){
-				$statement = $link->prepare("SELECT ID, name, truename, email FROM users WHERE ID=?");
+				$statement = $link->prepare("SELECT ID, name, truename, email, idnumber FROM users WHERE ID=?");
 				$statement->bind_param('i', intval($sname));
 			}elseif ($stype==4){
-				$statement = $link->prepare("SELECT ID, name, truename, email FROM users WHERE name LIKE CONCAT(?,'%') OR truename LIKE CONCAT(?,'%')");
+				$statement = $link->prepare("SELECT ID, name, truename, email, idnumber FROM users WHERE name LIKE CONCAT(?,'%') OR truename LIKE CONCAT(?,'%')");
 				$statement->bind_param('ss', StrToLower($sname), $sname);
 			}elseif ($stype==5){
-				$statement = $link->prepare("SELECT ID, name, truename, email FROM users WHERE email=?");
+				$statement = $link->prepare("SELECT ID, name, truename, email, idnumber FROM users WHERE email=?");
 				$statement->bind_param('s', $sname);
 			}elseif ($stype==6){
-				$statement = $link->prepare("SELECT users.ID, users.name, users.truename, users.email FROM users INNER JOIN point ON users.ID=point.uid WHERE point.zoneid IS NOT NULL");
+				$statement = $link->prepare("SELECT users.ID, users.name, users.truename, users.email, users.idnumber FROM users INNER JOIN point ON users.ID=point.uid WHERE point.zoneid IS NOT NULL");
 			}elseif ($stype==7){	
-				$query = "SELECT users.ID, users.name, users.truename, users.email FROM users INNER JOIN point ON users.ID=point.uid WHERE point.lastlogin >= ( CURDATE() - INTERVAL $txt DAY)";
+				$query = "SELECT users.ID, users.name, users.truename, users.email, users.idnumber FROM users INNER JOIN point ON users.ID=point.uid WHERE point.lastlogin >= ( CURDATE() - INTERVAL $sname DAY)";
 				$statement = $link->prepare($query);
 			}elseif ($stype==8){
-				$statement = $link->prepare("SELECT users.ID, users.name, users.truename, users.email FROM users INNER JOIN auth ON users.ID=auth.userid WHERE auth.zoneid = '1' GROUP BY auth.userid");
+				$statement = $link->prepare("SELECT users.ID, users.name, users.truename, users.email, users.idnumber FROM users INNER JOIN auth ON users.ID=auth.userid WHERE auth.zoneid = '1' GROUP BY auth.userid");
 			}elseif ($stype==9){
-				$statement = $link->prepare("SELECT users.ID, users.name, users.truename, users.email FROM users INNER JOIN auth ON users.ID=auth.userid WHERE auth.zoneid = '1'  INNER JOIN point ON users.ID=point.uid WHERE point.zoneid IS NOT NULL GROUP BY auth.userid");
+				$statement = $link->prepare("SELECT users.ID, users.name, users.truename, users.email, users.idnumber FROM users INNER JOIN auth ON users.ID=auth.userid WHERE auth.zoneid = '1'  INNER JOIN point ON users.ID=point.uid WHERE point.zoneid IS NOT NULL GROUP BY auth.userid");
 			}
 			$c=0;
 			if ($stype >0){
 				$statement->execute();
-				$statement->bind_result($id1, $name1, $rname1, $email1);
+				$statement->bind_result($id1, $name1, $rname1, $email1, $ip);
 				$statement->store_result();
 				$result = $statement->num_rows;
 				if ($result) {
@@ -56,7 +56,7 @@ if (($data)&&(isset($_SESSION['un']))) {
 						if ((CountMysqlRows($link, 5, $id1))>0){
 							$rank=1;
 						}
-						$user_arr[$c] = array("userid" => $id1, "username" => $name1, "realname" => $rname1, "email" => $email1, "rank" => $rank);
+						$user_arr[$c] = array("userid" => $id1, "username" => $name1, "realname" => $rname1, "email" => $email1, "rank" => $rank, "ip" => $ip);
 						$c++;
 					}   
 				}

@@ -1,0 +1,26 @@
+{
+    "userId": 7568,
+    "userName": "bank98",
+    "REMOTE_ADDR": "88.97.212.142",
+    "HTTP_X_FORWARDED_FOR": false,
+    "date": "2024-05-06 21:40:31",
+    "voteid": 1,
+    "VDates": [
+        "2024-05-05 19:48:27",
+        "2024-05-05 19:53:09",
+        "2024-05-05 20:00:34",
+        "2024-05-05 20:05:48",
+        "2024-05-05 20:07:37",
+        "2024-05-05 20:08:56",
+        "2016-12-01 01:00:00",
+        "2016-12-01 01:00:00"
+    ],
+    "HTTP_CLIENT_IP": "-",
+    "HTTP_USER_AGENT": "Mozilla\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\/537.36 (KHTML, like Gecko) Chrome\/124.0.0.0 Safari\/537.36 Edg\/124.0.0.0",
+    "HTTP_REFERER": "http:\/\/retroms.ddns.net\/pwAdmin\/page\/myacc.php",
+    "GEOIP_COUNTRY_CODE": "-",
+    "cheater": false,
+    "secDiff": -49924,
+    "VoteIntSec": 43200,
+    "sId": 724977612
+}

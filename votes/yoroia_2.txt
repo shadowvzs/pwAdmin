@@ -1,0 +1,26 @@
+{
+    "userId": 10800,
+    "userName": "yoroia",
+    "REMOTE_ADDR": "169.150.198.72",
+    "HTTP_X_FORWARDED_FOR": false,
+    "date": "2024-05-21 13:19:06",
+    "voteid": 2,
+    "VDates": [
+        "2024-05-21 13:12:17",
+        "2016-12-01 01:00:00",
+        "2016-12-01 01:00:00",
+        "2016-12-01 01:00:00",
+        "2016-12-01 01:00:00",
+        "2016-12-01 01:00:00",
+        "2016-12-01 01:00:00",
+        "2016-12-01 01:00:00"
+    ],
+    "HTTP_CLIENT_IP": "-",
+    "HTTP_USER_AGENT": "Mozilla\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\/537.36 (KHTML, like Gecko) Chrome\/124.0.6367.118 Safari\/537.36",
+    "HTTP_REFERER": "http:\/\/retroms.ddns.net\/pwAdmin\/page\/myacc.php",
+    "GEOIP_COUNTRY_CODE": "-",
+    "cheater": false,
+    "secDiff": -235700346,
+    "VoteIntSec": 43200,
+    "sId": 756760324
+}

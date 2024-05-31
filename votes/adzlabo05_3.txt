@@ -1,0 +1,26 @@
+{
+    "userId": 5728,
+    "userName": "adzlabo05",
+    "REMOTE_ADDR": "54.37.7.235",
+    "HTTP_X_FORWARDED_FOR": false,
+    "date": "2024-03-09 18:15:09",
+    "voteid": 3,
+    "VDates": [
+        "2024-03-09 18:13:12",
+        "2024-03-09 18:13:48",
+        "2024-03-07 14:15:13",
+        "2024-03-07 14:15:46",
+        "2024-03-07 14:16:25",
+        "2024-03-07 14:17:28",
+        "2016-12-01 01:00:00",
+        "2016-12-01 01:00:00"
+    ],
+    "HTTP_CLIENT_IP": "-",
+    "HTTP_USER_AGENT": "Mozilla\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\/537.36 (KHTML, like Gecko) Chrome\/122.0.0.0 Safari\/537.36 Edg\/122.0.0.0",
+    "HTTP_REFERER": "-",
+    "GEOIP_COUNTRY_CODE": "-",
+    "cheater": false,
+    "secDiff": -143996,
+    "VoteIntSec": 43200,
+    "sId": 2147189829
+}

@@ -1,0 +1,26 @@
+{
+    "userId": 7280,
+    "userName": "amon80",
+    "REMOTE_ADDR": "88.97.213.73",
+    "HTTP_X_FORWARDED_FOR": false,
+    "date": "2024-05-27 21:27:47",
+    "voteid": 4,
+    "VDates": [
+        "2024-05-27 21:21:48",
+        "2024-05-27 21:25:02",
+        "2024-05-27 21:27:04",
+        "2024-05-27 08:48:08",
+        "2024-05-27 08:48:50",
+        "2024-05-27 08:49:34",
+        "2016-12-01 01:00:00",
+        "2016-12-01 01:00:00"
+    ],
+    "HTTP_CLIENT_IP": "-",
+    "HTTP_USER_AGENT": "Mozilla\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\/537.36 (KHTML, like Gecko) Chrome\/125.0.0.0 Safari\/537.36 Edg\/125.0.0.0",
+    "HTTP_REFERER": "http:\/\/retroms.ddns.net\/pwAdmin\/page\/myacc.php",
+    "GEOIP_COUNTRY_CODE": "-",
+    "cheater": false,
+    "secDiff": -2379,
+    "VoteIntSec": 43200,
+    "sId": 600488234
+}

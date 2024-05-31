@@ -1406,7 +1406,7 @@ $SCArr[5]=5;
 <tr><td>Guid1: </td><td><input type="text" maxlength="20" id="WSE_Guid1" value='' style='width: 70px;'></td></tr>
 <tr><td>Guid2: </td><td><input type="text" maxlength="20" id="WSE_Guid2" value='' style='width: 70px;'></td></tr>
 <tr><td>Expire: </td><td><input type="text" maxlength="20" id="WSE_Expire" value='' style='width: 70px;'></td></tr>
-<tr><td>Octet: </td><td><input type="text" maxlength="255" id="WSE_Octet" value='' style='width: 150px;'></td></tr>
+<tr><td>Octet: </td><td><input type="text" id="WSE_Octet" value='' style='width: 150px;'></td></tr>
 <tr><td>Price1 (G): </td><td><input type="text" maxlength="9" id="WSE_Price1" value='' style='width: 50px;'></td></tr>
 <tr><td>Price2 (W): </td><td><input type="text" maxlength="9" id="WSE_Price2" value='' style='width: 50px;'></td></tr>
 <tr><td>Color: </td><td><select id='ItmShpCol' style='width: 150px;'>

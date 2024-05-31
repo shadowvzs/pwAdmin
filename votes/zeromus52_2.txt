@@ -1,0 +1,26 @@
+{
+    "userId": 6368,
+    "userName": "zeromus52",
+    "REMOTE_ADDR": "90.247.189.235",
+    "HTTP_X_FORWARDED_FOR": false,
+    "date": "2024-03-16 13:39:30",
+    "voteid": 2,
+    "VDates": [
+        "2024-03-16 13:38:24",
+        "2024-03-12 19:10:11",
+        "2024-03-12 20:44:12",
+        "2024-03-12 21:26:57",
+        "2016-12-01 01:00:00",
+        "2016-12-01 01:00:00",
+        "2016-12-01 01:00:00",
+        "2016-12-01 01:00:00"
+    ],
+    "HTTP_CLIENT_IP": "-",
+    "HTTP_USER_AGENT": "Mozilla\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\/537.36 (KHTML, like Gecko) Chrome\/122.0.0.0 Safari\/537.36",
+    "HTTP_REFERER": "http:\/\/retroms.ddns.net\/pwAdmin\/page\/myacc.php",
+    "GEOIP_COUNTRY_CODE": "-",
+    "cheater": false,
+    "secDiff": -282559,
+    "VoteIntSec": 43200,
+    "sId": 999384794
+}

@@ -7,8 +7,7 @@
 
 <?php
 include "../config.php";
-
-	echo"<div id='MainTab2' style='display:none;'>";
+	echo"<div id='MainTab2' style='display:none;padding: 32px;'>";
 	echo"
 	<div id='ClassButtons'>
 	<div style='width:100%;border:0px solid #000;'><center><table id='ButtonRow'><tr>";
@@ -172,7 +171,9 @@ include "../config.php";
 	echo"</div>";
 
 	echo"
-	<div id='MainTab1' style='display:none;'>
+	<div id='MainTab1' style='display:none; padding: 32px;'>
+	<img src='./images/class/Class_Guide.jpg' width='800' alt='Guide'>
+	<br><br>
 	<font size='5'><b>Short Class description</b></font><br><br><br>
 	<img src='./images/class/wr-0.png' valign='middle' style='vertical-align:middle;'><font color='#000055'> <b>Warrior [WR]</b><br></font>
 	Master of Martial Arts and excelent melee weapon fighter, most flexible class.<br>
@@ -204,20 +205,176 @@ include "../config.php";
 	<font size='2' color='#0000aa'><b>Pro:</b> highest range, critical strike rate in game, good dodge and accurancy, can use metal damage skills.</font><br>
 	<font size='2' color='#aa0000'><b>Contra:</b> low dph skills, depend on luck.</font>
 	</div>";
-
-
+	
+	echo"
+		<div id='MainTab3' style='display:none;padding: 32px;'>
+			Welcome on our retro server, here we explain how can you start your journey...
+			<br/><br/>
+			<b>Choose your path/Why do you want to play?</b><br/>
+			<br/> - <b>Option 1: Nostalgia</b> - you can do the regular quests and cultivations quests, grind with the original non-repetative quests/mission in 1x exp/sp rate like in the original. It is slower but you feel the original way of the playing.
+			<br/> - <b>Option 2: PvP with grind</b> - you can buy high % exp gear from the webshop and grind, or buy scroll and oracles and do them (it has 5x exp, 10x sp, 2x coin rewards). It is fast leveling but you will lack of the spirit points (sp) or costly in gold.
+			<br/> - <b>Option 3: PvP but no time</b> - you can buy exp pill from the in game item mall, however it became expensive, so either you wait and do daily vote or donate. It is fast leveling, but you need to wait, join to events, spend money.
+			
+			<br/><br><br/><br>
+			<b>WebShop:</b> We have a webshop where you can buy starter gears, hieros, mats, oracles, scrolls, elf and many more with webpoints, each player start with a fixed amount of web points and can join to the discord events for additional points.
+			<br><br>
+			<br><br>
+			<b>FAQ:</b>
+			<br><b>How can i get webpoints/pw-gold?</b>: everybody start with an initial webpoint and pw-gold, for getting more you must join to the <b><span style='color: blue'>discord events, vote, stay online (hourly you get 5), or donate</span></b> but only if you want and liek the server.
+			<br><b>Which gear:</b> we have 2 gear type in the webshop: <b><span style='color: blue'>exp gear</span></b> (gear with %exp on gear), <b><span style='color: red'>quester gear</span></b> (no exp but stronger attributes)
+			<br><b>Which currency do we use?:</b> we use <b><span style='color: red'>PW-Gold</span></b> for the item mall inside the game, <b><span style='color: blue'>webshop point</span></b> at the website webshop, in-game <b><span style='color: yellow'>coin</span></b> for in-game and webshop
+			<br><b>I must spend money for the webshop?:</b> No, few item even buyable with your in-game character inventory coins, rest need webshop point buy you get enough at the registration, then you can get more as discord events rewards etc.
+			<br><br>
+			<br><br> 
+			<b>Tips & Tricks</b>
+			<br><br><b>How can i get PW-Gold?</b>
+			<br> - join to the discord events
+			<br> - stay online (hourly rewards)
+			<br> - donation
+			<br><br><b>How to level up fast?</b>
+			<br> - buy exp gear from webshop
+			<br> - buy task dice items from webshop and from in-game NPC (Minny at West ADC banker) like:
+			<br> &nbsp;&nbsp;&nbsp;&nbsp; - oracle [highest exp - kill mini bosses]
+			<br> &nbsp;&nbsp;&nbsp;&nbsp; - scrolls [talk with npc, fastest but lowest reward]
+			<br> &nbsp;&nbsp;&nbsp;&nbsp; - heroism [decent exp/sp rewards but also give reputation as well]
+			<br> &nbsp;&nbsp;&nbsp;&nbsp; <b>Important:</b> you can buy the above 3 scroll type with your inventory coins and you can earn inventory coin as I wrote in the below section
+			<br> - stone quests: starts from <b>Eunice</b> <i>[530 641]</i> and <b>Rosalind</b> <i>[532 642]</i> - it rewards 5x higher exp and 10x higher sp
+			<br> - events: 
+			<br> &nbsp;&nbsp;&nbsp;&nbsp; - <b>Wushu / Martial Arts</b> (PvP) event, very high exp for first 3 (the Lv90+ winner get 12 mil exp), every Thursday at <i>[529 663]</i> - <a href='https://www.youtube.com/watch?v=-SrNAbDM2UI' target='_blank'>video</a>
+			<br> &nbsp;&nbsp;&nbsp;&nbsp; - <b>Path of Ashura</b> (PvP) event, you can exchange your collected items into exp, every day at 8PM <i>[108 509 53]</i> - <a href='https://youtu.be/IgqX23xSZbI?feature=shared&t=131' target='_blank'>video</a>
+			<br><br>
+			<br><br><b>What should i get from webshop with (inventory) coins?</b>
+			<br> - scrolls, oracles, heroeism, mysterious chips, soul stones (Lv6-9), herbs, mirage stones, teleport stone, silver HP/MP hiero, Teleacoustic (for world chat)
+			<br><br><b>How can I get (inventory) coins?</b>
+			<br> - do 'Punish' quests which gives good coin rewards (500k - 1.2m) at <i>118 856 37</i>, <i>129 856 37</i>, <i>129 861 37</i>
+			<br> - sell items to the npc
+			<br> - do quests
+			<br> - you can get <span style='color:red'><b>1 Million coin</b></span> for doing <b>Villa/World</b> quest (starts with <u>A Brooch For A Villa</u> at <b>ADC Elder</b> <i>[571 646]</i>) then it is daily at <b>Amerigo</b> <i>[531 641]</i>, the guide is <a href='https://pwi.fandom.com/wiki/World_Quest'><b>here</b></a>, check always the next target in the game chat (btw this is an npc talking quest)
+			<br><br><b>How can I get rank 8?</b>
+			<br> - buy heroism and make them for the rep reward
+			<br> - exchange <b>Lucky Charm</b> (from the Anniversary/Coral packs) at <i>528 650</i> to the 25 rep badge
+			<br> - slower but you can farm fb instances like 59 and TW
+			<br> - if you do not have time and want invest money then the <b>Wedding Chocolate</b> in the <i>Item Mall</i> is an expensive but fast method to it
+			<br><br><b>How to get Cube necklance?</b>
+			<br> - Coral pack if you are lucky
+			<br> - Buy Cube Stamp from the item mall and exchange it
+			<br> - [Free/Grind] Finish cube and get 5 <b>Rotational Gear</b> from the room 60 with 500k EXP, then if you finished Cube 6x then then 30 Rot. Gear could be combined into 1 Grade 14 Cube Necklance, then 3 gr14 into gr15 and 3 gr15 into gr16
+			<br><br><b>How to get lucky packs?</b>
+			<br> - buy from Item Mall
+			<br> - Lv90 Winner of the Wushu Events gets 50 - 150x <a href='https://www.pwdatabase.com/pwi/quest/21385' target='_blank'><b>Lucky Coral pack</b></a> - <a href='https://www.youtube.com/watch?v=-SrNAbDM2UI' target='_blank'>video</a>
+			<br><br><b>What was change on Ashura event? <a href='https://youtu.be/IgqX23xSZbI?feature=shared&t=131' target='_blank'>video</a></b>
+			<br> - when you enter then you will get 10x more collectible items (can be traded to mysterious chip, special necklance (+5% max hp, +8 con, 3% reduced phys harm), exp+coin etc)
+			<br> - exchange rate into exp was adjusted, it will give 2x more exp, and give gold as well
+			<br><br><b>Why to do card bosses?</b>
+			<br> - Depends on the difficulty, they can drop <b>Dragon Orbs</b> (1start - 5star), gr12 stones, FB79 boss have the worst drop, CV/GV have the best drop rate
+			<br> - Last boss drop several Warsoul Weapon materia which is the ultimate weapon in the game
+			<br> - <b>Note: </b> maybe you can check the <a href='http://ecatomb.rf.gd/es.ecatomb.net/boss-card.html?i=1' target='_blank'>where they are</a> or <a href='https://www.youtube.com/watch?v=SioVYZZjvVw' target='_blank'> video tutorial</a>
+			<br><br><b>Gear improve with refine/socketing?</b>
+			<br> - farm socket stone and fortune stone from spiders at Nameless Isle <i>[696 689]</i>
+			<br> - do World Bosses and Card Bosses for dragon orbs
+			<br><br><b>World Bosses info</b>
+			<br> - they can drop dragon orb, gr12 stones and +10con stone (if Chrono World boss then instead of con stone they drop +att/def lv stones)
+			<br> - respawn time is 24h
+			<br><br> - location is on World bosses:
+			<br>&emsp;	- Aurumborn Kingsof - 19473 - 653 390 (24)
+			<br>&emsp;	- Soul Hunter - 19472 - 658 434 (23)
+			<br>&emsp;	- Alpha - 19468 - 162 427 (53)
+			<br>&emsp;	- Obeaune - 19471 - 553 437 (22)
+			<br>&emsp;	- ShadowShade - 19470 - 659 524 (28)
+			<br>&emsp;	- Apro.Shield - 19469 - 151 340 (55)
+			<br>&emsp;	- Awler - 19467 - 252 755 (26)
+			<br>&emsp;	- Fetch Suppresser - 19466 - 159 976 (22)
+			<br>&emsp;	- Ghost Rider - 19465 - 172 787 (22)
+			<br>&emsp;	- Enguerrand - 19464 - 236 867 (23)
+			<br>&emsp;	- Puzzle - 19463 - 314 955 (22)
+			<br>&emsp;	- Deep - 19462 - 293 969 (22)
+			<br>&emsp;&emsp;	- Pterygota Warrior - 19474 - 440 752 (22)
+			<br>&emsp;	- Sword Demonic.Still - 19475 - 488 571 (22)
+			<br>&emsp;	- Chilopod Terminator - 19476 - 639 868 (22)
+			<br>&emsp;	- Falchion Demonic - 19477 - 438 471 (23)
+			<br><br> - location is on Chrono World boss:
+			<br>&emsp;	- Thunder Beast (chrono) - 19478 - 334 597 (23) - map2
+			<br>&emsp;	- Skeleton King.Scorch (chrono) - 19479 - 365 611 (25) - map2
+			<br>&emsp;	- Gaia Fighter (chrono)  - 19480 - 477 623 (24) - map3
+			<br>&emsp;	- Skeleton King.Atropine (chrono) - 19481 - 422 570 (23) - map3
+			<br>&emsp;	- Slaughtry (chrono) - 19482 - 367 472 (22) - map1
+			<br>&emsp;	- Axemaster·Malphas (chrono) - 19483 - 345 459 (22) - map1
+			<br>&emsp;	- Daricon (chrono) - 19484 - 463 520 (53) - map4
+			<br>&emsp;	- Frost City Guard-0 (chrono) - 19485 - 477 476 (55) - map4
+		</div>
+	";
 
 	echo"
-	<div id='MainTab3'>
-	<div style='width:100%;border:0px solid #000;font-weight:bold;'>
-	<table id='ButtonRow' style='float:left;'>
-	<tr><td align='center'><a href='javascript:void(0);' style='text-decoration:none;' onclick='showMainTab(2);'><img src='./images/PW_char.png' width='150' alt='Details about characters'><br>Class: Descriptions</a><br><br></td></tr>
-	<tr><td align='center'><a href='javascript:void(0);' style='text-decoration:none;' onclick='showMainTab(1);'><img src='./images/PW_all.png' width='150' alt='Details about characters'><br>Class: Pro vs Contra</a></td></tr>
-	</tr></table><br><br>
-	<center>
-	<img src='./images/class/Class_Guide.jpg' width='800' alt='Guide'>
-	</center>
-	</div><br><br><br><br><br>
+	<div id='MainTab4' style='display:none;padding: 32px;'>
+		<center>
+			<iframe src='https://www.youtube.com/embed/IgqX23xSZbI' width='420' height='315' borde='0' style='float:left; margin: 0 20px;'></iframe>
+			<h2>Base informations</h2>
+			<table>
+				<tr><td style='font-weight:bold;'> Note:</td><td>PvP server, gear and everything important buyable somehow!</td></tr>
+				<tr><td style='font-weight:bold;'> Version:</td><td>1.4.1</td></tr>
+				<tr><td style='font-weight:bold;'> Language:</td><td>PW MS & PW MY-EN</td></tr>
+				<tr><td style='font-weight:bold;'> Race:</td><td>Human, Beastkind, Elf</td></tr>
+				<tr><td style='font-weight:bold;'> Skills:</td><td>Normal + Lv79 & 100</td></tr>
+				<tr><td style='font-weight:bold;'> Server rate:</td><td>Normal 1x, (+ culti and exp pill, exp starter gear)</td></tr>
+				<tr><td style='font-weight:bold;'> Leveling:</td><td>Normal way or with pills</td></tr>
+				<tr><td style='font-weight:bold;'> Get PW-Gold:</td><td>Vote to server for Gold</td></tr>
+				<tr><td style='font-weight:bold;'> Elemental Elf: &nbsp;&nbsp;&nbsp;&nbsp;</td><td style='vertical-align:top;'>On, like original server.</td></tr>
+				<tr><td style='font-weight:bold;'> How to Start:</td><td>Login and go to the WebShop and you can buy starter gears and items</td></tr>
+				<tr><td style='font-weight:bold;'> Peak:</td><td><b>WebShop</b>, starter gear, vote system, discord events</td></tr>
+				<tr><td style='font-weight:bold;'> F2P:</td><td>Multiple items (hiero, dye, tp stone) can buy with in-game gold without spending</td></tr>
+				<tr><td style='font-weight:bold;'> Vote:</td><td> Please watch this: <a href='https://youtu.be/5PiYd6XS5pI' rel='noopener noreferrer' target='_blank'>https://youtu.be/5PiYd6XS5pI</a></td></tr>
+			</table>
+
+			<br/><br/>
+			<div class='float: clear;' />
+			<h2>Working instances</h2>
+			<table>
+				<tr><td style='font-weight:bold;'> FB instances:</td><td> 19 (elf, human, beast), 29, 39, 49, 59, 69, 79, 89 (both), 99 (both), 109 (both)</td></tr>
+				<tr><td style='font-weight:bold;'> Special maps:</td><td> Arena (4), Chrono 1-4, TW, Horse Race (Snake Island), Ashura Path, Netherbeast, Dragon Temple</td></tr>
+				<tr><td style='font-weight:bold;'> Gear instances:</td><td> Frost Walk City (FC), Crescent Valley (CV), Holy Hall (HH), Beehive/Cube, Godless Valley (GV), Warsong City (WS) - <span style='color:red'>the required player in team was reduced to 2</span></td></tr>
+			</table>
+			
+			<br/><br/>
+			<div class='float: clear;' />
+			<h2>End game</h2>
+			<table>
+				<tr><td style='font-weight:bold;'> Jewelry:</td><td> Cube neck, Warsong belt, HH99 or Rank8, Gr16 rings, Gr16 bless box (PW School Teacher)</td></tr>
+				<tr><td style='font-weight:bold;'> Armor:</td><td> Rank 8, HH99, Helmet and Cloack/Manteou from packs</td></tr>
+				<tr><td style='font-weight:bold;'> Weapon:</td><td> Warsoul, R8, HH99, CV</td></tr>
+				<tr><td style='font-weight:bold;'> SoulStones:</td><td> +1 DefLv, +1 DefLV, +1 AttackLv, +Vit (World Boss) stones, gr12 stones</td></tr>
+			</table>
+			
+			<br/><br/>
+			<span style='color: red;'>More information about the server customization, how to play, trick & tips can be found in the other section, at <b>Guide\How to Start?</b></span>
+		</center>
+	</div>
+	";
+
+	echo"
+	<div id='MainTab5'>
+		<div style='width:100%;border:0px solid #000;font-weight:bold;text-align:center;'>
+			<br><br><br>
+				You can fing all information, what you need, if you not found it then ask it on the discord
+			<br><br><br><br><br>
+			<div style='display: flex;gap: 32px;text-align:center; justify-content: center;'>
+				<div>
+					<a href='javascript:void(0);' style='text-decoration:none;' onclick='showMainTab(4);'><img src='./images/InfoIcon.png' width='100' alt='Server info'><br>Server information</a>
+				</div>
+				<div>
+					<a href='javascript:void(0);' style='text-decoration:none;' onclick='showMainTab(3);'><img src='./images/HowToStart.png' width='100' alt='Details about characters'><br>How to start?</a>
+				</div>
+				
+				<div>
+					<a href='javascript:void(0);' style='text-decoration:none;' onclick='showMainTab(2);'><img src='./images/PW_char.png' width='100' alt='Details about characters'><br>Class: Descriptions</a>
+				</div>
+						
+				<div>
+					<a href='javascript:void(0);' style='text-decoration:none;' onclick='showMainTab(1);'><img src='./images/PW_all.png' width='100' alt='Details about characters'><br>Class: Pro vs Contra</a>
+				</div>
+			</div>
+			<center>
+			</center>
+		</div>
 	</div>
 	";
 

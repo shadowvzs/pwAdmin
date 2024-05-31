@@ -1,0 +1,26 @@
+{
+    "userId": 8208,
+    "userName": "ngocvu",
+    "REMOTE_ADDR": "14.191.165.203",
+    "HTTP_X_FORWARDED_FOR": false,
+    "date": "2024-04-22 02:46:25",
+    "voteid": 3,
+    "VDates": [
+        "2024-04-22 02:43:44",
+        "2024-04-22 02:44:18",
+        "2016-12-01 01:00:00",
+        "2024-04-22 02:45:54",
+        "2024-04-22 02:45:24",
+        "2024-04-22 02:44:51",
+        "2016-12-01 01:00:00",
+        "2016-12-01 01:00:00"
+    ],
+    "HTTP_CLIENT_IP": "-",
+    "HTTP_USER_AGENT": "Mozilla\/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit\/537.36 (KHTML, like Gecko) Chrome\/109.0.0.0 Safari\/537.36",
+    "HTTP_REFERER": "http:\/\/retroms.ddns.net\/pwAdmin\/page\/myacc.php",
+    "GEOIP_COUNTRY_CODE": "-",
+    "cheater": false,
+    "secDiff": -233156785,
+    "VoteIntSec": 43200,
+    "sId": 186667279
+}

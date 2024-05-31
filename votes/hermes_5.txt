@@ -1,0 +1,26 @@
+{
+    "userId": 7776,
+    "userName": "hermes",
+    "REMOTE_ADDR": "91.23.44.102",
+    "HTTP_X_FORWARDED_FOR": false,
+    "date": "2024-05-07 16:01:15",
+    "voteid": 5,
+    "VDates": [
+        "2024-05-07 15:58:04",
+        "2024-05-07 15:58:44",
+        "2024-05-07 15:59:26",
+        "2024-05-07 16:00:19",
+        "2024-05-04 14:45:49",
+        "2024-05-04 14:46:27",
+        "2016-12-01 01:00:00",
+        "2016-12-01 01:00:00"
+    ],
+    "HTTP_CLIENT_IP": "-",
+    "HTTP_USER_AGENT": "Mozilla\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\/537.36 (KHTML, like Gecko) Chrome\/124.0.0.0 Safari\/537.36",
+    "HTTP_REFERER": "http:\/\/retroms.ddns.net\/pwAdmin\/page\/myacc.php",
+    "GEOIP_COUNTRY_CODE": "-",
+    "cheater": false,
+    "secDiff": -220526,
+    "VoteIntSec": 43200,
+    "sId": 943028044
+}

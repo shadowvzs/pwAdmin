@@ -188,14 +188,16 @@ function showClassTab(id){
 	}
 }
 function showMainTab(id){
-	var tb;
-	for (var i=1; i < 4; i++){
-		tb=document.getElementById('MainTab'+i);
-		if (tb!=null){
-			if (i==id){
-				tb.style.display="block";
+	var tab = null;
+	var i = 1;
+	for (; i < 6; i++){
+		tab = document.getElementById('MainTab'+i);
+		console.log(tab, 'MainTab'+i);
+		if (tab != null){
+			if (i == id){
+				tab.style.display="block";
 			}else{
-				tb.style.display="none";
+				tab.style.display="none";
 			}
 		}else{
 			break;

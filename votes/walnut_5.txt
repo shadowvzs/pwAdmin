@@ -1,0 +1,26 @@
+{
+    "userId": 9360,
+    "userName": "walnut",
+    "REMOTE_ADDR": "223.25.59.235",
+    "HTTP_X_FORWARDED_FOR": false,
+    "date": "2024-05-10 12:05:34",
+    "voteid": 5,
+    "VDates": [
+        "2024-05-10 12:03:07",
+        "2024-05-10 12:04:00",
+        "2024-05-10 12:04:32",
+        "2024-05-10 12:05:03",
+        "2024-05-09 23:42:26",
+        "2024-05-09 23:42:58",
+        "2016-12-01 01:00:00",
+        "2016-12-01 01:00:00"
+    ],
+    "HTTP_CLIENT_IP": "-",
+    "HTTP_USER_AGENT": "Mozilla\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\/537.36 (KHTML, like Gecko) Chrome\/124.0.0.0 Safari\/537.36 Edg\/124.0.0.0",
+    "HTTP_REFERER": "http:\/\/retroms.ddns.net\/pwAdmin\/page\/myacc.php",
+    "GEOIP_COUNTRY_CODE": "-",
+    "cheater": false,
+    "secDiff": -1388,
+    "VoteIntSec": 43200,
+    "sId": 559616369
+}
