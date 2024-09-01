@@ -85,7 +85,7 @@ class ReadPacket
 	
 	public function ReadCUInt32()
 	{
-		$value = unpack("C", substr($this -> data, $this -> pos, 1));
+		$value = unpack("C", substr($this -> data, $this -> pos ?? 0, 1));
 		$value = $value[1];
 		$this -> pos++;
 		

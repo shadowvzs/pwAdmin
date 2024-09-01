@@ -1,4 +1,5 @@
 <?php
+	die("you must enable it: create_admin.php");
     ini_set('display_errors', 1);
     include "./config.php";
     mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);

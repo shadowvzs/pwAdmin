@@ -115,7 +115,7 @@ input:focus {
 	top:30px;
 	left:5px;	
 	right:5px;
-	height:435px;
+	bottom: 35px;
 	overflow-y: auto;
 }
 #UsersDiv td{
@@ -144,6 +144,27 @@ input:focus {
 }
 
 #VoteDiv:hover{
+	opacity:1;
+}
+
+#WebshopLog{
+	position: absolute;
+	top:200px;
+	left:360px;
+	min-height: 200px;
+	padding:5px 20px;
+	border:1px solid #000;
+	-moz-box-shadow: 10px 10px 14px -7px #777;
+	-webkit-box-shadow: 10px 10px 14px -7px #777;
+	box-shadow: 10px 10px 14px -7px #777;
+	background: -webkit-linear-gradient(-90deg, #fff, #ddf);
+	background: -o-linear-gradient(-90deg, #fff, #ddf);
+	background: -moz-linear-gradient(-90deg, #fff, #ddf);
+	background: linear-gradient(-90deg, #fff, #ddf);
+	opacity:0.8;
+}
+
+#WebshopLog:hover{
 	opacity:1;
 }
 

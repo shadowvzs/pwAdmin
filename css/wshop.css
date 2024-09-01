@@ -1,9 +1,7 @@
 a{
 text-decoration:none;
 }
-a:hover{
-   co1lor: #000033;
-}
+
 #PreviewDiv{
 	position:fixed;
 	top: 120px;
@@ -51,7 +49,7 @@ a:hover{
 }
 #iconHolder{
 	position: absolute;
-	top: 80px;
+	top: 160px;
 	left: 20px;
 	right: 422px;
 }

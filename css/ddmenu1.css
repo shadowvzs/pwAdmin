@@ -30,6 +30,8 @@
 	-ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr='#292929', endColorstr='#252525')";
 	background: linear-gradient(#292929, #252525);
 	min-width: 160px;
+	border-bottom: 2px solid transparent;
+	border-top: 2px solid transparent;
 }
 .menu > li {
 	display: block;
@@ -102,7 +104,7 @@
 	font-family: 'Lucida Console';
 	font-size: 16px;
 	line-height: 34px;
-	height:36;
+	height: 36px;
 	z-index: 10;
 }
 	

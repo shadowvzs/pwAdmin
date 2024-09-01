@@ -770,8 +770,8 @@ var FashWMCombo=[
 var FashWeapMask=[
 ["Polehammer",1], 
 ["Poleaxe",2], 
-["Dual Hammer",4], 
-["Dual Axe",8], 
+["Dual Axe",4], 
+["Dual Hammer",8], 
 ["Spear",16], 
 ["Polearm",32], 
 ["Staff",64], 

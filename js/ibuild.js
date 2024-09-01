@@ -1784,8 +1784,8 @@ var intervalID = setInterval(function(){
 		}	
 		AData[12] = "<a title='Physical Defense: "+parseInt(document.getElementById('Inp_A_PDef').value)+"'>"+DectoRevHex(parseInt(document.getElementById('Inp_A_PDef').value),8,0)+"</a>";
 		AData[13] = "<a title='Dodge: "+parseInt(document.getElementById('Inp_A_Dodge').value)+"'>"+DectoRevHex(parseInt(document.getElementById('Inp_A_Dodge').value),8,0)+"</a>";
-		AData[14] = "<a title='Hit Point: "+parseInt(document.getElementById('Inp_A_HP').value)+"'>"+DectoRevHex(parseInt(document.getElementById('Inp_A_HP').value),8,0)+"</a>";
-		AData[15] = "<a title='Mana Point: "+parseInt(document.getElementById('Inp_A_MP').value)+"'>"+DectoRevHex(parseInt(document.getElementById('Inp_A_MP').value),8,0)+"</a>";
+		AData[14] = "<a title='Mana Point: "+parseInt(document.getElementById('Inp_A_MP').value)+"'>"+DectoRevHex(parseInt(document.getElementById('Inp_A_MP').value),8,0)+"</a>";
+		AData[15] = "<a title='Hit Point: "+parseInt(document.getElementById('Inp_A_HP').value)+"'>"+DectoRevHex(parseInt(document.getElementById('Inp_A_HP').value),8,0)+"</a>";
 		AData[16] = "<a title='Metal Defense: "+parseInt(document.getElementById('Inp_A_Metal').value)+"'>"+DectoRevHex(parseInt(document.getElementById('Inp_A_Metal').value),8,0)+"</a>";
 		AData[17] = "<a title='Wood Defense: "+parseInt(document.getElementById('Inp_A_Wood').value)+"'>"+DectoRevHex(parseInt(document.getElementById('Inp_A_Wood').value),8,0)+"</a>";
 		AData[18] = "<a title='Water Defense: "+parseInt(document.getElementById('Inp_A_Water').value)+"'>"+DectoRevHex(parseInt(document.getElementById('Inp_A_Water').value),8,0)+"</a>";
@@ -1892,10 +1892,10 @@ var intervalID = setInterval(function(){
 		AData[12] = "<a title='Physical Defense: "+parseInt(document.getElementById('Inp_A_PDef').value)+" +"+bPdef+"'>"+DectoRevHex(fix,8,0)+"</a>";
 		fix = parseInt(parseInt(document.getElementById('Inp_A_Dodge').value)+bDodge);
 		AData[13] = "<a title='Dodge: "+parseInt(document.getElementById('Inp_A_Dodge').value)+" +"+bDodge+"'>"+DectoRevHex(fix,8,0)+"</a>";
-		fix = parseInt(parseInt(document.getElementById('Inp_A_HP').value)+parseInt(bHP));
-		AData[14] = "<a title='Hit Point: "+parseInt(document.getElementById('Inp_A_HP').value)+" +"+bHP+"'>"+DectoRevHex(fix,8,0)+"</a>";
 		fix = parseInt(parseInt(document.getElementById('Inp_A_MP').value)+bMP);
-		AData[15] = "<a title='Mana Point: "+parseInt(document.getElementById('Inp_A_MP').value)+" +"+bMP+"'>"+DectoRevHex(fix,8,0)+"</a>";
+		AData[14] = "<a title='Mana Point: "+parseInt(document.getElementById('Inp_A_MP').value)+" +"+bMP+"'>"+DectoRevHex(fix,8,0)+"</a>";
+		fix = parseInt(parseInt(document.getElementById('Inp_A_HP').value)+parseInt(bHP));
+		AData[15] = "<a title='Hit Point: "+parseInt(document.getElementById('Inp_A_HP').value)+" +"+bHP+"'>"+DectoRevHex(fix,8,0)+"</a>";
 		fix = parseInt(parseInt(document.getElementById('Inp_A_Metal').value)+bMetal);
 		AData[16] = "<a title='Metal Defense: "+parseInt(document.getElementById('Inp_A_Metal').value)+" +"+bMetal+"'>"+DectoRevHex(fix,8,0)+"</a>";
 		fix = parseInt(parseInt(document.getElementById('Inp_A_Wood').value)+bWood);
@@ -1974,9 +1974,9 @@ var intervalID = setInterval(function(){
 			RefineOn = 1;
 			if ((jType == 1)||(jType == 4)||(jType == 7)){
 				RefCat = 1;		
-			}else if((jType == 2)||(jType == 5)||(jType == 8)){
+			}else if((jType == 2)||(jType == 5)){
 				RefCat = 2;
-			}else if (jType == 3){
+			}else if (jType == 3 || jType == 8 || jType == 6){
 				RefCat = 3;
 			}
 			var aArr = refBase[3][RefCat][JGrade].split("#");
@@ -2282,10 +2282,10 @@ var intervalID = setInterval(function(){
 			BData[12] = "<a title='Physical Defense: "+parseInt(document.getElementById('Inp_B_PDef').value)+" +"+bPdef+"'>"+DectoRevHex(fix,8,0)+"</a>";
 			fix = parseInt(parseInt(document.getElementById('Inp_B_Dodge').value)+bDodge);
 			BData[13] = "<a title='Dodge: "+parseInt(document.getElementById('Inp_B_Dodge').value)+" +"+bDodge+"'>"+DectoRevHex(fix,8,0)+"</a>";
-			fix = parseInt(parseInt(document.getElementById('Inp_B_HP').value)+parseInt(bHP));
-			BData[14] = "<a title='Hit Point: "+parseInt(document.getElementById('Inp_B_HP').value)+" +"+bHP+"'>"+DectoRevHex(fix,8,0)+"</a>";
 			fix = parseInt(parseInt(document.getElementById('Inp_B_MP').value)+bMP);
-			BData[15] = "<a title='Mana Point: "+parseInt(document.getElementById('Inp_B_MP').value)+" +"+bMP+"'>"+DectoRevHex(fix,8,0)+"</a>";
+			BData[14] = "<a title='Mana Point: "+parseInt(document.getElementById('Inp_B_MP').value)+" +"+bMP+"'>"+DectoRevHex(fix,8,0)+"</a>";
+			fix = parseInt(parseInt(document.getElementById('Inp_B_HP').value)+parseInt(bHP));
+			BData[15] = "<a title='Hit Point: "+parseInt(document.getElementById('Inp_B_HP').value)+" +"+bHP+"'>"+DectoRevHex(fix,8,0)+"</a>";
 			fix = parseInt(parseInt(document.getElementById('Inp_B_Metal').value)+bMetal);
 			BData[16] = "<a title='Metal Defense: "+parseInt(document.getElementById('Inp_B_Metal').value)+" +"+bMetal+"'>"+DectoRevHex(fix,8,0)+"</a>";
 			fix = parseInt(parseInt(document.getElementById('Inp_B_Wood').value)+bWood);
@@ -2718,7 +2718,7 @@ function ChangeElfGear(id){
 	var reqLv = parseInt(myArr[1], 10);
 	if (elfLevel < reqLv){
 		e.selectedIndex = 0;
-		document.getElementById("EGearImg"+id).src="../images/icons/slot.gif";
+		document.getElementById("EGearImg"+id).src="../images/icons/slot.png";
 		document.getElementById("Inp_E_GearId"+id).value = 0;
 		document.getElementById('Inp_E_GearName'+id).value = "";
 		alert("This item need level "+reqLv+", but your genie is level "+elfLevel+"!");
@@ -2730,7 +2730,7 @@ function ChangeElfGear(id){
 		}else{
 			document.getElementById("Inp_E_GearId"+id).value = 0;
 			document.getElementById("Inp_E_GearName"+id).value = "";
-			document.getElementById("EGearImg"+id).src="../images/icons/slot.gif";
+			document.getElementById("EGearImg"+id).src="../images/icons/slot.png";
 		}
 	}
 }
@@ -3637,19 +3637,13 @@ function refreshShopItems(){
 		div.innerHTML = "";
 		var myArr=[];
 		var myArr2=[];
-		var lnbrk;
 		var ShpTime="Shop Type: Permanent";
 		var txt = "";
 		for (i = 1; i <= WSIInd; i++) {
-			if (i == 1){
-				lnbrk = "";
-			}else{
-				lnbrk ="<br>";
-			}
 			myArr=WSIData[i].split("#");
 			myArr2=myArr[19].split(" ");
 			if (myArr2[0] > 0){ShpTime="Shop Type: Not permanent";}
-			txt = txt+lnbrk+"<input type='checkbox' style='vertical-align: middle;' value='"+WSIData[i]+"' id='ShopItmChBox"+i+"' onClick=ShopChckboxToggle('');><a title='Item Title: "+myArr[2]+"\nDescripton: "+myArr[3]+"\nItem Color: "+itmCol[myArr[17]]+"\nCategory ID: "+myArr[16]+"\nPrice (Gold): "+myArr[0]+"\nPrice (WebPoint): "+myArr[1]+"\nItemId: "+myArr[7]+"\nItem Mask:"+myArr[8]+"\nProcType: "+myArr[9]+"\nStack: "+myArr[10]+"/"+myArr[11]+"\nGuid1: "+myArr[12]+"\nGuid2: "+myArr[13]+"\nExpire: "+myArr[14]+"\n"+ShpTime+"\nStorage ID: "+db+"\nOctet: "+myArr[15]+"\n\nClick: Select or Unselect\nDouble click: load the item octet for edit' onClick=ShopChckboxToggle('"+i+"'); ondblclick='OctSelectedItem("+i+", 2);'><b>"+myArr[2]+"</b> - "+myArr[6]+"</a> "+" <span style='float:right;clear: both;'> <a href='javascript:void(0);'  onclick='EditShopItem("+i+");'><button style='vertical-align: middle;'> Nfo </button></a><a href='javascript:void(0);'  onclick='DeleteShopItem("+i+");'><button style='vertical-align: middle;'> Del </button></a></span>";
+			txt = txt+"<div style='display: flex; flex-wrap: nowrap;justify-content:space-between;'><span><input type='checkbox' style='vertical-align: middle;' value='"+WSIData[i]+"' id='ShopItmChBox"+i+"' onClick=ShopChckboxToggle('');><a title='Item Title: "+myArr[2]+"\nDescripton: "+myArr[3]+"\nItem Color: "+itmCol[myArr[17]]+"\nCategory ID: "+myArr[16]+"\nPrice (Gold): "+myArr[0]+"\nPrice (WebPoint): "+myArr[1]+"\nItemId: "+myArr[7]+"\nItem Mask:"+myArr[8]+"\nProcType: "+myArr[9]+"\nStack: "+myArr[10]+"/"+myArr[11]+"\nGuid1: "+myArr[12]+"\nGuid2: "+myArr[13]+"\nExpire: "+myArr[14]+"\n"+ShpTime+"\nStorage ID: "+db+"\nOctet: "+myArr[15]+"\n\nClick: Select or Unselect\nDouble click: load the item octet for edit' onClick=ShopChckboxToggle('"+i+"'); ondblclick='OctSelectedItem("+i+", 2);'><b>"+myArr[2]+"</b> - "+myArr[6]+"</a> "+"</span> <span> <a href='javascript:void(0);'  onclick='EditShopItem("+i+");'><button style='vertical-align: middle;'> Nfo </button></a><a href='javascript:void(0);'  onclick='DeleteShopItem("+i+");'><button style='vertical-align: middle;'> Del </button></a></span></div>";
 		}
 		div.innerHTML = txt;
 	}
@@ -4608,8 +4602,8 @@ function LoadOctet(n){
 				}
 				var Pdef = HextoDec(LOctet.substr(n, 8), 8, 0, true);
 				var Dodge = HextoDec(LOctet.substr(n+8, 8), 8, 0, true);
-				var HitPoint = HextoDec(LOctet.substr(n+16, 8), 8, 0, true);
-				var Mana = HextoDec(LOctet.substr(n+24, 8), 8, 0, true);
+				var Mana = HextoDec(LOctet.substr(n+16, 8), 8, 0, true);
+				var HitPoint = HextoDec(LOctet.substr(n+24, 8), 8, 0, true);
 				var Metal = HextoDec(LOctet.substr(n+32, 8), 8, 0, true);
 				var Wood = HextoDec(LOctet.substr(n+40, 8), 8, 0, true);
 				var Water = HextoDec(LOctet.substr(n+48, 8), 8, 0, true);
@@ -5866,6 +5860,7 @@ function OctSelectedItem(id, listType){
 			if (listType == 2){
 				myArr[5] = myArr[2];
 			}			
+			console.log(itmCol[iCol], iCol,myArr[5] );
 			cINM="<font color='"+itmCol[iCol]+"'>"+myArr[5]+"</font>";
 			itmName.innerHTML = cINM;
 			if (myArr[10] == 1){

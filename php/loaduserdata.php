@@ -61,7 +61,7 @@ if (($data)&&(isset($_SESSION['un']))) {
 			}
 			$statement->close();	
 			
-			$query = "SELECT cash, fintime FROM usecashlog WHERE userid=?";
+			$query = "SELECT cash, fintime FROM usecashlog WHERE userid=? ORDER BY creatime DESC";
 			$statement = $link->prepare($query);
 			$statement->bind_param('i', $id);
 			$statement->execute();
@@ -78,77 +78,7 @@ if (($data)&&(isset($_SESSION['un']))) {
 			$statement->close();
 			
 			include("../php/packet_class.php");
-			$CharCount=0;
-			$GetUserRolesArg = new WritePacket();
-			$GetUserRolesArg -> WriteUInt32(-1); // always
-			$GetUserRolesArg -> WriteUInt32($id); // userid
-			$GetUserRolesArg -> Pack(0xD49);//0xD49
-			if ($GetUserRolesArg -> Send("localhost", 29400)){ // send to gamedbd
-				//return;
-				$GetUserRolesRes = new ReadPacket($GetUserRolesArg); // reading packet from stream
-				$GetUserRolesRes -> ReadPacketInfo(); // read opcode and length
-				$GetUserRolesRes -> ReadUInt32(); // always
-				$GetUserRolesRes -> ReadUInt32(); // retcode
-				$CharCount = $GetUserRolesRes -> ReadCUInt32();
-															
-				for ($i = 0; $i < $CharCount; $i++){
-					$roleid = $GetUserRolesRes -> ReadUInt32();
-					$rolename = $GetUserRolesRes -> ReadUString();
-										
-					$GetRoleBase = new WritePacket();
-					$GetRoleBase -> WriteUInt32(-1); // always
-					$GetRoleBase -> WriteUInt32($roleid); // userid
-					$GetRoleBase -> Pack(0x1F43); // opcode  
-
-					if (!$GetRoleBase -> Send("localhost", 29400)) // send to gamedbd
-					return;
-
-					$GetRoleBase_Re = new ReadPacket($GetRoleBase); // reading packet from stream
-					$packetinfo = $GetRoleBase_Re -> ReadPacketInfo(); // read opcode and length
-					$GetRoleBase_Re -> ReadUInt32(); // always
-					$GetRoleBase_Re -> ReadUInt32(); // retcode
-					$GetRoleBase_Re -> ReadUByte();
-					$GetRoleBase_Re -> ReadUInt32();
-					$GetRoleBase_Re -> ReadUString();
-					$GetRoleBase_Re -> ReadUInt32();
-					$roleCls = cls2class($GetRoleBase_Re -> ReadUInt32());
-					$GetRoleBase_Re -> ReadUByte();
-					$GetRoleBase_Re -> ReadOctets();
-					$GetRoleBase_Re -> ReadOctets();
-					$GetRoleBase_Re -> ReadUInt32();
-					$GetRoleBase_Re -> ReadUByte();
-					$roleDelTime = $GetRoleBase_Re -> ReadUInt32();
-					$GetRoleBase_Re -> ReadUInt32();
-					$roleLastLogin = $GetRoleBase_Re -> ReadUInt32();
-					$forbidcount = $GetRoleBase_Re -> ReadCUInt32();
-					for ($x = 0; $x < $forbidcount; $x++){
-						$GetRoleBase_Re -> ReadUByte();
-						$GetRoleBase_Re -> ReadUInt32();
-						$GetRoleBase_Re -> ReadUInt32();
-						$GetRoleBase_Re -> ReadUString();
-					}
-					$GetRoleBase_Re -> ReadOctets();
-					$GetRoleBase_Re -> ReadUInt32();
-					$GetRoleBase_Re -> ReadUInt32();
-					$GetRoleBase_Re -> ReadOctets();
-					$GetRoleBase_Re -> ReadUByte();
-					$GetRoleBase_Re -> ReadUByte();
-					$GetRoleBase_Re -> ReadUByte();
-					$GetRoleBase_Re -> ReadUByte();
-					$roleLevel = $GetRoleBase_Re -> ReadUInt32();
-					$roleCulti = $GetRoleBase_Re -> ReadUInt32();
-					$roleClass = $PWclass[$roleCls];
-					$rolePath = "";
-					if (($roleCulti > 19) && ($roleCulti<23)){
-						$rolePath = $PWclsPath[1]." ";
-					}elseif(($roleCulti>29)&&($roleCulti<33)){
-						$rolePath = $PWclsPath[2]." ";
-					}
-					if (isset($PWclass[$roleCls])){
-						$role_arr[$i]=array("roleid" => $roleid, "rolename" => $rolename, "roleclass" => $roleClass, "rolelevel" => $roleLevel, "rolepath" => $rolePath, "roledel" => $roleDelTime, "roleban" => $forbidcount, "roleculti" => $roleCulti);
-					}
-				}
-			}
+			$role_arr = loadUserRoles($id);
 			
 			$err_arr["error"]="";			
 		}

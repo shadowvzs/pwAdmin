@@ -5,8 +5,8 @@ include "../basefunc.php";
 $resp="Unknown Error";
 
 SessionVerification();
-
 $data = json_decode(file_get_contents('php://input'), true);
+
 if ( $data ) {
 	$username=$data['name'];
 	$password=$data['password'];

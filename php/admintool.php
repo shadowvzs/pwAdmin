@@ -154,7 +154,7 @@ if (($data)&&(isset($_SESSION['un']))) {
 				}
 				
 			}elseif ($atool==10){
-				if ((($days > -1)&&($days<36500))&&(($amount > 0)&&($amount<9999999))){
+				if ((($days > -1)&&($days<36500))&&(($amount > 0)&&($amount<99999999))){
 					if ($days==0){
 						$query="SELECT uid FROM point WHERE zoneid IS NOT NULL";
 					}else{
@@ -183,7 +183,7 @@ if (($data)&&(isset($_SESSION['un']))) {
 					$statement->close();											
 				}				
 			}elseif ($atool==11){
-				if ((($days > -1)&&($days<36500))&&(($amount > 0)&&($amount<9999999))){
+				if ((($days > -1)&&($days<36500))&&(($amount > 0)&&($amount<99999999))){
 					if ($days==0){
 						$query="SELECT uid FROM point WHERE zoneid IS NOT NULL";
 					}else{

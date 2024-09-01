@@ -1,5 +1,8 @@
 <?php 
 session_start();
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
 include "../config.php";
 include "../basefunc.php";
 $header_arr = array("error" => "Unknown Error!", "reloaduserlist" => "0", "success" => "", "reloaduserdata" => "0");
@@ -59,7 +62,7 @@ if (($data)&&(isset($_SESSION['un']))) {
 						if (((ctype_alnum($CurUnam))&&(ctype_alnum($CurPw)))||((ctype_alnum($CurUnam))&&($CurPw=="")&&($admin)&&($uid!=$OldUId))){
 							if (!(strlen($NewPw1)==0)){
 								if ((strlen($NewPw1)>4)&&(strlen($NewPw1)<21)&&(strlen($NewPw2)>4)&&(strlen($NewPw2)<21)&&(ctype_alnum($NewPw1))&&(ctype_alnum($NewPw2))){
-									if ($NewPw1==$NewPw2){
+									if ($NewPw1==$NewPw2 && $NewPw1 != $CurPw){
 										$validNewPw=true;
 										$changePw=true;
 									}else{
@@ -87,10 +90,13 @@ if (($data)&&(isset($_SESSION['un']))) {
 											}
 											if ($PassType==1){
 												$Salt2="0x".md5($CurUnam.$NewPw1);
+												$oldSalt2="0x".md5($CurUnam.$CurPw);
 											}else if ($PassType==2){
 												$Salt2=base64_encode(hash('md5',strtolower($CurUnam).$NewPw1, true));
+												$oldSalt2=base64_encode(hash('md5',strtolower($CurUnam).$CurPw, true));
 											}else if ($PassType==3){
 												$Salt2="0x".md5($CurUnam.$NewPw1);
+												$oldSalt2="0x".md5($CurUnam.$CurPw);
 											}
 											$test2=0;
 											if (($admin) && ($CurUId != $OldUId)){
@@ -130,7 +136,7 @@ if (($data)&&(isset($_SESSION['un']))) {
 															}
 														}else if($PassType==3){	
 															$LPw = addslashes($LPw);
-															$rs=mysqli_query($link,"SELECT ID FROM users WHERE ID=? AND passwd=CONVERT($Salt2 USING latin1)");
+															$rs=mysqli_query($link,"SELECT ID FROM users WHERE ID=$uid AND passwd=CONVERT($oldSalt2 USING latin1)");
 															$count = mysqli_num_rows($rs);
 															if ($count > 0){
 																$verifiedPw=true;
@@ -148,7 +154,7 @@ if (($data)&&(isset($_SESSION['un']))) {
 															$updatBDate=false;
 														}
 													}
-													
+					
 													if (($verifiedPw)&&($newDateCheck)){
 														$Lrank=CountMysqlRows($link,5,$OldUId);
 														$count7=0;

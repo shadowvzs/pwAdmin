@@ -21,7 +21,7 @@ if ( $data ) {
 			if ($chat_text != ""){
 				$result = mysqli_query($link,"SELECT zoneid FROM point WHERE zoneid IS NOT NULL");
 				$count = @mysqli_num_rows($result);
-				$sockres = @FSockOpen($LanIP, $ServerPort, $errno, $errstr, 1);
+				$sockres = @FSockOpen('localhost', $ServerPort, $errno, $errstr, 1);
 				if (!$sockres){
 					mysqli_query($link,"DELETE FROM online");
 					$SRunning=false;
