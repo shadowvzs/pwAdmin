@@ -13,7 +13,7 @@ DEBIAN_FRONTEND=noninteractive apt install -y libapache2-mod-php
 apt install -y php php-mysql php-curl mcrypt
 
 # pwAdminId="$lastInsertedUserId" pwAdminUsername="$pwAdminUsername" pwAdminPassword="$pwAdminPw"
-wget http://github.com/shadowvzs/pwAdmin/archive/master.tar.gz
+wget https://github.com/hoangnguyent/pwAdmin/archive/refs/heads/master.zip
 tar -xzf ./master.tar.gz -C $websitePath
 rm ./master.tar.gz
 
