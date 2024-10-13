@@ -28,7 +28,7 @@ if [ -d "$webFolder" ]; then rm -Rf $webFolder; fi
 cp -R $initWebFolder $webFolder
 rm -Rf $initWebFolder
 
-mariadb -u"$dbUser" -p"$dbPassword" pw <<eof
+mariadb -u"$dbUser" -p"$dbPassword" $dbName <<eof
     ALTER TABLE users ADD VotePoint INT(11) DEFAULT 0;
     ALTER TABLE users ADD VoteDates varchar(255) NOT NULL DEFAULT "1970-01-01 01:00:00";
 eof
