@@ -22,11 +22,11 @@ if (($data)&&(isset($_SESSION['un']))) {
 		$Admin=VerifyAdmin($link, $un, $pw, $uid, $ma);
 
 		if (($Admin!==false)||($uid==$id)){
-			$query = "SELECT ID, name, truename, email, birthday, creatime, gender, idnumber, VotePoint, VoteDates FROM users WHERE ID=?";
+			$query = "SELECT ID, name, truename, email, birthday, creatime, gender, idnumber, mudev, VotePoint, VoteDates FROM users WHERE ID=?";
 			$statement = $link->prepare($query);
 			$statement->bind_param('i', $id);
 			$statement->execute();
-			$statement->bind_result($LID, $LName, $Lrname, $Lmail, $Lbday, $LRegDate, $Lsex, $LIpAddr, $LWebPoint, $LVC);
+			$statement->bind_result($LID, $LName, $Lrname, $Lmail, $Lbday, $LRegDate, $Lsex, $LIpAddr, $loginIp, $LWebPoint, $LVC);
 			$statement->store_result();
 			$result = $statement->num_rows;
 			$LastVotes = "";
@@ -42,7 +42,24 @@ if (($data)&&(isset($_SESSION['un']))) {
 					$srank=0;
 					if ($uid==$id){$LPw=$pw;$SelfA=1;}
 					if ($Admin!==false){$srank=1;}
-					$user_arr = array("self" => $Self, "id" => $LID, "username" => $LName, "password" => $LPw, "rank" => $rank, "srank" => $srank, "truename" =>  $Lrname,"email" =>  $Lmail, "birthday" =>  $Lbday, "creatime" =>  $LRegDate, "gender" =>  $Lsex, "ip" => $LIpAddr, "votepoint" => $LWebPoint, "votedate" => $LVC, "pointtogold" => $PointExc);
+					$user_arr = array(
+						"self" => $Self,
+						"id" => $LID,
+						"username" => $LName,
+						"password" => $LPw,
+						"rank" => $rank,
+						"srank" => $srank,
+						"truename" =>  $Lrname,
+						"email" =>  $Lmail,
+						"birthday" =>  $Lbday,
+						"creatime" =>  $LRegDate,
+						"gender" =>  $Lsex,
+						"regIp" => $LIpAddr,
+						"loginIp" => $loginIp,
+						"votepoint" => $LWebPoint,
+						"votedate" => $LVC,
+						"pointtogold" => $PointExc
+					);
 				}   
 			}
 			$statement->close();

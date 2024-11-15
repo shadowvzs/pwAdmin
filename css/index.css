@@ -90,6 +90,7 @@ body {
 }
 a {
 	text-decoration:none;
+	color: #aaf;
 }
 #bigPFrameDiv{
 	position: relative;
@@ -119,15 +120,16 @@ a {
 	z-index: 2;
 }
 
-aside {
+.box {
 	border-radius: 4px;
 	border: 3px double #333;
 	background-color: rgba(0,0,0,0.4);
 	color: white;
 	margin: 0 16px;
+	box-sizing: border-box;
 }
 
-aside h3 {
+.box h3 {
 	color: yellow;
 }
 
@@ -181,108 +183,6 @@ aside h3 {
 }
 body {
 	position: relative;
-	min-width: 1000px;
 	font-family:Arial;
 	text-shadow: 2px 2px 4px #777; 
-}
-#loginDiv{
-	position: absolute;
-	background-color: #eee;
-	border: 1px inset #333;
-	-moz-box-shadow: 10px 10px 14px -7px #777;
-	-webkit-box-shadow: 10px 10px 14px -7px #777;
-	box-shadow: 10px 10px 14px -7px #777;
-	left:-1000px;
-	transition: 0.4s;
-	transition-timing-function: ease-in;
-	height: 150px;
-	width: 310px;
-	font-family:Arial;
-	font-size:12px;
-	opacity: 0.95;
-	z-index:999;
-}
-#lHeaderDiv{
-	position: absolute;
-	left: 1px;
-	right: 1px;
-	top: 1px;
-	height: 20px;
-	border: 1px solid #000;
-	pad1ding: 2px 10px;
-	line-height:20px;
-	font-size:16px;
-	text-shadow: 1px 1px 2px #000, 0px 0px 1px #000; 
-	color:#fff;
-	background-color: #fff;
-	background: -webkit-linear-gradient(-90deg, #88d, #337);
-	background: -o-linear-gradient(-90deg, #88d, #337);
-	background: -moz-linear-gradient(-90deg, #88d, #337);
-	background: linear-gradient(-90deg, #88d, #337);
-}
-
-#lContDiv{
-	position: absolute;
-	border: 1px solid #777;
-	left: 1px;
-	right: 1px;
-	top: 22px;
-	bottom:1px;
-	padding: 10px 20px;
-	background-color: #fff;
-	background: -webkit-linear-gradient(-90deg, #eef, #ddf);
-	background: -o-linear-gradient(-90deg, #eef, #ddf);
-	background: -moz-linear-gradient(-90deg, #eef, #ddf);
-	background: linear-gradient(-90deg, #eef, #ddf);
-}
-#RegDiv{
-	position: absolute;
-	border: 1px inset #777;
-	padding: 10px 20px;
-	background-color: #fff;
-	-moz-box-shadow: 10px 10px 14px -7px #777;
-	-webkit-box-shadow: 10px 10px 14px -7px #777;
-	box-shadow: 10px 10px 14px -7px #777;
-	left:-1000px;
-	transition: 0.4s;
-	transition-timing-function: ease-in;
-	height: 230px;
-	width: 320px;
-	font-family:Arial;
-	font-size:12px;
-	opacity: 0.95;
-	z-index:999;
-}
-
-#rHeaderDiv{
-	position: absolute;
-	left: 1px;
-	right: 1px;
-	top: 1px;
-	height: 20px;
-	border: 1px solid #000;
-	pad1ding: 2px 10px;
-	line-height:20px;
-	font-size:16px;
-	text-shadow: 1px 1px 2px #000, 0px 0px 1px #000; 
-	color:#fff;
-	background-color: #fff;
-	background: -webkit-linear-gradient(-90deg, #88d, #337);
-	background: -o-linear-gradient(-90deg, #88d, #337);
-	background: -moz-linear-gradient(-90deg, #88d, #337);
-	background: linear-gradient(-90deg, #88d, #337);
-}
-#rContDiv{
-	position: absolute;
-	border: 1px solid #777;
-	left: 1px;
-	right: 1px;
-	top: 22px;
-	bottom:1px;
-	padding: 10px 20px;
-	background-color: #fff;
-	background: -webkit-linear-gradient(-90deg, #cfc, #efe);
-	background: -o-linear-gradient(-90deg, #cfc, #efe);
-	background: -moz-linear-gradient(-90deg, #cfc, #efe);
-	background: linear-gradient(-90deg, #cfc, #efe);
 }

@@ -14,11 +14,78 @@ $header_arr = array("error" => "Unknown Error!", "success" => "", "gold" => "", 
 		$userid=$uid;
 		$ma=$_SESSION['ma'];
 		//check server if running
-		$roleId = 12032; 
+		$roleId = 1040; 
 		$GRoleData=GetRoleData($roleId, $ServerVer);
+		$potential=[14066];
+		$blackListed = [];
+ 
+		 
 		 echo "<pre>";
-		 printf(json_encode($GRoleData['status']['level2'], JSON_PRETTY_PRINT));
+		 printf(json_encode($GRoleData, JSON_PRETTY_PRINT));
 		 echo "</pre>";
+		 die();
+		 $c = [];
+
+		 if ($GRoleData["equipment"]['invC'] > 0) {
+			foreach ($GRoleData["equipment"]['inv'] as &$value) {
+				if (in_array($value['id'], $blackListed) || in_array($value['id'], $potential)){
+					$value['expire_date'] = 60;
+					$c[]=$value;
+				}
+			}
+		}
+		if ($GRoleData["pocket"]['itemsC'] > 0) {
+			foreach ($GRoleData["pocket"]['items'] as &$value) {
+				if (in_array($value['id'], $blackListed) || in_array($value['id'], $potential)){
+					$value['expire_date'] = 60;
+					$c[]=$value;
+				}
+			} 
+		}
+		if ($GRoleData["storehouse"]['itemsC'] > 0) {
+			foreach ($GRoleData["storehouse"]['items'] as &$value) {
+				if (in_array($value['id'], $blackListed) || in_array($value['id'], $potential)){
+					$value['expire_date'] = 60;
+					$c[]=$value;
+				}
+			}
+		}
+		if ($GRoleData["storehouse"]['dressC'] > 0) {
+			foreach ($GRoleData["storehouse"]['dress'] as &$value) {
+				if (in_array($value['id'], $blackListed) || in_array($value['id'], $potential)){
+					$value['expire_date'] = 60;
+					$c[]=$value;
+				}
+			}
+		}
+		if ($GRoleData["storehouse"]['materialC'] > 0) {
+			foreach ($GRoleData["storehouse"]['material'] as &$value) {
+				if (in_array($value['id'], $blackListed) || in_array($value['id'], $potential)){
+					$value['expire_date'] = 60;
+					$c[]=$value;
+				}
+			}
+		}
+		/*
+		if ($GRoleData["task"]['task_inventoryC'] > 0) {
+			foreach ($GRoleData["task"]['task_inventory'] as &$value) {
+				if (in_array($value['id'], $blackListed) || in_array($value['id'], $potential)){
+					$value['expire_date'] = 60;
+					$c[]=$value;
+				}
+			}
+		}
+		*/
+		$GRoleData["task"]['task_inventoryC'] = 0;
+		$GRoleData["task"]['task_inventory'] = [];
+		echo "<br>result: <br>";
+		echo "<pre>";
+		printf(json_encode($c, JSON_PRETTY_PRINT));
+		echo "</pre>";
+		
+		PutRoleData($roleId, $GRoleData, $ServerVer);
+		
+		
 		 // $GRoleData['status']['level2'] = 32;
 		 // PutRoleData($roleId, $GRoleData, $ServerVer);
 		 // 32
@@ -27,30 +94,24 @@ $header_arr = array("error" => "Unknown Error!", "success" => "", "gold" => "", 
 		 // $GRoleData['status']['skills'] = "090000009e00000000000000010000009f0000000000000001000000a00000000000000001000000a10000000000000001000000a700000000000000010000002b010000000000000a00000048010000000000000a00000049010000000000000a0000004a010000000000000a000000";
          // PutRoleData($roleId, $GRoleData, $ServerVer);
 		//$GRoleData['base']['name'] = "HMM";
-		/*
+	/*
 		if ($GRoleData["equipment"]['invC'] > 0) {
 			foreach ($GRoleData["equipment"]['inv'] as &$value) {
-				if (strpos($value['data'], "96210000") !== false) {
-					$value['expire_date'] = 60;
-				}
+				$value['expire_date'] = 60;
 			}
 		}
 		if ($GRoleData["pocket"]['itemsC'] > 0) {
 			foreach ($GRoleData["pocket"]['items'] as &$value) {
-				if (strpos($value['data'], "96210000") !== false) {
-					$value['expire_date'] = 60;
-				}
+				$value['expire_date'] = 60;
 			}
 		}
 		if ($GRoleData["storehouse"]['itemsC'] > 0) {
 			foreach ($GRoleData["storehouse"]['items'] as &$value) {
-				if (strpos($value['data'], "96210000") !== false) {
-					$value['expire_date'] = 60;
-				}
+				$value['expire_date'] = 60;
 			}
 		}
 		PutRoleData($roleId, $GRoleData, $ServerVer);
-		*/
+*/		
 		// $GRoleData=GetRoleData($roleId, $ServerVer);
 		// printf(json_encode($GRoleData, JSON_PRETTY_PRINT));
 	

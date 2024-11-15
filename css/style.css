@@ -13,6 +13,30 @@ input:not([type="checkbox"]):not([type="radio"]):not([name="answer"]) {
 	width: 200px;
 }
 
+.absolute-center {
+	position: fixed;
+    top: 50%;
+    z-index: 1;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.center-box {
+	position:relative;
+	left: 50%;
+	transform:translateX(-50%);
+	padding: 32px;
+	display:inline-block;
+	background: rgba(0,0,0,0.5);
+	margin: auto;
+	border-radius: 16px;
+	max-width:980px;
+	width: 100%;
+	margin-top: 64px;
+	color: white;
+	box-sizing: border-box;
+}
+
 .form-label {
 	text-shadow: 2px 2px 5px #000, 0px 0px 1px #000;
 	color:#fff;
@@ -53,4 +77,13 @@ td {
 
 .toggle-password-btn:hover {
 	opacity: 1;
+}
+
+.page-bg {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	z-index: -1;
 }

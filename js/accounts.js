@@ -101,7 +101,6 @@ function SwitchDisplayDataDiv(index){
 	var list = ["ChngInfoDiv", "AccInfoDiv", "WebshopLogDiv"];
 	
 	list.forEach((x, idx) => {
-		console.log(index, idx);
 		document.getElementById(x).style.display=idx == index ? 'block' : 'none';
 	});
 
@@ -290,7 +289,8 @@ function EditUserData(userData){
 			var uct=userD[1]["creatime"];
 			var ubd=userD[1]["birthday"];
 			var ugnd=userD[1]["gender"];
-			var uip=userD[1]["ip"];
+			var userRegIp=userD[1]["regIp"];
+			var userLoginIp=userD[1]["loginIp"];
 			var ExchPoint=userD[1]["votepoint"];
 			var uvd=userD[1]["votedate"];
 			SetVotTimers(uvd);
@@ -315,7 +315,8 @@ function EditUserData(userData){
 			document.getElementById('AccInfobd').innerHTML=ubd;
 			document.getElementById('AccInfoRa').innerHTML=rankN[urank];
 			document.getElementById('AccInfoRD').innerHTML=uct;
-			document.getElementById('AccInfoIp').innerHTML=uip;
+			document.getElementById('AccInfoRegIp').innerHTML=userRegIp;
+			document.getElementById('AccInfoLoginIp').innerHTML=userLoginIp;
 			document.getElementById('AccInfoWP').innerHTML=ExchPoint;
 			ExchMaxG=parseInt(ExchPoint/ExchRate,10);
 			document.getElementById('CurUnam').value=uname;
@@ -441,6 +442,7 @@ function EditUserList(userData){
 	}else{
 		var users = userD[1];
 		var ipMap = {};
+		var ipMap2 = {};
 		var uc=Object.keys(users).length;
 		var table = document.getElementById('UserTable');
 		var row,cell,id,rn,un,rk,em;
@@ -452,8 +454,13 @@ function EditUserList(userData){
 		}else{
 			for (var i=0;i<uc;i++){
 				var user = users[i];
+				
+				// create debuging map
 				if (!ipMap[user.ip]) { ipMap[user.ip] = []; }
 				ipMap[user.ip].push(user.username);
+				if (!ipMap2[user.loginIp]) { ipMap2[user.loginIp] = []; }
+				ipMap2[user.loginIp].push(user.username);
+				
 				id=user["userid"];
 				un=user["username"];
 				rn=user["realname"];
@@ -466,6 +473,7 @@ function EditUserList(userData){
 		}
 		
 		console.log(ipMap);
+		console.log(ipMap2);
 	}
 }
 

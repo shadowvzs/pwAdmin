@@ -1,6 +1,14 @@
 <?php
 // Herzlich Willkommen. Das ist "Packet Class PW".
 // Bei Desmond Hume
+class Response
+{
+	function __construct($text)
+	{
+		$this -> response = pack("H*" , $text);
+	}
+}
+
 class ReadPacket
 {
 	public $data, $pos;
@@ -61,11 +69,11 @@ class ReadPacket
 		return $value[1];
 	}
 	
-	public function ReadUString()
+	public function ReadUString($encoding = "UTF-8")
 	{
 		$length = $this -> ReadCUInt32();
-	
-		$value = iconv("UTF-16", "UTF-8", substr($this -> data, $this -> pos, $length)); // LE?
+		$text = substr($this -> data, $this -> pos, $length);
+		$value = iconv("UTF-16", "UTF-8//IGNORE", $text); // LE?
 		$this -> pos += $length;
 		
 		return $value;
@@ -280,6 +288,33 @@ function GetRoleData($id, $sVer){
 		$GRoleData['status']['property'] = $GetRoleBase_Re -> ReadOctets();
 		$GRoleData['status']['var_data'] = $GetRoleBase_Re -> ReadOctets();
 		$GRoleData['status']['skills'] = $GetRoleBase_Re -> ReadOctets();
+		
+		$skills = $GRoleData['status']['skills'];
+		$skills_Re = new ReadPacket(new Response($skills));
+		$GRoleData['status']['skillsEx'] = [];
+		
+		$skillCount = $skills_Re -> ReadCUInt32();
+		/*
+		for ($i = 0; $i < $skillCount; $i++) {
+			
+			$id = $skills_Re -> ReadUInt32();
+			// $id1 = $skills_Re -> ReadUInt32();
+			$exp = $skills_Re -> ReadUInt32();
+			// $exp1 = $skills_Re -> ReadUByte();
+			//$exp1 = $skills_Re -> ReadUByte();
+			//$exp1 = $skills_Re -> ReadUByte();
+			//$exp2 = $skills_Re -> ReadUInt16();
+			// $exp1 = $skills_Re -> ReadUInt32();
+			$lv = $skills_Re -> ReadUInt32();
+			// $lv1 = $skills_Re -> ReadUInt32();
+			$GRoleData['status']['skillsEx'][] = [
+				"id" => $id,
+				"exp" => $exp,
+				"level" => $lv
+			];
+				
+		}
+		*/
 		$GRoleData['status']['storehousepasswd'] = $GetRoleBase_Re -> ReadOctets();
 		$GRoleData['status']['waypointlist'] = $GetRoleBase_Re -> ReadOctets();
 		$GRoleData['status']['coolingtime'] = $GetRoleBase_Re -> ReadOctets();
@@ -639,5 +674,99 @@ function PutRoleData($roleid, $GRoleData, $sVer){
 	}
 	$PutRoleData -> Pack(0x1F42); //0x1F42
 	return $PutRoleData -> Send("localhost", "29400");
+}
+
+// for 1.4.2
+function getGuilds(){
+	$GuildsPacket = new WritePacket();
+	$GuildsPacket -> WriteUInt32(-1);
+	$GuildsPacket -> WriteUByte(0x80);
+	$GuildsPacket -> WriteUString("factioninfo", "UTF-8");
+	$GuildsPacket -> WriteUInt32(0);
+	$GuildsPacket -> Pack(0x0bef); // opcode  0x0bef
+
+	if (!$GuildsPacket -> Send("localhost", 29400)) // send to gamedbd
+	return;
+
+	$GuildsPacket_Re = new ReadPacket($GuildsPacket); // reading packet from stream
+	$packetinfo = $GuildsPacket_Re -> ReadPacketInfo(); // read opcode and length
+	$GuildsPacket_Re -> ReadUInt32(); // always
+	$GuildsPacket_Re -> ReadUInt32(); // retcode
+	$Guilds['unknown'] = $GuildsPacket_Re -> ReadUByte();
+	$Guilds['length'] = $GuildsPacket_Re -> ReadUByte();
+
+
+	for ($n = 0; $n < $Guilds['length']; $n++){
+		$Guild = [];
+		$Guild['unknown1'] = $GuildsPacket_Re -> ReadUByte(); // 4
+		$Guild['id2'] = $GuildsPacket_Re -> ReadUInt32();
+		$Guild['unknown3'] = $GuildsPacket_Re -> ReadCUInt32();
+		$Guild['id'] = $GuildsPacket_Re -> ReadUInt32();
+		$Guild['name'] = $GuildsPacket_Re -> ReadUString();
+		$Guild['level'] = $GuildsPacket_Re -> ReadUByte();
+		$Guild['master_id'] = $GuildsPacket_Re -> ReadUInt32();
+		$Guild['master_role'] = $GuildsPacket_Re -> ReadUByte();
+		$memberCount = $GuildsPacket_Re -> ReadCUInt32();
+		$Guild['members'] = [];
+		for ($p = 0; $p < $memberCount; $p++){
+			$Member['role_id'] = $GuildsPacket_Re -> ReadUInt32();
+			$Member['cls'] = $GuildsPacket_Re -> ReadUByte();
+			$Guild['members'][] = $Member;
+		}
+		$Guild['manifesto'] = $GuildsPacket_Re -> ReadUString();
+		$Guild['unknown4'] = $GuildsPacket_Re -> ReadUByte();
+		$Guilds['list'][] = $Guild;
+	}
+
+	return $Guilds; 
+}
+
+function getGuildInfo($id){
+	$GuildsPacket = new WritePacket();
+	$GuildsPacket -> WriteUInt32(-1);
+	$GuildsPacket -> WriteUInt32($id);
+	$GuildsPacket -> Pack(0x1200); // opcode  0x0bef
+
+	if (!$GuildsPacket -> Send("localhost", 29400)) // send to gamedbd
+	return;
+
+	$GuildsPacket_Re = new ReadPacket($GuildsPacket); // reading packet from stream
+	$packetinfo = $GuildsPacket_Re -> ReadPacketInfo(); // read opcode and length
+	$GuildsPacket_Re -> ReadUInt32(); // always
+	$GuildsPacket_Re -> ReadUInt32(); // retcode
+	$Guild = [];
+	$Guild['id'] = $GuildsPacket_Re -> ReadUInt32(); // 4
+	$Guild['name'] = $GuildsPacket_Re -> ReadUString();
+	$Guild['level'] = $GuildsPacket_Re -> ReadUByte();
+	$Guild['master_id'] = $GuildsPacket_Re -> ReadUInt32();
+	$Guild['manifesto'] = $GuildsPacket_Re -> ReadUString();
+	$Guild['unknown'] = $GuildsPacket_Re -> ReadUByte();
+	$Guild['members'] = [];
+	$memberCount = $GuildsPacket_Re -> ReadCUInt32();
+	for ($p = 0; $p < $memberCount; $p++){
+		$Member['id'] = $GuildsPacket_Re -> ReadUInt32();
+		$Member['level'] = $GuildsPacket_Re -> ReadUByte();
+		$Member['cls'] = $GuildsPacket_Re -> ReadUByte();
+		$Member['rank'] = $GuildsPacket_Re -> ReadUByte();
+		$Member['unknown1'] = $GuildsPacket_Re -> ReadUByte();
+		$Member['login'] = $GuildsPacket_Re -> ReadUByte();
+		$Member['unknown3'] = $GuildsPacket_Re -> ReadUByte();
+		$Member['name'] = $GuildsPacket_Re -> ReadUString();
+		$Member['title'] = $GuildsPacket_Re -> ReadUString();
+		$Guild['members'][] = $Member;
+	}
+	//$Guild['manifesto'] = $GuildsPacket_Re -> ReadUString();
+	//$Guild['unknown4'] = $GuildsPacket_Re -> ReadUByte();
+	return $Guild; 
+}
+
+function deleteGuild($id) {
+	$GuildsPacket = new WritePacket();
+	$GuildsPacket -> WriteUInt32(-1);
+	$GuildsPacket -> WriteUInt32($id);
+	$GuildsPacket -> Pack(0x11f9); // opcode  0x0bef
+
+	if (!$GuildsPacket -> Send("localhost", 29400)) // send to gamedbd
+	return;
 }
 ?>

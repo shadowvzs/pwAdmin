@@ -23,9 +23,9 @@ if ($diff < 3600) {
 	die("Wait $timeLext sec");
 }
 $DB_Host="localhost";
-$DB_User="YOUR_DB_USER";
-$DB_Password="YOUR_DB_PASSWORD";
-$DB_Name="YOUR_DB_NAME";
+$DB_User="DragonCity";
+$DB_Password="123456";
+$DB_Name="pw";
 
 $link = new mysqli($DB_Host, $DB_User, $DB_Password, $DB_Name);
 
@@ -59,6 +59,7 @@ if (true){
 
 	include("$base_path/config.php");
 	include("$base_path/basefunc.php");
+	include("$base_path/whitelist.php");
 	include("$base_path/php/packet_class.php");
 	
 	$rewardedUserMap = array();
@@ -91,7 +92,7 @@ if (true){
 
 		$PWGold = $cultiLevels[0] ?? 0;
 
-		$mainUsername = getMainUserId($userIdMap[$onlineUserId]);
+		$mainUsername = getMainUserId($userIdMap[$onlineUserId], $base_path);
 		if (!isset($mainUsername)) {
 			// echo "missing: $onlineUserId - $onlineUsername";
 			continue;
@@ -116,11 +117,8 @@ if (true){
 }
 mysqli_close($link);
 
-function getMainUserId($searchedUsername) {
-	// main character => [sub characters]
-	$whitelist = [
-		"shadowvzs" => ["shadowvzs", "shadowvzs87", "pwadmin"],
-];
+function getMainUserId($searchedUsername, $base_path) {
+	include("$base_path/whitelist.php");
 	foreach($whitelist as $mainUserName => $userNames) {
 		if (in_array($searchedUsername, $userNames)) {
 			return $mainUserName;
@@ -132,12 +130,15 @@ function rewardUser($link, $userId, $reward) {
 	if ($reward <= 0) { return; }
 	$PwGold = $reward * 100;
 	$TIME=date("Y-m-d H:i:s");
+	/*
 	$query="INSERT INTO usecashnow (userid, zoneid, sn, aid, point, cash, status, creatime) VALUES ('$userId', '1', '0', '1', '0', '$PwGold', '1', '$TIME') ON DUPLICATE KEY UPDATE cash = cash + $PwGold";
 	$stmt = $link->prepare($query);
 	$stmt->execute(); 
 	$stmt->close();
+	*/
 	
-	$query = "UPDATE users SET VotePoint=VotePoint+$reward WHERE ID=?";
+	$webPoints = round($reward * 1.75);
+	$query = "UPDATE users SET VotePoint=VotePoint+$webPoints WHERE ID=?";
 	$stmt = $link->prepare($query);
 	$stmt->bind_param('i', $userId);
 	$stmt->execute(); 

@@ -13,12 +13,14 @@ if ( $data ) {
 	if (($username)&&($password)){
 		$u=Trim(stripslashes($username));
 		$p=stripslashes($password);
-		if (!(((strlen($u)<5)||(strlen($u)>20)||(strlen($p)<5))||(strlen($p)>20))&&((ctype_alnum($u))&&(ctype_alnum($p)))){
+		$passwdRegExp = '/[0-9a-zA-Z\$\!\@\[\]\?\.\,]/';
+		
+		if (!(((strlen($u)<5)||(strlen($u)>20)||(strlen($p)<5))||(strlen($p)>20))&&((ctype_alnum($u))&& preg_match($passwdRegExp, $p))){
 			$link = new mysqli($DB_Host, $DB_User, $DB_Password, $DB_Name);
 			if ($link->connect_errno) {
 				$resp="Sorry, this website is experiencing problems (failed to make a MySQL connection)!";
 				exit;
-			}	
+			}
 			if (VerifyPassword ($link, $u, $p) !== false){
 				$statement = $link->prepare("SELECT ID, email, creatime FROM users WHERE name=?");
 				$statement->bind_param('s', $u);
@@ -43,7 +45,14 @@ if ( $data ) {
 							$_SESSION['t']=$TIME;
 							$_SESSION['UD3']=$AKey2;
 							$_SESSION['LogTtry'] = 0;
-							$resp="";	
+							$resp="";
+
+							$query = "UPDATE users SET mudev=? WHERE ID=?";
+							$ip = $_SERVER['REMOTE_ADDR'];
+							$stmt = $link->prepare($query);
+							$stmt->bind_param('si', $ip, $ID);
+							$stmt->execute(); 
+							$stmt->close();		
 						}
 					}
 				}else{
@@ -69,5 +78,4 @@ if ( $data ) {
 	}
 }
 echo $resp;
-
 ?>

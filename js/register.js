@@ -156,7 +156,12 @@ class RegFormController extends BaseFormController {
 				  term: this.inputMap['term'].checked
 			  })
 			});
-			window.location.href = "../page/myacc.php";
+			const message = await registerRequest.text();
+			if (message) {
+				alert(message);
+			} else {
+				window.location.href = "../my-account";
+			}
 		} catch (err) {
 			alert(err);
 			return;

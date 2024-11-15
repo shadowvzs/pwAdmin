@@ -97,17 +97,13 @@ function VerifyAdmin($con, $username, $password, $userid, $email){
 
 function SessionVerification(){
 	global $AKey1;
-	if (isset($_SESSION['UD1'])){
-		if ($_SESSION['UD1'] != 1){
-			die;
-		}elseif (isset($_SESSION['UD2'])){
-			if ($_SESSION['UD2'] != $AKey1){
-				die;
-			}
-		}else{
-			die;
-		}
-	}else{
+	if (!isset($_SESSION['UD1'])){ 
+		die;
+	}
+	if ($_SESSION['UD1'] != 1){
+		die;
+	}	
+	if (!isset($_SESSION['UD2']) || ($_SESSION['UD2'] != $AKey1)){
 		die;
 	}
 }
@@ -295,11 +291,11 @@ function loadUserRoles($id) {
 			$GetRoleBase_Re -> ReadUString();
 			$GetRoleBase_Re -> ReadUInt32();
 			$roleCls = cls2class($GetRoleBase_Re -> ReadUInt32());
-			$GetRoleBase_Re -> ReadUByte();
+			$gender = $GetRoleBase_Re -> ReadUByte();
 			$GetRoleBase_Re -> ReadOctets();
 			$GetRoleBase_Re -> ReadOctets();
 			$GetRoleBase_Re -> ReadUInt32();
-			$GetRoleBase_Re -> ReadUByte();
+			$status = $GetRoleBase_Re -> ReadUByte();
 			$roleDelTime = $GetRoleBase_Re -> ReadUInt32();
 			$GetRoleBase_Re -> ReadUInt32();
 			$roleLastLogin = $GetRoleBase_Re -> ReadUInt32();
@@ -337,6 +333,7 @@ function loadUserRoles($id) {
 			}elseif(($roleCulti>29)&&($roleCulti<33)){
 				$rolePath = $PWclsPath[2]." ";
 			}
+
 			if (isset($PWclass[$roleCls])){
 				$role_arr[$i]=array(
 					"roleid" => $roleid,
@@ -355,7 +352,10 @@ function loadUserRoles($id) {
 					"posX" => $posX,
 					"posY" => $posY,
 					"posZ" => $posZ,
-					"map" => $worldTag
+					"map" => $worldTag,
+					"gender" => $gender,
+					"status" => $status,
+					"lastLogin" => $roleLastLogin
 				);
 			}
 		}

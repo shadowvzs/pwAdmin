@@ -1,31 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-	<head>
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<link rel="canonical” href="https://retroms.ddns.net">
-		<meta name="description" content="Perfect World - Retro MS, the old version of this MMORPG game, from 2009, it is free to play oriented server, where we respect eachother." />
-		<meta charset="utf-8">
-		<title>Perfect World Retro PvP server</title>
-		<link rel="stylesheet" type="text/css" href="./base.css">
-		<link rel="stylesheet" type="text/css" href="./style.css">
-		<link rel="icon" type="image/x-icon" href="../images/pwicon3.png">
-	</head>
-	<body>
-		<table border="0" class="mx-auto" style="-webkit-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none; max-width: 1000px; width: 100%;">
-			<tr>
-				<td width="99" align="center" style="text-shadow: 2px 2px 5px #000, 0px 0px 1px #000; color:white;">
-					<b><span style="color: #ffff88">Perfect</span> <span style="color: #ffff99">World </span><span style="color: #ffffaa">RetroMS</span></b>
-					<br><br><b><span style="color: #ffffcc">Wodan</span></b></td>
-				<td align="center"><img src="../images/banner.jpg" alt="Perfect World RetroMS" border="0" /></td>
-				<td width="99" align="center" style="text-shadow: 2px 2px 5px #000, 0px 0px 1px #000; color:white;">
-					<b><span style="color:#ffff99">Three race</span></b><br>
-					<b><span style="color:#ffffaa">Six class</span></b><br><br>
-					<b><span style="color:#ffffcc">Lv 79 & 100</span> <span style="color:#ffffdd">skills + Elfs</span></b></td>
-			</tr>
-		</table>
-		<br/><br/>
+<?php include "../common/header.php"; ?>
 
-		<div class="flex flex-wrap p-6 justify-center mx-auto rounded-xl gap-8 border border-solid border-slate-800" style="background-color: rgba(0,0,0,0.2); max-width: 768px;">
+		<div class="flex flex-wrap p-6 justify-center mx-auto rounded-xl gap-8 border-3 border-double border-slate-800" style="background-color: rgba(255,255,255,0.6); max-width: 768px; box-shadow: 5px 5px 5px 5px rgba(0,0,0,0.2)">
 			<div class="flex gap-2 flex-col">
 				<img src="../../images/spirit.png" alt="Dawn of Spirits" />
 				<h2 class="font-bold text-center my-0"> RetroMS - 1.4.1</h2>
@@ -77,7 +52,7 @@
 						<tr>
 							<td class='form-label font-base'> <b>Question:</b></td>
 							<td style='font-size:16px;text-shadow: 2px 2px 5px #000, 0px 0px 1px #000;'>
-								<span id='RegQuestion'></span>
+								<span id='RegQuestion' style="display:inline-block;vertical-align:middle"></span>
 								<span>
 									<input type='text' id='RegAnswer' name='answer' maxlength='5' class='w-10' title="Write here the answer" required />
 								</span>
@@ -92,21 +67,17 @@
 					<br /><br />
 					<footer class="flex justify-center gap-2">
 						<div>
-							<button type="button" class="myButton" id="RegBackBtn"><a href="../">Back</a></button>
+							<button type="submit" class="myButton cursor-pointer" id="RegConfirmBtn">Confirm</button>
 						</div>
 						<div>
-							<button type="submit" class="myButton" id="RegConfirmBtn">Confirm</button>
-						</div>
-						<div>
-							<button type="button" class="myButton" id="RegAutofillBtn">Autofill</button>
+							<button type="button" class="myButton cursor-pointer" id="RegAutofillBtn">Autofill</button>
 						</div>
 					</footer>
 				</form>
 			</div>
 		</div>
-	<script src="./register.js?t=<?php echo time(); ?>" type="text/javascript"></script>
+			<script src="../js/register.js?t=<?php echo time(); ?>" type="text/javascript"></script>
 	<script>	
 		var regFormController = new RegFormController();
 	</script>
-	</body>
-</html>
+<?php include "../common/footer.php"; ?>

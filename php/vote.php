@@ -10,6 +10,7 @@ SessionVerification();
 if ($_SESSION['UD3'] != $AKey2){die();}
 $data = json_decode(file_get_contents('php://input'), true);
 $storagePath = "../votes/";
+$storageVoteInfoFile = "$storagePath"."voteInfo.json";
 
 $header_arr["error"]="Invalid vote id!";
 if (($data)&&(isset($_SESSION['un']))) {
@@ -74,10 +75,25 @@ if (($data)&&(isset($_SESSION['un']))) {
 								$isCheater = (time() - intval($json['date'])) < 43200;
 							}
 							
+							$userIP = $_SERVER['REMOTE_ADDR'];
+							if (file_exists($storageVoteInfoFile)) {
+								$infoJSON = json_decode(file_get_contents($storageVoteInfoFile), true);
+							} else {
+								$infoJSON = [];
+							}
+							
+							if (!isset($infoJSON[$un])) {
+								$infoJSON[$un] = [];
+							}
+							if (!in_array($userIP, $infoJSON[$un])) {
+								$infoJSON[$un][] = $userIP;
+							}
+							file_put_contents($storageVoteInfoFile, json_encode($infoJSON, JSON_PRETTY_PRINT));
+							
 							$logData=array();
 							$logData['userId']=$uid;
 							$logData['userName']=$un;
-							$logData['REMOTE_ADDR']=$_SERVER['REMOTE_ADDR'];
+							$logData['REMOTE_ADDR']=$userIP;
 							$logData['HTTP_X_FORWARDED_FOR']=getenv('HTTP_X_FORWARDED_FOR');
 							$logData['date']=$TIME;
 							$logData['voteid']=$vId;							

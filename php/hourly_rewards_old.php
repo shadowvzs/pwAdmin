@@ -21,11 +21,7 @@ if ($diff < 3600) {
 	$timeLext = str_pad($hourLeft, 2, "0", STR_PAD_LEFT).":".str_pad($minLeft, 2, "0", STR_PAD_LEFT).":".str_pad($secLeft, 2, "0", STR_PAD_LEFT);
 	die("Wait $timeLext sec");
 }
-$DB_Host="localhost";
-$DB_User="YOUR_DB_USER";
-$DB_Password="YOUR_DB_PASSWORD";
-$DB_Name="YOUR_DB_NAME";
-
+include("/var/www/html/pwAdmin/config.php");
 $link = new mysqli($DB_Host, $DB_User, $DB_Password, $DB_Name);
 
 if (true){

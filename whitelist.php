@@ -1,0 +1,5 @@
+<?php
+	$whitelist = [
+		"testAccountName" => ["testAccountName"],
+	];
+?>
