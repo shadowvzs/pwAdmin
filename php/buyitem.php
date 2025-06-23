@@ -8,6 +8,7 @@ include "../php/sendgamemail.php";
 include("../php/packet_class.php");
 $header_arr = array("error" => "Unknown Error!", "success" => "", "gold" => "", "point" => "");
 SessionVerification();
+
 if ($_SESSION['UD3'] != $AKey2){die();}
 $data = json_decode(file_get_contents('php://input'), true);
 if (($data)&&(isset($_SESSION['un']))) {
@@ -36,13 +37,27 @@ if (($data)&&(isset($_SESSION['un']))) {
 				}else{		
 					$valid = false; // init as false				
 					if ($WShopDB==1){
-						$query = "SELECT id FROM webshop WHERE pcst=? AND gcst=? AND itmid=? AND imask=? AND iproc=? AND imax=? AND expir=? AND octet=? AND stim=?";
+						$query = "SELECT * FROM webshop WHERE pcst=? AND gcst=? AND itmid=? AND imask=? AND iproc=? AND imax=? AND expir=? AND octet=? AND stim=?";
 						$statement = $conn->prepare($query);
 						$statement->bind_param('iiiiiiiss', $iArr[0], $iArr[1], $iArr[7], $iArr[8], $iArr[9], $iArr[11], $iArr[14], $iArr[15], $iArr[19]);
 						$statement->execute();
-						$statement->store_result();
+						$result = $statement->get_result();
+						$rows = [];
+						while ($row = $result->fetch_array(MYSQLI_ASSOC)) {
+							$rows[] = $row;
+						}
+
 						$result = $statement->num_rows;	
-						if ($result>0){
+						
+						$isGold = intval($data['buyWith']) == 1;
+						$isPoint = intval($data['buyWith']) == 2;
+						if (count($rows) == 0) {
+							$header_arr["error"]="Item not found";
+						} else if ($isGold && $rows[0]['pcst'] == 0) {
+							$header_arr["error"]="You cannot buy it with coin";
+						} else if ($isPoint && $rows[0]['gcst'] == 0) {
+							$header_arr["error"]="You cannot buy it with webshop point";
+						} else {
 							$valid = TRUE;
 						}
 						$statement->free_result();
@@ -158,8 +173,6 @@ if (($data)&&(isset($_SESSION['un']))) {
 								}
 							}
 						}
-					}else{
-						$header_arr["error"]="Item not found!";	
 					}	
 				}
 				$conn->close();				
